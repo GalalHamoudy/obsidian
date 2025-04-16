@@ -140,3 +140,32 @@ A security baseline defines the minimum security standards and configurationsreq
 
 [Q19] - What port number does ping use?
 Ping uses ICMP so it doesn’t use any port 
+
+[Q20] - Describe the steps in the digital forensic investigation process.
+
+The digital forensic process typically follows these six stages :
+- **Identification:** Recognize potential sources of digital evidence.
+- **Preservation:** Ensure that the digital evidence is preserved in its original state. This is often done by creating forensic images.
+- **Collection:** Gather data from various sources, such as hard drives, servers, and cloud storage, while ensuring that the evidence remains intact.
+- **Examination:** Use forensic tools to sift through the data and identify relevant evidence.
+- **Analysis:** Reconstruct events based on the evidence collected, and draw conclusions about what may have occurred.
+- **Reporting:** Present the findings in a clear, detailed, and legally sound report suitable for court or internal investigations. This structured approach ensures thoroughness and prevents evidence tampering.
+
+[Q21] - How do you ensure the integrity of digital evidence?
+- **Chain of Custody
+- **Forensic Imaging**
+- **Hashing Algorithms**
+
+[Q22] - What are anti-forensic techniques, and how do you counter them?
+Anti-forensic techniques are methods cybercriminals use to obscure, destroy, or alter evidence to avoid detection. These techniques include:
+
+- **File Encryption:** Criminals may encrypt data to prevent access to evidence.
+- **Data Wiping:** Software is used to erase files and overwrite data permanently.
+- **Steganography:** Hiding data within other files, such as images or videos, to make it undetectable.
+- **Log Manipulation:** Modifying system logs to hide tracks.
+
+[Q23] -  What is data mining?
+Data mining is the process of recording as much data as possible to create reports and analysis on user input. For instance, you can mine data from various websites and then log user interactions with this data to evaluate which website areas are accessed by users when logged in.
+
+[Q24] -  What is data carving?
+Data carving is different than data mining in that data carving searches through raw data on a hard drive without using a file system. It allows a computer forensic investigator to recover a deleted file from a hard drive. Data carving is essential for computer forensics investigators to find data when a hard drive’s data is corrupted.
