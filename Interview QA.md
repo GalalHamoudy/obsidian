@@ -115,3 +115,28 @@ A security baseline defines the minimum security standards and configurationsreq
 	- Often **cloud-based (SaaS)** for real-time updates.
 	- Needs **security team expertise** for full effectiveness.
 
+[Q14] - Can you walk me through the threat intelligence analysis process?
+1. **Collect Data:** This is the first step in any threat intelligence analysis process. I need to collect data from various sources such as open-source intelligence, threat intelligence feeds, and reports. This data should be relevant to the organization's environment and business operations.
+2. **Analyze data:** With the data collected, I will analyze it to identify potential threats. I will use various tools and techniques to identify patterns, anomalies, and suspicious activities. This includes the use of data visualization tools that can help in pattern recognition.
+3. **Classification:** After analyzing the data, I will classify the threats into different categories to prioritize them. This classification may be based on the probability and impact of the threat on the organization's operations, assets, and reputation.
+4. **Validation:** Before reporting the threats to the organization or management, I will validate the accuracy, reliability, and credibility of the information collected. This may involve verifying the source of the data and cross-checking it with other sources.
+5. **Reporting and Recommendations:** Finally, I will prepare a detailed report that summarizes the findings of my analysis and provides recommendations on how to mitigate or eliminate the identified threats. This report may include technical details, such as indicators of compromise or attack signatures, and non-technical information, such as business impacts and financial losses.
+
+[Q15] - How do you prioritize threats based on potential impact?
+- Gathering information about the threat
+- Assessing the likelihood of an attack
+- Determining the potential impact
+- Assigning a risk score
+- Communicating the risk to stakeholders
+
+[Q16] - How do you prioritize threats?
+ Prioritizing threats is a critical skill in CTI, requiring an assessment of the potential impact, urgency, and likelihood of each threat. I prioritize based on the severity of the impact on the organization’s critical assets and operations, the credibility of the threat intelligence, and the organization’s vulnerability to the specific threat. This approach ensures that resources are allocated effectively, focusing on the most significant threats first.
+
+[Q17] - "How do you prioritize and manage multiple threat intelligence reports?"
+"I prioritize threat intelligence reports based on the potential impact and likelihood of the threat. I use a risk matrix to categorize threats and focus on high-impact, high-likelihood threats first. For instance, during a recent surge in phishing attacks, I prioritized reports related to phishing over less immediate threats, ensuring our defenses were promptly strengthened."
+
+[Q18] - Describe a time when you identified a false positive. How did you handle it?
+ I **adjusted the monitoring tool’s parameters** to minimize similar occurrences in the future, enhancing the accuracy of our threat detection efforts.
+
+[Q19] - What port number does ping use?
+Ping uses ICMP so it doesn’t use any port 
