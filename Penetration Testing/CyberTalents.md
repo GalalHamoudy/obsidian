@@ -136,3 +136,4 @@ Why is Vulnerability Assessment Important?
 - **Prevents breaches** by finding flaws before hackers do.
 - **Compliance requirement** (e.g., PCI-DSS, HIPAA, ISO 27001).
 - **Reduces attack surface** by fixing misconfigurations.
+
