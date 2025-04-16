@@ -19,7 +19,7 @@
 - SEC487 + SEC587 OSINT
 
 
-##### Malware & Reverse Engineering Study Notes
+##### Malware & Reverse Engineering
 
 - practical malware analysis Book
 - mastering malware analysis Book
