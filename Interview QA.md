@@ -17,13 +17,13 @@ VPN →
 - Creates a secure, encrypted tunnel over a public or untrusted network (like the internet) to connect remote users or networks as if they were on a private network.
 - Provides encryption (AES, RSA) and authentication to secure data over untrusted networks.
 - Spans across **wide-area networks (WANs)**, connecting different locations over the internet.
-- An employee working from home securely accesses the company’s internal systems via an encrypted VPN connection.
+- ex: An employee working from home securely accesses the company’s internal systems via an encrypted VPN connection.
 
 VLAN → 
 - Logically segments a physical network into multiple isolated broadcast domains within the same infrastructure.
 - Provides isolation but no encryption (unless paired with other security measures).
 - Operates within a **single local network (LAN)**, segmenting devices logically.
-- A university separates student, faculty, and guest traffic on the same physical network using VLANs.
+- ex: A university separates student, faculty, and guest traffic on the same physical network using VLANs.
 
 [Q3] - Explain SQL injection types.
 There are 3 types of SQL Injections. These are:
@@ -86,7 +86,7 @@ Malware achieves persistence on Windows by using techniques such as modifying re
 Handling data exfiltration incidents involves quickly identifying the source and extent of the breach, isolating affected systems, and mitigating further data loss. Investigating the attack vector, restoring data from backups, and notifying relevant stakeholders are also crucial steps.
 
 [Q12] - What is a security baseline?
-A security baseline defines the minimum security standards and configurationsrequired for systems and applications.
+A security baseline defines the minimum security standards and configurations required for systems and applications.
 
 
 [Q13] - What is the difference between EDR and AV?
@@ -169,3 +169,238 @@ Data mining is the process of recording as much data as possible to create repor
 
 [Q24] -  What is data carving?
 Data carving is different than data mining in that data carving searches through raw data on a hard drive without using a file system. It allows a computer forensic investigator to recover a deleted file from a hard drive. Data carving is essential for computer forensics investigators to find data when a hard drive’s data is corrupted.
+
+
+[Q25] - Explain the difference between OSI and TCP/IP model ?
+
+ Key Differences Between OSI and TCP/IP Models:
+
+|Feature|**OSI Model**|**TCP/IP Model**|
+|---|---|---|
+|**Origin**|Developed by **ISO** (International Organization for Standardization)|Evolved from **ARPANET**, adopted by the Internet|
+|**Layers**|**7 layers** (Application, Presentation, Session, Transport, Network, Data Link, Physical)|**4 layers** (Application, Transport, Internet, Network Access)|
+|**Approach**|**Theoretical** (designed as a reference model)|**Practical** (based on real-world implementation)|
+|**Protocol Dependency**|**Protocol-independent** (generic framework)|**Protocol-dependent** (built around TCP, IP, UDP, etc.)|
+|**Layer Functionality**|Strictly separates functions (e.g., Session & Presentation layers)|Combines functions (e.g., Application layer handles Session & Presentation)|
+|**Usage**|Used for **understanding & troubleshooting** networks|Used in **real-world networking** (e.g., the Internet)|
+
+ Key Takeaways:
+1. **OSI is a 7-layer theoretical model**, while **TCP/IP is a 4-layer practical model**.
+2. **TCP/IP combines OSI's Application, Presentation, and Session layers** into a single **Application layer**.
+3. **TCP/IP's Internet layer ≈ OSI's Network layer** (both handle IP addressing & routing).
+4. **TCP/IP is the foundation of the modern Internet**, while OSI is used mainly for **education and network design**.
+5. **OSI is more detailed**, but **TCP/IP is more widely implemented**.
+
+[Q26] - Which event logs are available default on Windows?
+- Security
+- Application
+- System
+
+[Q27] - Compare between Normal URLs (Surface Web), v2 Onion, and v3 Onion addresses
+
+|Feature|**Normal Web URL** (e.g., `google.com`)|**v2 Onion Address** (e.g., `facebookcorewwwi.onion`)|**v3 Onion Address** (e.g., `facebookwkhpilnemxj7...onion`)|
+|---|---|---|---|
+|**Domain Format**|`.com`, `.org`, `.net`, etc.|`.onion` (16 chars)|`.onion` (56 chars)|
+|**Readability**|Human-friendly (e.g., `youtube.com`)|Semi-readable (shorter random string)|Fully random (long hash)|
+|**Accessibility**|Via any browser (Chrome, Firefox, etc.)|**Tor Browser only** (deprecated since 2021)|**Tor Browser only** (current standard)|
+|**Encryption**|HTTPS (SSL/TLS)|SHA-1 + 1024-bit RSA (weak)|SHA-3 + 3072-bit RSA (strong)|
+|**Anonymity**|Low (IP/logs trackable by ISPs & sites)|High (hidden service + user anonymity)|**Highest** (improved anti-censorship)|
+|**DNS System**|Uses **DNS** (centralized, can be blocked)|**No DNS** (self-authenticating)|**No DNS** (decentralized, harder to block)|
+|**Brute-Force Risk**|N/A (domains are registered, not hashed)|**High** (shorter hashes guessable)|**Near-zero** (56-char entropy)|
+|**Phishing Risk**|High (fake domains like `g00gle.com`)|Medium (harder to spoof than clearnet)|**Very low** (cannot fake cryptographic hash)|
+|**Example Use Cases**|Everyday browsing, social media, shopping|Old dark web markets (pre-2021)|Privacy tools (SecureDrop, ProtonMail Tor mirror)|
+
+```
+Normal URL:  https://www.wikipedia.org  
+v2 Onion:    http://facebookcorewwwi.onion (DEAD)  
+v3 Onion:    http://facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion  
+```
+
+
+
+
+[Q28] -  **How do you ensure the integrity of digital evidence?**
+- Use cryptographic hashes (like MD5 or SHA-256) to verify that the forensic image matches the original data.
+- **Forensic Imaging:** Create an exact bit-by-bit copy of the original data
+- Record every step in Chain of Custody
+
+
+
+
+[Q29] -  What is a WAF, and how does it differ from a traditional firewall?
+
+A Web Application Firewall (WAF) protects web apps by filtering and monitoring HTTP/HTTPS traffic for attacks like SQLi, XSS, and API abuse. Unlike traditional firewalls (which operate at Layers 3/4), WAFs work at Layer 7 (application layer) and understand web protocols (e.g., HTTP headers, JSON, cookies).
+
+
+[Q30] -  **How would you investigate a WAF alert for a potential SQL injection attempt?**  
+
+1. **Review WAF logs**: Extract the payload (e.g., `' OR 1=1--`), source IP, and user-agent.
+2. **Verify blocking**: Check if the WAF blocked the request (HTTP 403) or if it reached the server.
+3. **Correlate with other logs**: Look for repeated attempts or other suspicious activity from the same IP.
+4. **Escalate**: If the attack succeeded, notify the app team for patching.
+
+[Q31] - **How can attackers bypass a WAF?**  
+
+- **Obfuscation**: Encoding payloads (e.g., `%3Cscript%3E` for `<script>`).
+- **HTTP Parameter Pollution**: Sending duplicate parameters (`?id=1&id=1'--`).
+- **Slowloris DDoS**: Slow HTTP requests to exhaust WAF resources.
+- **Zero-days**: Exploiting unknown vulnerabilities not covered by WAF rules.
+
+
+[Q32] - **You see 100+ WAF alerts for XSS from one IP. What’s your action plan?**  
+
+1. **Triage**: Confirm if payloads are malicious (e.g., `<script>alert()`).
+2. **Block**: Add the IP to the WAF deny list or network firewall.
+3. **Investigate**: Check if any requests bypassed the WAF (server logs).
+4. **Report**: Document the incident and share IoCs (Indicators of Compromise) with the team.
+
+[Q33] -Difference Between DDoS (Layer 3 vs. Layer 7)
+
+|**Aspect**|**Layer 3/4 DDoS** (Network/Transport)|**Layer 7 DDoS** (Application)|
+|---|---|---|
+|**Target**|Overwhelms bandwidth/network resources.|Exhausts application resources (e.g., HTTP/S requests).|
+|**Examples**|SYN floods, UDP reflection, ICMP floods.|HTTP floods, Slowloris, GET/POST attacks.|
+|**Detection**|High traffic volume, packet rate anomalies.|Abnormal request patterns (e.g., many `/login` requests).|
+|**Mitigation**|Rate limiting, blackholing, scrubbing.|WAF rules, CAPTCHA, bot detection.|
+|**Complexity**|Easier to detect (volume-based).|Harder to detect (mimics legitimate traffic).|
+
+
+[Q34] - How to Write Correlation Rules ?
+
+**Purpose**: Combine multiple events to detect complex threats (e.g., brute force, lateral movement).
+Mention **false positive reduction** (e.g., whitelist trusted IPs).
+**Steps to Write a Rule** (e.g., in Splunk/QRadar):
+1. **Define the Threat**:
+    - Example: *"Detect 5+ failed logins followed by a success from the same IP."*
+2. **Identify Data Sources**:
+    - Windows Event Logs (Event ID 4625 for failures, 4624 for success).
+    - Firewall/SIEM logs.
+3. **Write the Logic** (Pseudocode):
+```
+	WHEN (EventID=4625 AND Status="Failure") 
+	WITH same IP 
+	FOLLOWED BY (EventID=4624 AND Status="Success") 
+	WITHIN 10 minutes 
+	COUNT > 5 
+	THEN ALERT "Potential Brute Force Attack"
+```
+1. **Test & Tune**:
+    - Run in **log-only mode** to check false positives.
+    - Adjust thresholds (e.g., change `COUNT > 5` to `COUNT > 10`).
+
+**Example Correlation Rules**
+- **Port Scanning**: `Multiple TCP SYN packets to different ports from one IP`.
+- **Data Exfiltration**: `Large outbound transfer + connection to a known C2 server`.
+
+
+[Q35] - **How to Investigate "100 Failed Logins in 5 Mins"**
+
+**SOC Investigation Steps**:
+1. **Triage the Alert**:
+    - Check SIEM/WAF logs for:
+        - Source IP, usernames targeted, timestamps.
+        - Geolocation (e.g., unexpected country).
+2. **Determine Legitimacy**:
+    - **False Positive?**:
+        - Is it a load balancer/misconfigured app?
+        - Check user-agent (e.g., legitimate crawlers like Googlebot).
+    - **Real Attack?**:
+        - Payloads (e.g., `admin'--` in username field = SQLi attempt).
+3. **Containment**:
+    - **Short-term**: Block the IP at firewall/WAF.
+    - **Long-term**: Implement rate limiting or CAPTCHA.
+4. **Deep Dive**:
+    - **Correlate with Other Logs**:
+        - Any successful login after failures? (Check Event ID 4624).
+        - Unusual activity from the same IP (e.g., port scans).
+    - **Enrich Data**:
+        - Threat intel feeds (Is the IP known malicious?).
+5. **Escalate & Document**:
+    - If credentials were compromised: Force password resets.
+    - Add IoCs (IP, timestamps) to threat intelligence database.
+
+[Q36] - Why Save Emails as .eml or .msg?
+
+Purpose :
+Saving emails in **`.eml` (MIME format)** or **`.msg` (Outlook format)** preserves the **complete email structure**, including:
+- **Headers** (critical for tracing sender/IP).
+- **Attachments** (for malware analysis).
+- **Metadata** (timestamps, routing info).
+
+[Q37] - **What Are DKIM, SPF & DMARC Used For?**
+
+These **email authentication protocols** prevent spoofing/phishing by verifying sender legitimacy.
+
+ **SPF (Sender Policy Framework)**
+- **Purpose**: Validates the sender’s IP against a list of authorized mail servers.
+- **How It Works**:
+    - The domain owner publishes SPF records in DNS (e.g., `v=spf1 include:_spf.google.com ~all`).
+    - Recipient servers check if the email’s source IP matches the SPF record.
+- **Limitation**: Doesn’t protect against header spoofing (e.g., fake `From:` addresses).
+
+ **DKIM (DomainKeys Identified Mail)**
+- **Purpose**: Ensures email integrity via cryptographic signatures.
+- **How It Works**:
+    - The sender’s server signs the email with a private key.
+    - The recipient verifies the signature using the sender’s public key (published in DNS).
+- **Key Benefit**: Detects tampering (e.g., altered body/headers).
+    
+
+ **DMARC (Domain-based Message Authentication, Reporting & Conformance)**
+- **Purpose**: Defines policies for handling emails that fail SPF/DKIM.
+- **How It Works**:
+    - Domain owners publish DMARC policies in DNS (e.g., `p=quarantine` or `p=reject`).
+    - Recipient servers enforce the policy (e.g., reject/quarantine failing emails).
+    - Sends reports back to the domain owner about spoofing attempts.
+
+**Example Flow**
+1. **SPF Check**: Is the sending IP authorized?
+2. **DKIM Check**: Is the email untampered?
+3. **DMARC Action**: If both fail, reject/quarantine the email.
+
+
+[Q38] - Important Windows Events Every SOC Analyst Should Know
+
+- **100**: Scheduled task started
+- **104**: System, Security, and Application log file cleared
+- **106**: New scheduled task created
+- **1102**: Audit log cleared
+- **4104**: Command line auditing for PowerShell
+- **4624**: Successful logon
+- **4625**: Failed logon
+- **4634**: Logoff events
+- **4647**: User-initiated logoff
+- **4648**: User used explicit credentials for login (Run as)
+- **4663**: Files or folders accessed (sensitive files)
+- **4672**: Special privileges assigned to a user (e.g., Admin login)
+- **4688**: A new process was created
+- **4698**: New scheduled task was created
+- **4720**: New user account created
+- **4722**: Account was enabled (previously disabled)
+- **4723/4724**: Password changes or reset attempts
+- **4768**: Kerberos TGT ticket requested
+- **4769**: Kerberos service ticket requested
+- **4771**: Kerberos pre-authentication failed
+- **4776**: Domain controller attempted to validate credentials
+- **4798**: User’s local group membership was enumerated
+- **4799**: Security-enabled local group membership was enumerated
+- **4946/4947**: New inbound/outbound firewall rules added
+- **5140**: Network share object was accessed
+- **5145**: Network share object access checked for permissions
+- **7045**: New service installed
+- **1116**: Malware detected in system
+- **1117**: Protection action taken on malware
+
+
+[Q39] - **Windows Search order for DLLs**
+
+1. Side-by-Side Components
+2. KnownDLLs list “registry”
+3. Application Directory
+4. C:\Windows\System32
+5. C:\Windows\system
+6. C:\Windows
+7. Application’s registered App Paths directories
+8. System PATH
+
+

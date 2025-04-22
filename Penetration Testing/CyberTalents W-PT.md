@@ -139,6 +139,11 @@ The reflected XSS is one of the common types in which the injected payload is re
 
 Is the dangerous type where the injected payload is stored and displayed later when it is retrieved, it can be stored in the database, cookies, or session data, and when retrieved and viewed it will be executed.
 
+#### DOM XSS
+
+DOM-based XSS is a type of cross-site scripting vulnerability where the attack payload is executed as a result of modifying the Document Object Model (DOM) environment in the victim's browser, without any malicious content being sent to the server.
+
+
 ---
 ## What is CSRF?
 

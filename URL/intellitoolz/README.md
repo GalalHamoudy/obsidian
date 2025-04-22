@@ -4,8 +4,8 @@
 ![DEMO](demo.png)
 
 ##  Person Of interest Search
-<details>
-<summary>Reverse Image</summary>
+
+Reverse Image
 
 [Yandex.Images: search for images online or search by image](https://yandex.com/images/)
 
@@ -37,11 +37,7 @@
 [Cloud Vision API  --  Image Analysis](https://cloud.google.com/vision/docs/drag-and-drop)
 
 
-
-</details>
-
-<details>
-<summary>Name </summary>
+Name 
 
 [Public Information](https://xlek.com/search_results.php)
 
@@ -49,11 +45,8 @@
 
 [WhatsMyName Web osint](https://whatsmyname.app/)
 
-</details>
 
-
-<details>
-<summary>Email</summary>
+Email
 
 [Epieos, the ultimate OSINT tool for email search -- holehe is CLI LINUX](https://epieos.com/)
 
@@ -69,17 +62,10 @@
 
 [Trace Email Address Source](https://whatismyipaddress.com/trace-email)
 
-</details>
 
 ## SOCIAL
 
-
-
-
-
-
-<details>
-<summary>Twitter</summary>
+Twitter
 
 [Twitterfall (Twitter)](https://twitterfall.com/)
 
@@ -92,7 +78,6 @@
 [OneMillionTweetMap (Twitter)](https://onemilliontweetmap.com/?center=25.505,-0.09&zoom=2&search=&timeStep=0&timeSelector=0&hashtag1=&hashtag2=&hashtagBattle=0&timeRange=0&timeRange=25&heatmap=0&sun=0&cluster=1)
 
 [OmniSci Tweetmap (Twitter)](https://www.omnisci.com/demos/tweetmap/)
-
 
 [Twitter Advanced Search (Twitter)](https://twitter.com/search-advanced?lang=en&new)
 
@@ -108,10 +93,8 @@
 
 [TheHerdLocker.com](http://theherdlocker.com/)
 
-</details>
-<details>
 
-<summary>Instagram</summary>
+Instagram
 
 [Instagram (Use Search + Auto Refresh)](https://www.instagram.com/accounts/login/?hl=en)
 
@@ -127,34 +110,30 @@
 
 [Instagram Analytics & TikTok Analytics -- Analisa.io](https://analisa.io/)
 
-</details>
-<details>
-<summary>WhatsApp</summary>
+
+
+WhatsApp
 
 [WA Watcher online status tracker - WhatsApp Tools](https://watools.io/wa-watcher)
-</details>
 
-<details>
-<summary>Facebook</summary>
+
+Facebook
 
 [Facebook Live Video Search (Modify search location)](https://www.facebook.com/search/videos/?q=Sydney&epa=FILTERS&filters=eyJ2aWRlb3Nfc291cmNlIjoie1wibmFtZVwiOlwidmlkZW9zX2xpdmVcIixcImFyZ3NcIjpcIlwifSJ9)
 
 [Facebook Event (Modify <eventID in URL)](https://www.facebook.com/events/%3CeventID%3E/?active_tab=discussion)
 
-
 [Facebook Filter Search](http://graph.tips/beta/)
-
-[FB ID Extractor](javascript:(function()%7Bfunction%20document_keywords()%7Bvar%20keywords%3D%27%27%3Bvar%20metas%3Ddocument.getElementsByTagName(%27meta%27)%3Bfor(var%20x%3D0%2Cy%3Dmetas.length%3Bx%3Cy%3Bx%2B%2B)%7Bif(metas%5Bx%5D.getAttribute(%22property%22)%3D%3D%22al%3Aandroid%3Aurl%22)%7Bif(prompt(%27Facebook%20ID%3A%20%27%2Bmetas%5Bx%5D.content.match(%2F%5Cd%2B%2Fg),metas%5Bx%5D.content.match(%2F%5Cd%2B%2Fg)))window.close()%3B%7D%7Dreturn%20keywords!%3D%27%27%3Fkeywords%3Afalse%3B%7Dk%3Ddocument_keywords()%3Bif(k)%7Balert(k)%3B%7D%7D)())
 
 [Export Facebook, Instagram, Twitter, YouTube, VK, TikTok, Vimeo Comments to CSV / Excel - EXPORTCOMMENTS.COM](https://exportcomments.com/)
 
 
 
-</details>
 
-<details>
 
-<summary>Snapchat</summary>
+
+
+Snapchat
 
 [SnapChat Activity Map (SnapChat)](https://map.snapchat.com/@-33.867100,151.207000,12.00z)
 
@@ -164,38 +143,26 @@
 
 
 
-</details>
 
 
 
 
-<details>
 
-<summary>TikTok</summary>
+TikTok
 
 [TikTok Quick Search -- OSINT Combine](https://www.osintcombine.com/tiktok-quick-search)
 
 [Instagram Analytics & TikTok Analytics -- Analisa.io](https://analisa.io/#)
 
 
-</details>
 
-
-
-<details>
-
-<summary>VK</summary>
+VK
 
 [VKontakte People Search](https://vk.com/people)
 
 
 
-
-</details>
-
-<details>
-
-<summary>Foursquare</summary>
+Foursquare
 
 [Foursquare Search](https://foursquare.com/search)
 
@@ -203,10 +170,10 @@
 
 
 
-</details>
-<details>
 
-<summary>Telegram</summary>
+
+
+Telegram
 
 [Telegram Search (Telegago)](https://cse.google.com/cse?&cx=006368593537057042503:efxu7xprihg#gsc.tab=0)
 
@@ -216,11 +183,11 @@
 
 
 
-</details>
 
-<details>
 
-<summary>Flikr</summary>
+
+
+Flikr
 
 
 [Flickr Activity Map (Flickr)](https://www.flickr.com/map)
@@ -228,9 +195,9 @@
 [Flikr Current Location](https://current-location.com/)
 
 
-</details>
-<details>
-<summary>Other</summary>
+
+
+Other
 
 
 [Google NEAR Keyword Sample (Google)](https://www.google.com.au/search?q=cowboy+boots+AND+near+sydney&safe=strict&glp=1&adtest=on&tci=g%3A2036&uule=w+CAIQICIJQXVzdHJhbGlh&adtest-useragent=Mozilla%2F5.0+%28Linux%3B+U%3B+Android-4.0.3%3B+en-us%3B+Xoom+Build%2FIML77%29+AppleWebKit%2F535.7+%28KHTML%2C+like+Gecko%29+CrMo%2F16.0.912.75+Safari%2F535.7&oq=cowboy+boots+AND+near+sydney&gs_l=heirloom-serp.3...3525.3898.0.4005.6.2.0.3.0.0.171.301.0j2.2.0....0...1ac.1.34.heirloom-serp..5.1.130.fun-5TipiJM)
@@ -254,11 +221,11 @@
 [Live Feeds Status](https://livingatlas.arcgis.com/livefeeds-status/)
 
 [Active Fire Data -- Earthdata](https://earthdata.nasa.gov/earth-observation-data/near-real-time/firms/active-fire-data)
-</details>
 
-<details>
 
-<summary>YouTube</summary>
+
+
+YouTube
 
 
 [Youtube Geo Search Tool](https://youtube.github.io/geo-search-tool/search.html)
@@ -268,12 +235,12 @@
 [Hadzy - Youtube comments search](https://hadzy.com/)
 
 
-</details>
 
 
-<details>
 
-<summary>Link Analysis</summary>
+
+
+Link Analysis
 
 [Mentionmapp Twitter Networks (Twitter)](https://mentionmapp.com/)
 
@@ -298,13 +265,13 @@
 [Polinode - Powerful Network Analysis in the Cloud](https://polinode.com/)
 
 [2\. Google Advanced Search (Google)](https://www.google.com/advanced_search)
-</details>
+
 
 
 
 ## Web
-<details>
-<summary>IP</summary>
+
+IP
 
 [Dig (DNS lookup)](https://toolbox.googleapps.com/apps/dig/#ANY/)
 
@@ -320,14 +287,14 @@
 
 [GeoIP2 Web Service Demo -- MaxMind](https://www.maxmind.com/en/geoip2-precision-demo?ip_address=134.119.176.19)
 
-</details>
+
 
 ## Transport
 
 
-<details>
 
-<summary>Maritime</summary>
+
+Maritime
 
 [Vessel Ownership & ID Records](http://www.equasis.org/EquasisWeb/public/HomePage)
 
@@ -337,10 +304,10 @@
 
 [Maritime Database](https://www.maritime-database.com/)
 
-</details>
 
-<details>
-<summary>Air</summary>
+
+
+Air
 
 [Aircraft Radar (ADSB Exchange)](https://global.adsbexchange.com/VirtualRadar/desktop.html)
 
@@ -352,11 +319,11 @@
 
 [ADS-B Historical Records](http://www.ads-b.nl/)
 
-</details>
 
-<details>
 
-<summary>Rails</summary>
+
+
+Rails
 
 [Global Railway Map Reference](https://www.openrailwaymap.org/)
 
@@ -364,19 +331,19 @@
 
 [Railroad Maps](http://www-personal.umich.edu/~yopopov/rrt/railroadmaps/)
 
-</details>
 
-<details>
-<summary>VKontakte</summary>
+
+
+VKontakte
 
 [SnRadar](http://snradar.azurewebsites.net/)
-</details>
+
 
 
 ## CCTV Cameras
 
-<details>
-<summary>Live Geo Map</summary>
+
+Live Geo Map
 
 [OpenStreetCam](https://openstreetcam.org/map/@40.73112880602221,-73.99618148803712,12z)
 
@@ -387,9 +354,9 @@
 [Surveillance under Surveillance](https://kamba4.crux.uberspace.de/)
 
 [Windy: Webcams](https://www.windy.com/-Webcams/webcams?-33.859,151.200,5)
-</details>
-<details>
-<summary>Reference Search</summary>
+
+
+Reference Search
 
 [Global Airport Webcams](http://airportwebcams.net/category/australia/)
 
@@ -399,10 +366,10 @@
 
 
 
-</details>
 
-<details>
-<summary>Alerting & Triggers</summary>
+
+
+Alerting & Triggers
 
 [Google Alerts](https://www.google.com.au/alerts)
 
@@ -414,12 +381,12 @@
 
 [GDACS - Global Disaster Alerting Coordination System](https://gdacs.org/)
 
-</details>
 
 
 
-<details>
-<summary>Keyword Tools</summary>
+
+
+Keyword Tools
 
 [Multi-Platform Search Portal (6 SM Platforms)](https://www.social-searcher.com/google-social-search/)
 
@@ -427,7 +394,7 @@
 
 
 
-</details>
+
 
 
 
@@ -436,9 +403,9 @@
 
 
 
-</details>
-<details>
-<summary>Area Overview</summary>
+
+
+Area Overview
 
 
 [1\. Area Maps](https://mc.bbbike.org/mc/#)
@@ -457,10 +424,10 @@
 
 
 
-</details>
 
-<details>
-<summary>Drone Footage</summary>
+
+
+Drone Footage
 
 [TRAVELwithDRONE - Aerial Videos Database](https://travelwithdrone.com/)
 
@@ -478,8 +445,8 @@
 
 
 
-<details>
-<summary>News Topics</summary>
+
+News Topics
 
 [5\. Global Newspaper Map](https://newspapermap.com/)
 
@@ -491,10 +458,10 @@
 
 [Trackography - Who tracks you online?](https://trackography.org/)
 
-</details>
-<details>
 
-<summary>Social Media Macro View</summary>
+
+
+Social Media Macro View
 
 [9\. Social Media Usage Statistics](https://www.statista.com/)
 
@@ -504,9 +471,9 @@
 
 
 
-</details>
-<details>
-<summary>Keyword Tools</summary>
+
+
+Keyword Tools
 
 ## High Activity Zones
 
@@ -520,9 +487,9 @@
 
 
 
-</details>
-<details>
-<summary>Keyword Tools</summary>
+
+
+Keyword Tools
 ## Area Photos
 
 [16\. Facebook (Modify Tagged Location & Keyword to Area)](https://www.facebook.com/search/photos/?q=Bangkok)
@@ -539,9 +506,9 @@
 
 
 
-</details>
-<details>
-<summary>Crime & Gangs</summary>
+
+
+Crime & Gangs
 
 
 [19\. Crime Index by Country](https://www.numbeo.com/crime/rankings_by_country.jsp)
@@ -554,9 +521,9 @@
 
 
 
-</details>
-<details>
-<summary>Militant Organisations</summary>
+
+
+Militant Organisations
 
 [23\. Militant Group Historical Activities](https://www.start.umd.edu/gtd/search/BrowseBy.aspx?category=country)
 
@@ -570,9 +537,9 @@
 
 
 
-</details>
-<details>
-<summary>Health Activity</summary>
+
+
+Health Activity
 
 [Coronavirus 2019-nCoV](https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#)
 
@@ -582,9 +549,9 @@
 
 
 
-</details>
-<details>
-<summary>NGO Activity</summary>
+
+
+NGO Activity
 
 [Counter Human Trafficking Organisations Map](http://www.globalmodernslavery.org/)
 
@@ -602,15 +569,15 @@
 
 
 
-</details>
+
 
 
 ## Person of Interest Search
 
 
-</details>
-<details>
-<summary>People Search Tools</summary>
+
+
+People Search Tools
 
 [Pipl - People Search](https://pipl.com/)
 
@@ -633,16 +600,16 @@
 [xlek - Free Public Data Search](https://xlek.com/)
 
 [Nuwber](https://nuwber.com/)
-</details>
+
 
 
 
 ## Breached Data
 
 
-</details>
-<details>
-<summary>Sites</summary>
+
+
+Sites
 
 [Have I Been Pwned: Check if your email has been compromised in a data breach](https://haveibeenpwned.com/)
 
@@ -651,9 +618,9 @@
 [GhostProject](https://ghostproject.fr/m)
 
 
-</details>
-<details>
-<summary>Documents</summary>
+
+
+Documents
 
 [Google Custom Search](http://cse.google.co.uk/cse?cof=CX:Documents%2520-%2520Formats;&cx=009462381166450434430:nudphlkt3p4&num=100&ei=TgKvWJLJCamUgAaP1Y2IBA)
 
@@ -661,9 +628,9 @@
 
 
 
-</details>
-<details>
-<summary>Forums</summary>
+
+
+Forums
 
 
 [search (@search@gab.com) -- gab.com - Gab Social](https://gab.com/search)
@@ -680,17 +647,17 @@
 
 [reddit visualization - YASIV](http://yasiv.com/reddit)
 
-</details>
+
 
 ## Country Specific Registers
 
 
 
 
-</details>
-<details>
 
-<summary>CANADA</summary>
+
+
+CANADA
 
 [CANADA](http://www.canada411.ca/)
 
@@ -710,18 +677,18 @@
 
 
 
-</details>
-<details>
-<summary>CYPRUS</summary>
+
+
+CYPRUS
 
 [CYPRUS](https://eservices.dls.moi.gov.cy/#/national/geoportalmapviewer)
 
 [CYPRUS - Offshore Companies](https://efiling.drcor.mcit.gov.cy/DrcorPublic/SearchForm.aspx?sc=0&lang=EN)
 
 
-</details>
-<details>
-<summary>DENMARK</summary>
+
+
+DENMARK
 
 [DENMARK - Domain Register](https://www.dk-hostmaster.dk/da/velkommen-til-dk-hostmaster)
 
@@ -736,23 +703,23 @@
 [DENMARK - Search for Person](https://www.krak.dk/)
 
 
-</details>
-<details>
-<summary>ESTONIA</summary>
+
+
+ESTONIA
 
 [ESTONIA](http://teatmik.ee/en/personlegal/14144085-Asicvault-O%C3%9C)
 
 
-</details>
-<details>
-<summary>FRANCE</summary>
+
+
+FRANCE
 
 [FRANCE](http://societe.com/)
 
 
-</details>
-<details>
-<summary>NORWAY</summary>
+
+
+NORWAY
 
 [NORWAY - Yellow Pages](https://www.gulesider.no/)
 
@@ -765,16 +732,16 @@
 [NORWAY - Proff - Business site, find info about companies, key persons, accounting info etc:](https://www.proff.no/)
 
 
-</details>
-<details>
-<summary>RUSSIA</summary>
+
+
+RUSSIA
 
 [RUSSIA](https://egrul.nalog.ru/index.html)
 
 
-</details>
-<details>
-<summary>SWEDEN</summary>
+
+
+SWEDEN
 
 [SWEDEN](http://www.allabolag.se/)
 
@@ -783,9 +750,9 @@
 [SWEDEN - Eniro](http://www.eniro.se/)
 
 
-</details>
-<details>
-<summary>SWITZERLAND</summary>
+
+
+SWITZERLAND
 
 [SWITZERLAND - Search companies and individuals in Switzerland.](http://zefix.ch/en/search/entity/welcome)
 
@@ -794,9 +761,9 @@
 [Moneyhouse - Commercial register and business information](https://www.moneyhouse.ch/en/)
 
 
-</details>
-<details>
-<summary>UNITED KINGDOM</summary>
+
+
+UNITED KINGDOM
 
 [UNITED KINGDOM - 192](https://www.192.com/)
 
@@ -805,9 +772,9 @@
 [British Phonebook](http://www.britishphonebook.com/)
 
 
-</details>
-<details>
-<summary>USA</summary>
+
+
+USA
 
 [USA - Public Records](https://publicrecords.onlinesearches.com/)
 
@@ -816,27 +783,27 @@
 [USA - Biznar](https://biznar.com/biznar/desktop/en/search.html)
 
 
-</details>
-<details>
-<summary>AUSTRALIA</summary>
+
+
+AUSTRALIA
 
 [Australia Business Directory](https://au.companiesdb.net/)
 
 [ASIC Home -- ASIC - Australian Securities and Investments Commission](https://asic.gov.au/)
 
 
-</details>
 
-</summary>
+
+
 
 
 
 ## Corporate Profiling
 
 
-</details>
-<details>
-<summary>Structures</summary>
+
+
+Structures
 
 [LinkedIn Hidden Search](https://www.linkedin.com/search/results/all/?keywords=%20company:%22Company%22&origin=GLOBAL_SEARCH_HEADER)
 
@@ -855,9 +822,9 @@
 [Dun & Bradstreet - Accelerate Growth and Improve Business Performance](https://www.dnb.com/)
 
 
-</details>
-<details>
-<summary>Brand Metrics</summary>
+
+
+Brand Metrics
 
 [Twiangulate Competition Comparison (Tiwtter )](http://twiangulate.com/search/)
 
@@ -876,9 +843,9 @@
 [Ad Library](https://www.facebook.com/ads/library/?active_status=all&ad_type=political_and_issue_ads&country=AU)
 
 
-</details>
-<details>
-<summary>Records</summary>
+
+
+Records
 
 [Influence Explorer (Contracts US & Aus)](https://techinquiry.org/explorer)
 
@@ -896,12 +863,12 @@
 
 [OffshoreAlert -- Offshore Financial News, Documents & Intelligence](https://www.offshorealert.com/)
 
-</details>
+
 
 ## Mapping
 
-<details>
-<summary>Tools</summary>
+
+Tools
 [Google Maps](https://www.google.com/maps)
 
 [Bing Maps](https://www.bing.com/maps)
@@ -924,9 +891,9 @@
 
 [Wayback Imagery](http://livingatlas.arcgis.com/wayback/)
 
-</details>
-<details>
-<summary>Sat Imagery</summary>
+
+
+Sat Imagery
 
 [Remote Pixel -- Satellite Search](https://search.remotepixel.ca/#6.71/-34.451/147.593)
 
@@ -940,18 +907,18 @@
 
 [Sentinel Hub Playground - A user-friendly place for Sentinel 2/Landsat images.](http://apps.sentinel-hub.com/sentinel-playgr%20ound)
 
-</details>
-<details>
-<summary>JSON</summary>
+
+
+JSON
 
 [geojson.io](https://geojson.io/#map=2/-18.3/161.0)
 
 [Sun Calc - Make an approximation of the time of the day using shadow direction](http://suncalc.net/)
 
 
-</details>
-<details>
-<summary>Advanced</summary>
+
+
+Advanced
 
 [overpass turbo](https://overpass-turbo.eu/)
 
@@ -967,13 +934,13 @@
 
 
 
-</details>
+
 
 
 ## Persona Creation Tools
 
-<details>
-<summary>Email</summary>
+
+Email
 
 [10 Minute Mail - Temporary E-Mail](https://10minutemail.com/10MinuteMail/index.html?dswid=-1408)
 
@@ -988,18 +955,18 @@
 [Asia-East Free Email Providers](http://www.fepg.net/asia.HTML)
 
 
-</details>
-<details>
-<summary>Bio</summary>
+
+
+Bio
 
 [Generate a Random Name - Fake Name Generator](https://www.fakenamegenerator.com/)
 
 [faker.js - generate massive amounts of fake data in node.js and the browser](https://cdn.rawgit.com/Marak/faker.js/master/examples/browser/index.html)
 
 
-</details>
-<details>
-<summary>Phone</summary>
+
+
+Phone
 
 [Twilio -- Try Twilio Free](https://www.twilio.com/try-twilio)
 
@@ -1016,16 +983,16 @@
 [Full Contact Information Generator](https://names.igopaygo.com/people/full-contact)
 
 
-</details>
-<details>
-<summary>Faces</summary>
+
+
+Faces
 
 [This Person Does Not Exist](https://thispersondoesnotexist.com/)
 
 
-</details>
-<details>
-<summary>Backstories</summary>
+
+
+Backstories
 
 [This resume does not exist](https://thisresumedoesnotexist.com/)
 
@@ -1062,20 +1029,20 @@
 [SMAT - Disinformation Tool](https://www.smat-app.com/)
 
 [Full Results Table -- MetaOSINT.github.io](https://metaosint.github.io/table/)
-</details>
+
 
 
 
 
 ## Other
 
-</details>
-<details>
 
 
 
 
-<summary>Cyrptocurrency</summary>
+
+
+Cyrptocurrency
 
 [ΞTHTECTIVE](https://ethtective.com/)
 
@@ -1096,12 +1063,12 @@
 
 [Blockchair — Universal blockchain explorer and search engine](https://blockchair.com/)
 
-</details>
 
 
 
-<details>
-<summary>Collective Tools</summary>
+
+
+Collective Tools
 
 [OSINT Framework](https://osintframework.com/)
 
@@ -1130,9 +1097,9 @@
 [daily court lists](https://web.archive.org/web/20200306131224/https://www.criminal-court-records.com.au/daily-court-lists.html)
 
 
-</details>
-<details>
-<summary>Topics of Interest Search</summary>
+
+
+Topics of Interest Search
 
 [Map of Reddit](https://anvaka.github.io/map-of-reddit/?x=353711.52128544624&y=389235.4555817076&z=18075.980708777406&q=europe)
 
@@ -1143,9 +1110,9 @@
 [TweetDeck](https://tweetdeck.twitter.com/#)
 
 
-</details>
-<details>
-<summary>China</summary>
+
+
+China
 
 [Weapon Knowledge Resource Base](https://bqzs.cnki.net/)
 
@@ -1155,9 +1122,9 @@
 
 
 
-</details>
-<details>
-<summary>Cyber</summary>
+
+
+Cyber
 
 [OpenPhish - Phishing Intelligence](https://openphish.com/)
 
@@ -1198,14 +1165,14 @@
 [DeepL Translate: The world's most accurate translator](https://www.deepl.com/translator)
 
 
-</details>
+
 
 ## Report
 
 
-</details>
-<details>
-<summary>Report</summary>
+
+
+Report
 
 [yEd Live - Online Diagram Tool](https://www.yworks.com/yed-live/)
 
@@ -1226,9 +1193,9 @@
 
 
 
-</details>
-<details>
-<summary>Referneces</summary>
+
+
+Referneces
 [Hate Symbols Database -- ADL](https://www.adl.org/hatesymbolsdatabase)
 
 [Glossary -- Counter Extremism Project](https://www.counterextremism.com/glossary)

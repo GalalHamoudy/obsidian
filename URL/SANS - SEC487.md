@@ -8,7 +8,7 @@
 
 ## CIA's Unbiased Methodology to evaluate multiple competing hypothesis for observed data
 
-[Analysis of competitng hypothesis](https://en.wikipedia.org/wiki/Analysis_of_competing_hypotheses)
+[Analysis of competing hypothesis](https://en.wikipedia.org/wiki/Analysis_of_competing_hypotheses)
 
 [Psychology of Intelligence Analysis](https://www.cia.gov/library/center-for-the-study-of-intelligence/csi-publications/books-and-monographs/psychology-of-intelligence-analysis/art3.html)
 
