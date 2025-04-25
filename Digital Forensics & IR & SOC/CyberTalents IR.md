@@ -81,19 +81,19 @@ DLL Search Order Hijacking is a persistence technique where attackers exploit th
 
 ### Other Common Auto-run keys
 
-**Run / RunOnce (as seen in 1st lab)**
-HKLM\Software\Microsoft\Windows\CurrentVersion\Run
-**Active Setup**
-HKLM\Software\Microsoft\Active Setup\Installed Components\APPGUIDS
-**Shell Extensions**
-HKLM\Software\Microsoft\Windows\CurrentVersion\Shell Extensions
-**Applnit DLLs**
-HKLM\Software\Microsoft\Windows
-NT\CurrentVersion\Windows\AppInit DLLS
-**UserInit**
-HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\UserInit
-**LSA Packages**
-HKLM\System\CurrentControlSet\Control\Lsa\
+Run / RunOnce
+	HKLM\Software\Microsoft\Windows\CurrentVersion\Run
+Active Setup
+	HKLM\Software\Microsoft\Active Setup\Installed Components\APPGUIDS
+Shell Extensions
+	HKLM\Software\Microsoft\Windows\CurrentVersion\Shell Extensions
+Applnit DLLs
+	HKLM\Software\Microsoft\Windows
+	NT\CurrentVersion\Windows\AppInit DLLS
+UserInit
+	HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\UserInit
+LSA Packages
+	HKLM\System\CurrentControlSet\Control\Lsa\
 
 
 

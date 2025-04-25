@@ -7,27 +7,27 @@ Penetration Testing Steps
 
 Linux File System (Filesystem Hierarchy Standard) :
 
-| Directory | Content / Description                                                                                            |
-| --------- | ---------------------------------------------------------------------------------------------------------------- |
-| /         | The root directory (It is the starting point for the file system hierarchy)                                      |
-| /bin/     | Essential user command binaries                                                                                  |
-| /boot/    | Linux kernel and other static files of the boot loader                                                           |
-| /dev/     | Device files                                                                                                     |
-| /etc/     | System configuration files                                                                                       |
-| /home/    | Home directories for normal users (non-root users)                                                               |
-| /lib/     | Essential shared libraries and kernel modules                                                                    |
-| /media/   | Mount points for removable devices, such as: CD-ROMs and USB keys                                                |
-| /mnt/     | Mount point for a temporarily mounted filesystem                                                                 |
-| /opt/     | Add-on application software packages                                                                             |
-| /proc/    | System processes information                                                                                     |
-| /root/    | Home directory for the root user                                                                                 |
-| /run/     | Volatile runtime data                                                                                            |
-| /sbin/    | System administration binaries                                                                                   |
-| /srv/     | Data for services provided by this system                                                                        |
-| /sys/     | Information about devices, drivers, and some kernel features                                                     |
-| /tmp/     | Temporary files (these temporary files are generally deleted when the system is restarted)                       |
-| /usr/     | Applications and files used by users (/usr/ is the second major section of the filesystem (secondary hierarchy)) |
-| /var/     | Variable data files handled by services, such as: logs, queues, caches, and spools                               |
+| Directory  | Content / Description                                                                                            |
+| ---------- | ---------------------------------------------------------------------------------------------------------------- |
+| /          | The root directory (It is the starting point for the file system hierarchy)                                      |
+| /bin/      | Essential user command binaries                                                                                  |
+| /boot/     | Linux kernel and other static files of the boot loader                                                           |
+| /dev/      | Device files                                                                                                     |
+| /etc/      | System configuration files                                                                                       |
+| /home/     | Home directories for normal users (non-root users)                                                               |
+| /lib/      | Essential shared libraries and kernel modules                                                                    |
+| /media/    | Mount points for removable devices, such as: CD-ROMs and USB keys                                                |
+| /mnt/      | Mount point for a temporarily mounted filesystem                                                                 |
+| /opt/      | Add-on application software packages                                                                             |
+| **/proc/** | System processes information                                                                                     |
+| /root/     | Home directory for the root user                                                                                 |
+| **/run/**  | Volatile runtime data                                                                                            |
+| /sbin/     | System administration binaries                                                                                   |
+| /srv/      | Data for services provided by this system                                                                        |
+| **/sys/**  | Information about devices, drivers, and some kernel features                                                     |
+| /tmp/      | Temporary files (these temporary files are generally deleted when the system is restarted)                       |
+| /usr/      | Applications and files used by users (/usr/ is the second major section of the filesystem (secondary hierarchy)) |
+| /var/      | Variable data files handled by services, such as: logs, queues, caches, and spools                               |
 
 
 The result of a scan on a port is usually generalized into one of three categories: 

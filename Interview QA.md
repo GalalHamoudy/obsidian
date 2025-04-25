@@ -404,3 +404,90 @@ These **email authentication protocols** prevent spoofing/phishing by verifyin
 8. System PATH
 
 
+[Q40] - What is most common persistence methods : 
+- Registry Modifications (add malicious entries to Windows Registry auto-start locations) 
+	- `HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run`
+	- `HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run`
+- Creating a scheduled task
+-  Startup Folder (placing a malicious shortcut or executable in Startup Folder)
+	- `%AppData%\Microsoft\Windows\Start Menu\Programs\Startup`
+	- `C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup`
+- Service Installation (Creating a malicious service that runs at boot)
+- SSH Key Addition (Adding attacker’s public key to `~/.ssh/authorized_keys` for password-less login)
+- Cron Jobs (Adding malicious cron jobs for repeated execution)
+- DLL Hijacking (Replacing a legitimate DLL with a malicious one that loads into a trusted process)
+- Browser Extensions (Installing malicious browser extensions that run at startup)
+- Fileless Persistence (Using PowerShell, macros, or in-memory techniques to avoid disk writes)
+
+[Q41] - Compare between Sigma Rules and yara rules
+Sigma Rules and YARA Rules are both used in threat detection and analysis, but they serve different purposes and operate in distinct ways.
+
+| Feature                | Sigma Rules                                                               | YARA Rules                                                                         |
+| ---------------------- | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| **Primary Use Case**   | Detection of security events (logs, SIEM alerts)                          | Malware identification and classification (file-based)                             |
+| **Target Data**        | Log files (e.g., Windows Event Logs, Sysmon, firewall logs)               | Files (executables, documents, memory dumps)                                       |
+| **Syntax**             | YAML-based                                                                | Custom rule language (text-based)                                                  |
+| **Detection Approach** | Pattern matching on log fields (e.g., process names, command lines)       | Pattern matching on byte sequences, strings, and binary signatures                 |
+| **Flexibility**        | Focused on structured log data, supports aggregations                     | More low-level, supports binary patterns, regex, and condition-based matching      |
+| **Tooling**            | Used with SIEMs (Splunk, Elasticsearch, Sigma-compatible tools)           | Used with malware analysis tools (YARA scanner, VirusTotal, IDA Pro)               |
+| **Rule Sharing**       | Widely shared for threat detection in SOC environments                    | Commonly used in malware research and threat intelligence                          |
+| **Example Use**        | Detecting suspicious PowerShell commands in Windows logs                  | Identifying a malware family by its unique strings or binary patterns              |
+| **Strengths**          | - Easy to write for log-based detection  <br>- Integrates well with SIEMs | - Powerful for file/memory analysis  <br>- Highly customizable for malware hunting |
+| **Limitations**        | - Limited to log data  <br>- Less effective for binary analysis           | - Not designed for log parsing  <br>- Requires file access for scanning            |
+
+[Q42] - what is Unified Kill Chain ?
+
+The **Unified Kill Chain (UKC)** is a cybersecurity framework that combines and extends concepts from the **Cyber Kill Chain®** (by Lockheed Martin) and the **MITRE ATT&CK®** matrix to provide a more comprehensive model for understanding and defending against cyber threats. It was developed by Paul Pols of Fox-IT (part of NCC Group) to address gaps in existing models and improve threat analysis, detection, and response.
+
+### **Key Features of the Unified Kill Chain:**
+1. **Integrates Multiple Models:**  
+   - Combines the **Cyber Kill Chain’s** linear attack progression with **MITRE ATT&CK’s** detailed tactics and techniques.
+   - Adds additional phases to cover modern attack methods (e.g., initial access, lateral movement, and actions on objectives).
+
+2. **18 Distinct Attack Phases:**  
+   Unlike the traditional 7-step Cyber Kill Chain, the UKC breaks down attacks into **18 phases**, grouped into three broader categories:
+   - **Initial Foothold (Preparation & Delivery)**  
+     - Reconnaissance  
+     - Weaponization  
+     - Delivery  
+     - Social Engineering  
+     - Exploitation  
+     - Persistence  
+   - **Network Propagation (Lateral Movement & Privilege Escalation)**  
+     - Internal Recon  
+     - Privilege Escalation  
+     - Defense Evasion  
+     - Lateral Movement  
+     - Collection  
+   - **Action on Objectives (Execution & Exfiltration)**  
+     - Command & Control  
+     - Execution  
+     - Data Exfiltration  
+     - Destruction  
+     - Misinformation  
+     - Monetization  
+
+3. **Focus on Defensive Strategies:**  
+   - Helps security teams **map attacker behaviors** to defensive actions (e.g., detection, prevention, mitigation).  
+   - Encourages **"breaking the chain"** at multiple points to disrupt attacks early.  
+
+4. **Aligns with MITRE ATT&CK:**  
+   - Each UKC phase can be mapped to **MITRE ATT&CK tactics & techniques**, making it useful for threat intelligence and detection engineering.  
+
+### **Why is the Unified Kill Chain Useful?**
+- Provides a **more granular view** of attack lifecycles than the traditional Cyber Kill Chain.  
+- Helps defenders **identify weak points** in security posture.  
+- Supports **red teaming, penetration testing, and incident response** by modeling real-world attack paths.  
+- Bridges the gap between **strategic (high-level kill chain) and tactical (MITRE ATT&CK techniques)** cybersecurity planning.  
+
+### **Comparison with Other Models:**
+| Model | Focus | Phases | Use Case |
+|--------|--------|--------|----------|
+| **Cyber Kill Chain** | Linear attack stages | 7 phases | High-level attack analysis |
+| **MITRE ATT&CK** | Tactics & Techniques | 14 tactics, 200+ techniques | Detailed threat detection & response |
+| **Unified Kill Chain** | Hybrid approach | 18 phases | Combines strategic & tactical defense |
+
+### **Conclusion:**
+The **Unified Kill Chain** improves upon older models by offering a **more detailed, flexible, and actionable** framework for analyzing cyber threats. It’s particularly useful for **security operations, threat hunting, and improving defensive measures** across different stages of an attack.
+
+Would you like a breakdown of how it applies to a specific attack (e.g., ransomware or APTs)?
