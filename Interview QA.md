@@ -613,3 +613,16 @@ This attack takes advantage of the compatibility between NTLM and Kerberos authe
 1. can be found in the Windows registry or in specific file system locations under `%WINDIR%\\System32\\config\\`
 2. It holds information regarding applications installed on the machine, tracking their installation and execution details. This can include versioning, patching, and metadata about software components that have been installed.
 
+[Q55] - common data exfiltration techniques :
+
+- DNS Tunneling – Data hidden in DNS queries.
+- HTTPS Exfiltration – Data smuggled through encrypted web traffic.
+- FTP/SFTP Uploads – Files sent to attacker-controlled servers.
+- Cloud Storage Abuse – Data synced to Dropbox, Google Drive, etc.
+- Webhooks/API Abuse – Data sent via legitimate APIs (Slack, Discord).
+- ICMP Tunneling – Data hidden in ping packets.
+- USB Exfiltration – Physical theft via USB drives.
+- Email Exfiltration – Sensitive data sent as email attachments.
+- RDP Clipboard Abuse – Copy-paste data over Remote Desktop
+- TOR/Proxies – Data routed through anonymity networks.
+
