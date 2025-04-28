@@ -48,24 +48,23 @@ TLS →
 Uses stronger algorithms (AES, SHA-256)
 Fast and Modern standard (required for PCI compliance)
 
-
 [Q6] - How would you handle network security in a company that allows employees to bring their own devices?
-Handling network security in a BYOD (Bring Your Own Device) environment involves implementing policies for device usage, enforcing strong authentication and encryption, using mobile device management (MDM) solutions, and educating employees about security best practices. Regular monitoring and applying network segmentation to isolate personal devices can also enhance security.
+Handling network security in a BYOD (Bring Your Own Device) environment involves implementing policies for device usage, enforcing strong authentication and encryption, using **mobile device management (MDM)** solutions, and educating employees about security best practices. Regular monitoring and applying network segmentation to isolate personal devices can also enhance security.
 
 [Q7] - How does malware achieve persistence on Windows?
 Malware achieves persistence on Windows by using techniques such as modifying registry keys, creating scheduled tasks, or placing malicious files in startup folders. These methods ensure that the malware runs every time the system boots or a user logs in.
 
 [Q8] - How SIEM Collects Data from Devices
 
-|**Device Type**|**Log Data Collected**|**Protocol/Method**|
-|---|---|---|
-|**Firewalls**|Blocked/Allowed traffic, intrusion attempts|Syslog, SNMP|
-|**Windows Servers**|Event logs (logins, file access, PowerShell)|WMI, Windows Event Forwarding|
-|**Linux Servers**|Auth logs, sudo commands, kernel events|Syslog, Rsyslog|
-|**Switches/Routers**|Traffic flows, ACL violations|NetFlow, SNMP|
-|**Endpoints (PCs)**|Process execution, USB usage, malware alerts|SIEM Agent (EDR integration)|
-|**Cloud Services**|Login attempts, API calls, configuration changes|REST API (AWS CloudTrail)|
-|**Email Servers**|Spam, phishing attempts, login failures|SMTP logs, IMAP/POP3|
+| **Device Type**      | **Log Data Collected**                           | **Protocol/Method**              |
+| -------------------- | ------------------------------------------------ | -------------------------------- |
+| **Firewalls**        | Blocked/Allowed traffic, intrusion attempts      | Syslog, SNMP                     |
+| **Windows Servers**  | Event logs (logins, file access, PowerShell)     | WMI, Windows Event Forwarding    |
+| **Linux Servers**    | Auth logs, sudo commands, kernel events          | Syslog, Rsyslog                  |
+| **Switches/Routers** | Traffic flows, ACL violations                    | **NetFlow, SNMP**                |
+| **Endpoints (PCs)**  | Process execution, USB usage, malware alerts     | SIEM Agent (**EDR** integration) |
+| **Cloud Services**   | Login attempts, API calls, configuration changes | **REST API** (AWS CloudTrail)    |
+| **Email Servers**    | Spam, phishing attempts, login failures          | SMTP logs, IMAP/POP3             |
 
 [Q9] - How SIEM Processes Collected Data
 
@@ -83,11 +82,10 @@ Malware achieves persistence on Windows by using techniques such as modifying re
 - **Encrypted Traffic** – Some SIEMs struggle to inspect TLS-encrypted data.
 
 [Q11] - How do you handle incidents involving data exfiltration?
-Handling data exfiltration incidents involves quickly identifying the source and extent of the breach, isolating affected systems, and mitigating further data loss. Investigating the attack vector, restoring data from backups, and notifying relevant stakeholders are also crucial steps.
+Handling data exfiltration incidents involves quickly identifying the source and extent of the breach, **isolating** affected systems, and mitigating further data loss. **Investigating** the attack vector, **restoring** data from backups, and notifying relevant stakeholders are also crucial steps.
 
 [Q12] - What is a security baseline?
-A security baseline defines the minimum security standards and configurations required for systems and applications.
-
+A security baseline defines the **minimum security standards** and **configurations** required for systems and applications.
 
 [Q13] - What is the difference between EDR and AV?
 
@@ -118,21 +116,21 @@ A security baseline defines the minimum security standards and configurations re
 [Q14] - Can you walk me through the threat intelligence analysis process?
 1. **Collect Data:** This is the first step in any threat intelligence analysis process. I need to collect data from various sources such as open-source intelligence, threat intelligence feeds, and reports. This data should be relevant to the organization's environment and business operations.
 2. **Analyze data:** With the data collected, I will analyze it to identify potential threats. I will use various tools and techniques to identify patterns, anomalies, and suspicious activities. This includes the use of data visualization tools that can help in pattern recognition.
-3. **Classification:** After analyzing the data, I will classify the threats into different categories to prioritize them. This classification may be based on the probability and impact of the threat on the organization's operations, assets, and reputation.
-4. **Validation:** Before reporting the threats to the organization or management, I will validate the accuracy, reliability, and credibility of the information collected. This may involve verifying the source of the data and cross-checking it with other sources.
+3. **Classification:** After analyzing the data, I will classify the threats into different categories to **prioritize** them. This classification may be based on the probability and impact of the threat on the organization's operations, assets, and reputation.
+4. **Validation:** Before reporting the threats to the organization or management, I will **validate the accuracy**, reliability, and credibility of the information collected. This may involve verifying the source of the data and cross-checking it with other sources.
 5. **Reporting and Recommendations:** Finally, I will prepare a detailed report that summarizes the findings of my analysis and provides recommendations on how to mitigate or eliminate the identified threats. This report may include technical details, such as indicators of compromise or attack signatures, and non-technical information, such as business impacts and financial losses.
 
 [Q15] - How do you prioritize threats based on potential impact?
 - Gathering information about the threat
-- Assessing the likelihood of an attack
-- Determining the potential impact
+- Assessing the **likelihood of an attack**
+- Determining the **potential impact of threat**
 - Assigning a risk score
 - Communicating the risk to stakeholders
 
 [Q16] - How do you prioritize threats?
  Prioritizing threats is a critical skill in CTI, requiring an assessment of the potential impact, urgency, and likelihood of each threat. I prioritize based on the severity of the impact on the organization’s critical assets and operations, the credibility of the threat intelligence, and the organization’s vulnerability to the specific threat. This approach ensures that resources are allocated effectively, focusing on the most significant threats first.
 
-[Q17] - "How do you prioritize and manage multiple threat intelligence reports?"
+[Q17] - How do you prioritize and manage multiple threat intelligence reports?
 "I prioritize threat intelligence reports based on the potential impact and likelihood of the threat. I use a risk matrix to categorize threats and focus on high-impact, high-likelihood threats first. For instance, during a recent surge in phishing attacks, I prioritized reports related to phishing over less immediate threats, ensuring our defenses were promptly strengthened."
 
 [Q18] - Describe a time when you identified a false positive. How did you handle it?
@@ -145,7 +143,7 @@ Ping uses ICMP so it doesn’t use any port
 
 The digital forensic process typically follows these six stages :
 - **Identification:** Recognize potential sources of digital evidence.
-- **Preservation:** Ensure that the digital evidence is preserved in its original state. This is often done by creating forensic images.
+- **Preservation:** Ensure that the digital evidence is preserved in its original state. This is often done by **creating forensic images.**
 - **Collection:** Gather data from various sources, such as hard drives, servers, and cloud storage, while ensuring that the evidence remains intact.
 - **Examination:** Use forensic tools to sift through the data and identify relevant evidence.
 - **Analysis:** Reconstruct events based on the evidence collected, and draw conclusions about what may have occurred.
@@ -165,10 +163,10 @@ Anti-forensic techniques are methods cybercriminals use to obscure, destroy, or 
 - **Log Manipulation:** Modifying system logs to hide tracks.
 
 [Q23] -  What is data mining?
-Data mining is the process of recording as much data as possible to create reports and analysis on user input. For instance, you can mine data from various websites and then log user interactions with this data to evaluate which website areas are accessed by users when logged in.
+Data mining is the process of recording as much data as possible **to create reports** and analysis on user input. For instance, you can mine data from various websites and then log user interactions with this data to evaluate which website areas are accessed by users when logged in.
 
 [Q24] -  What is data carving?
-Data carving is different than data mining in that data carving searches through raw data on a hard drive without using a file system. It allows a computer forensic investigator to recover a deleted file from a hard drive. Data carving is essential for computer forensics investigators to find data when a hard drive’s data is corrupted.
+Data carving is different than data mining in that data carving searches **through raw data on a hard drive without using a file system**. It allows a computer forensic investigator to recover a deleted file from a hard drive. Data carving is essential for computer forensics investigators to find data when a hard drive’s data is corrupted.
 
 
 [Q25] - Explain the difference between OSI and TCP/IP model ?
@@ -217,15 +215,10 @@ v3 Onion:    http://facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.oni
 ```
 
 
-
-
 [Q28] -  **How do you ensure the integrity of digital evidence?**
-- Use cryptographic hashes (like MD5 or SHA-256) to verify that the forensic image matches the original data.
+- Use cryptographic **hashes** (like MD5 or SHA-256) to verify that the forensic image matches the original data.
 - **Forensic Imaging:** Create an exact bit-by-bit copy of the original data
-- Record every step in Chain of Custody
-
-
-
+- Record every step in **Chain of Custody**
 
 [Q29] -  What is a WAF, and how does it differ from a traditional firewall?
 
@@ -254,7 +247,7 @@ A Web Application Firewall (WAF) protects web apps by filtering and monitoring H
 3. **Investigate**: Check if any requests bypassed the WAF (server logs).
 4. **Report**: Document the incident and share IoCs (Indicators of Compromise) with the team.
 
-[Q33] -Difference Between DDoS (Layer 3 vs. Layer 7)
+[Q33] - Difference Between DDoS (Layer 3 vs. Layer 7)
 
 |**Aspect**|**Layer 3/4 DDoS** (Network/Transport)|**Layer 7 DDoS** (Application)|
 |---|---|---|
@@ -263,7 +256,6 @@ A Web Application Firewall (WAF) protects web apps by filtering and monitoring H
 |**Detection**|High traffic volume, packet rate anomalies.|Abnormal request patterns (e.g., many `/login` requests).|
 |**Mitigation**|Rate limiting, blackholing, scrubbing.|WAF rules, CAPTCHA, bot detection.|
 |**Complexity**|Easier to detect (volume-based).|Harder to detect (mimics legitimate traffic).|
-
 
 [Q34] - How to Write Correlation Rules ?
 
@@ -474,8 +466,8 @@ The **Unified Kill Chain (UKC)** is a cybersecurity framework that combines and 
 4. **Aligns with MITRE ATT&CK:**  
    - Each UKC phase can be mapped to **MITRE ATT&CK tactics & techniques**, making it useful for threat intelligence and detection engineering.  
 
-### **Why is the Unified Kill Chain Useful?**
-- Provides a **more granular view** of attack lifecycles than the traditional Cyber Kill Chain.  
+[Q43] - **Why is the Unified Kill Chain Useful?**
+- Provides a **more granular view** of attack lifecycles than the traditional Cyber Kill Chain. 
 - Helps defenders **identify weak points** in security posture.  
 - Supports **red teaming, penetration testing, and incident response** by modeling real-world attack paths.  
 - Bridges the gap between **strategic (high-level kill chain) and tactical (MITRE ATT&CK techniques)** cybersecurity planning.  
@@ -487,7 +479,137 @@ The **Unified Kill Chain (UKC)** is a cybersecurity framework that combines and 
 | **MITRE ATT&CK** | Tactics & Techniques | 14 tactics, 200+ techniques | Detailed threat detection & response |
 | **Unified Kill Chain** | Hybrid approach | 18 phases | Combines strategic & tactical defense |
 
-### **Conclusion:**
-The **Unified Kill Chain** improves upon older models by offering a **more detailed, flexible, and actionable** framework for analyzing cyber threats. It’s particularly useful for **security operations, threat hunting, and improving defensive measures** across different stages of an attack.
 
-Would you like a breakdown of how it applies to a specific attack (e.g., ransomware or APTs)?
+
+[Q44] - Compare between IDS and HIDS
+
+| Feature                   | **IDS (Intrusion Detection System)**                                                                      | **HIDS (Host-Based Intrusion Detection System)**                                                                                             |
+| ------------------------- | --------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Scope**                 | Monitors **network traffic** for suspicious activity.                                                     | Monitors **individual host/endpoint** activities (files, processes, logs).                                                                   |
+| **Deployment**            | Network-based (NIDS) or host-based (HIDS).                                                                | Installed **directly on endpoints** (servers, workstations).                                                                                 |
+| **Detection Focus**       | - Network attacks (DDoS, port scans, malware C2 traffic).  <br>- Anomalies in traffic patterns.           | - File integrity changes (malware, rootkits).  <br>- Suspicious process activity.  <br>- Log analysis (failed logins, privilege escalation). |
+| **Data Sources**          | - Packet captures (PCAP).  <br>- Flow data (NetFlow, sFlow).                                              | - System logs (Windows Event Log, Syslog).  <br>- File system changes.  <br>- Running processes.                                             |
+| **Detection Methods**     | - Signature-based (known attack patterns).  <br>- Anomaly-based (behavioral analysis).                    | - File integrity monitoring (FIM).  <br>- Log correlation.  <br>- Behavioral analysis (unusual process execution).                           |
+| **Response Capabilities** | Typically **passive** (alerts only).  <br>Some can integrate with firewalls for blocking (IPS).           | Can **block malicious processes**, quarantine files, or trigger automated responses.                                                         |
+| **Examples**              | - Snort (NIDS).  <br>- Suricata.  <br>- Zeek (Bro).                                                       | - OSSEC.  <br>- Wazuh.  <br>- Tripwire.                                                                                                      |
+| **Strengths**             | - Broad visibility across the network.  <br>- Effective against external threats.                         | - Deep visibility into host activities.  <br>- Detects insider threats and file tampering.                                                   |
+| **Limitations**           | - Cannot inspect encrypted traffic without decryption.  <br>- Limited visibility into host-level attacks. | - Resource-intensive (CPU/memory usage).  <br>- Requires proper endpoint deployment.                                                         |
+
+
+[Q45] - Compare between HIPS and EDR
+
+| Feature                   | **HIPS (Host-Based IPS)**                                                       | **EDR (Endpoint Detection & Response)**                                                        |
+| ------------------------- | ------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| **Primary Purpose**       | Prevents attacks by blocking malicious activity in real-time.                   | Detects, investigates, and responds to advanced threats.                                       |
+| **Detection Method**      | - Signature-based  <br>- Behavior-based (heuristics)  <br>- Rule-based policies | - Behavioral analytics  <br>- Machine learning (ML)  <br>- Threat intelligence correlation     |
+| **Response Capabilities** | - Blocks/terminates malicious processes  <br>- Prevents unauthorized changes    | - Automated response (quarantine, kill process)  <br>- Forensic analysis  <br>- Threat hunting |
+| **Scope**                 | Focuses on **preventing** known and some unknown threats.                       | Focuses on **detecting, analyzing, and remediating** advanced threats.                         |
+| **Data Collected**        | - Process activity  <br>- File/registry changes  <br>- Network connections      | - Process execution chains  <br>- Memory analysis  <br>- User behavior analytics (UEBA)        |
+| **Forensic Capabilities** | Limited (logs basic events).                                                    | Extensive (timeline analysis, attack reconstruction).                                          |
+| **Integration**           | Often standalone or part of traditional antivirus.                              | Integrates with SIEM, SOAR, and threat intelligence platforms.                                 |
+| **Threat Intelligence**   | Relies on predefined rules/signatures.                                          | Uses real-time threat feeds and AI-driven analysis.                                            |
+| **Examples**              | - Symantec HIPS  <br>- McAfee HIPS                                              | - CrowdStrike Falcon  <br>- Microsoft Defender for Endpoint  <br>- SentinelOne                 |
+
+
+[Q46] - **How XDR Differs from EDR & SIEM**
+
+|Feature|**EDR**|**SIEM**|**XDR**|
+|---|---|---|---|
+|**Scope**|Endpoints only|Log aggregation (no response)|**Multi-layered** (endpoints, network, cloud, email)|
+|**Detection**|Endpoint-focused|Rule-based (logs)|**AI-driven, cross-domain correlation**|
+|**Response**|Automated on endpoints|Manual (alerts only)|**Automated across all layers**|
+|**Threat Hunting**|Limited to endpoints|Limited (depends on logs)|**Built-in proactive hunting**|
+|**Use Case**|Advanced malware protection|Compliance & log management|**Holistic security operations**|
+
+[Q47] - say some of Unencrypted Port and its Encrypted Port
+
+| **Protocol** | **Unencrypted Port**             | **Encrypted Port**         |
+| ------------ | -------------------------------- | -------------------------- |
+| **FTP**      | 20 (Data) / 21 (Command Control) | 989 (Data) / 990 (Control) |
+| **SMTP**     | 25                               | 465                        |
+| **HTTP**     | 80                               | 443                        |
+| **POP3**     | 110                              | 995                        |
+| **NNTP**     | 119                              | 563                        |
+| **IMAP**     | 143                              | 993                        |
+| **Telnet**   | 23                               | SSH/SCP/SFTP (22)          |
+| **DNS**      | 53                               | -                          |
+| **NTP**      | 123                              | -                          |
+
+
+[Q48] - What do you have in your home network?
+
+I set up a very strong user name and password for my router and Wi-Fi, its broadcasting feature is disabled. I set up MAC address filtering on the router and I use WPA2 (Wi-Fi protected access 2) security encryption technology. It encrypts the traffic on wi-fi networks. I disabled the remote access feature. I use a firewall and configure its security measures and it is always on.
+
+
+[Q49] - How **Pass the Hash** Works
+
+1- the attacker extracts password hashes stored in memory or on the disk using tools like :
+- Mimikatz: Extracts credentials and hashes from Windows systems.
+- pwdump: Dumps password hashes from the SAM database.
+- LSASS Process Dumping: Hashes can be obtained from the Local Security Authority Subsystem Service (LSASS) process.
+
+2- The attacker uses the stolen hash to authenticate on other systems. Instead of cracking the hash, they "pass" it directly to establish a session. Tools like pth-winexe , pth-rpcclient , or PowerShell scripts
+
+[Q51] - How **Kerberos Authentication** Works
+
+Kerberos uses tickets to authenticate users securely without transmitting passwords over the network. The key components include:
+- Key Distribution Center (KDC): Issues tickets.
+- Ticket Granting Ticket (TGT): Allows the user to obtain session-specific tickets for services.
+- Service Ticket (ST): Grants access to specific resources like file shares or databases.
+When a user logs in:
+- The user authenticates with the KDC to get a TGT.
+- The TGT is used to request Service Tickets for accessing specific services.
+
+
+[Q50] - How **Pass the Ticket** Works
+
+1- The attacker dumps Kerberos tickets from the system's memory. Tools like Mimikatz are commonly used. Tickets are stored in the LSASS process and can be extracted directly.
+
+2- The attacker uses the stolen ticket(s) to impersonate the victim user or access network resources. TGTs are particularly valuable because they can be used to request new Service Tickets.
+
+[Q51] - How Overpass-the-Hash Works
+
+This attack takes advantage of the compatibility between NTLM and Kerberos authentication protocols, It enables attackers to leverage an NTLM hash to request a Kerberos ticket for authentication in an Active Directory (AD) environment.
+
+1- Capturing credentials (NTLM hash) via tools like Mimikatz or dumping them from memory.
+2- Using tools like Mimikatz, the attacker injects the NTLM hash into the Kerberos authentication process. This requests a Ticket-Granting Ticket (TGT) from the Key Distribution Center (KDC) without needing the plaintext password.
+3-The attacker uses the TGT to obtain Service Tickets (STs) for accessing specific services (e.g., file shares, databases) in the domain.
+
+
+[Q52] - Password Extraction in Active Directory Environments
+
+1. Dumping Password Hashes from the Domain Controller (NTDS.dit)
+	- The NTDS.dit file stores all user password hashes in an AD environment. Attackers target this file to extract credentials
+2. Extracting Credentials from LSASS (Local Security Authority Subsystem Service)
+	- LSASS stores user credentials in memory during an active session. Attackers dump LSASS to extract passwords and hashes.
+3. Extracting Passwords from Group Policy Preferences (GPP)
+	- Older versions of Windows allowed storing plaintext passwords in Group Policy Preferences (GPP) XML files.
+4. Kerberoasting
+	- Kerberoasting targets accounts with Service Principal Names (SPNs) by requesting Kerberos tickets and cracking them offline.
+5. Pass-the-Hash (PtH)
+6. Pass-the-Ticket (PtT)
+7. Overpass-the-Hash
+8. DCSync Attack
+	- The DCSync attack allows attackers to simulate the behavior of a domain controller and request password hashes from other DCs.
+9. Credential Harvesting from Memory
+	- Dumping memory of processes (like browsers, RDP clients, or email clients) to extract credentials.
+10. SAM and SYSTEM File Extraction
+	- (SAM) file stores local account hashes. Attackers extract it to dump local hashes.
+11. LLMNR/NBT-NS Poisoning
+	- Exploiting network protocols to capture NTLM hashes during authentication requests.
+12. Password Spraying
+	- Brute-forcing common passwords against multiple accounts to avoid lockouts
+13. Brute-Force Password Attacks
+	- Targeting domain accounts with tools like Hydra or CrackMapExec
+
+
+[Q53] - What is the Shim Cache?
+1. designed to store information about executable files that have been run on a system.
+	1. It stores metadata about applications that were executed
+2. stored in the registry
+	1. `HKLM\\Software\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\ShimCache`
+
+[Q54] - What is the AM Cache?
+1. can be found in the Windows registry or in specific file system locations under `%WINDIR%\\System32\\config\\`
+2. It holds information regarding applications installed on the machine, tracking their installation and execution details. This can include versioning, patching, and metadata about software components that have been installed.
+

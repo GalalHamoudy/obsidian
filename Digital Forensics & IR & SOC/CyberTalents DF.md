@@ -15,7 +15,9 @@ Guymager is an open-source forensic imaging tool designed for creating and verif
  What is a SID?
 - Security identifier in Windows is a unique value used to identify any security entity that the Windows operating system (OS) can authenticate.
 
-Antimalware Scan Interface (AMSI) is a Microsoft Windows component that allows the deeper inspection of built-in scripting services.
+### Antimalware Scan Interface (AMSI) 
+
+- is a Microsoft Windows component that allows the deeper inspection of built-in scripting services.
 
 ### Microsoft Management Console (MMC)
 

@@ -35,7 +35,7 @@ By a given MAC address/OUI/IAB, retrieve OUI vendor information, detect virtual 
 [ Note ! ] =========================================
 There is a file **contacts3.db**
 The .db file is a sqlite database file.  
-So I opened it up in sqlite3
+So I opened it up in sqlite3 tool
 
 [ Note ! ] =========================================
 I use this site to search for information about phone numbers. [Phone number](https://www.ipqualityscore.com/user/search)
@@ -70,21 +70,16 @@ grep -Eo "\\b[0-9a-fA-F]{32}\\b" > 4 MD5
 [ Note ! ] =========================================
  A PST file is a personal storage table, which is a file format Microsoft programs use to store items like calendar events, contacts, and email messages.
 
-
 [ Note ! ] =========================================
 `pff-tools` , to extract all the emails, contacts, attachments etc
 https://github.com/avranju/pff-tools
 
-
 [ Note ! ] =========================================
-
 python-[oletools](https://github.com/decalage2/oletools) :
 Tools to analyze malicious documents
 
-
 [ Note ! ] =========================================
 Run Volatility "mftparser" plugin to analyze for potential MFT entries in memory.
-
 
 [ Note ! ] =========================================
 
