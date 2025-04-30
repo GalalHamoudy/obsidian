@@ -150,4 +150,19 @@ SOAR (Security Orchestration, Automation, and Response) and SIEM (Security Infor
 
 For optimal security, organizations should integrate both technologies to enhance threat detection and accelerate incident response.  
 
-Would you like recommendations on specific SIEM or SOAR platforms?
+
+
+# Compare between zui and Wireshark and NetworkMiner
+
+|Feature/Tool|**Zui** (by Brimdata)|**Wireshark**|**NetworkMiner**|
+|---|---|---|---|
+|**Primary Use Case**|Log analysis, security investigations|Deep packet inspection, network analysis|Forensic analysis, file extraction|
+|**Data Input**|Zeek logs, PCAPs, structured data (Zed)|Live traffic & PCAP files|PCAP files (offline analysis)|
+|**Interface**|GUI with Zed query language (ZQL)|GUI with filtering & dissection|GUI with file extraction & metadata|
+|**Key Strengths**|- Fast log queries (Zed backend)|- Real-time capture & deep protocol analysis|- Extracts files, credentials, sessions|
+||- Integrates with Zeek/Suricata logs|- Supports 3,000+ protocols|- Passive network forensics|
+|**Query Language**|Zed (ZQL)|Wireshark display filters|None (click-based analysis)|
+|**Forensics Focus**|Log correlation & threat hunting|Protocol debugging & troubleshooting|Evidence extraction (e.g., images, emails)|
+|**Live Capture**|No (post-analysis only)|**Yes** (real-time)|No (PCAP-only)|
+|**OS Support**|Windows, macOS, Linux|Windows, macOS, Linux|Windows (Linux via Mono)|
+|**Open Source?**|Yes (Apache 2.0)|Yes (GPL)|Free (closed-source)|
