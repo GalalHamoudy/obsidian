@@ -6,7 +6,7 @@ https://www.sans.org/job-roles-roadmap/cyber-defense/
 - [eCDFP] - Digital Forensics Professional
 - [eCIR] - Incident Handling And Response Professional
 - Effective Threat Investigation for SOC analyst Book
-- (OSDA-soc200) Security Operations and Defensive Analysis Book
+- (OSDA-soc200) Security Operations and Defensive Analysis Book  [ >>> NOW !!! ]
 - (FOR508) Advanced Incident Response & Threat Hunting
 
 ##### Threat Intelligence and Threat Hunting
