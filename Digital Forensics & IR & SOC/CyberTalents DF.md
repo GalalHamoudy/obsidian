@@ -3,8 +3,7 @@
 - Acquisition: a collection of digital media to be examined.
 - Analysis: the actual examination of the media
 - Presentation: The process by which the examiner shares the results of this analysis.
-
-## Steganography
+---
 
 Steganography is the art and science of embedding secret messages in a cover message in such a way that no one, apart from the sender and intended recipient, suspects the existence of the message.
 
@@ -12,7 +11,9 @@ KAPE (Kroll Artifact Parser and Extractor) is a digital forensics and incident r
 
 Guymager is an open-source forensic imaging tool designed for creating and verifying disk images. It is known for its speed, efficiency, and ease of use, making it a popular choice among digital forensic professionals.
 
- What is a SID?
+---
+### Security identifier (SID)
+
 - Security identifier in Windows is a unique value used to identify any security entity that the Windows operating system (OS) can authenticate.
 
 ### Antimalware Scan Interface (AMSI) 
@@ -25,14 +26,13 @@ Guymager is an open-source forensic imaging tool designed for creating and verif
 
 ###  Windows Management Instrumentation (WMI)
 
-It is a set of management and instrumentation technologies built into the Microsoft Windows operating system. It provides a standardized way for administrators and software developers to access and manipulate system resources, configurations, and performance data on Windows-based computers and servers. WMI is an integral part of the Windows operating system and plays a crucial role in system management, monitoring, and automation
-
-
-Compare with sleuthkit and autopsy tools :
-
-**SleuthKit (TSK)** and **Autopsy** are both digital forensics tools used for analyzing disk images and file systems, but they have some key differences in terms of functionality, usability, and use cases. Below is a comparison of the two:
+- It is a set of management and instrumentation technologies built into the Microsoft Windows operating system. It provides a standardized way for administrators and software developers to access and manipulate system resources, configurations, and performance data on Windows-based computers and servers. WMI is an integral part of the Windows operating system and plays a crucial role in system management, monitoring, and automation
 
 ---
+
+### Compare with sleuthkit and autopsy tools :
+
+**SleuthKit (TSK)** and **Autopsy** are both digital forensics tools used for analyzing disk images and file systems, but they have some key differences in terms of functionality, usability, and use cases. Below is a comparison of the two:
 
 ### **1. Overview**
 | Feature       | **SleuthKit (TSK)** | **Autopsy** |
@@ -42,8 +42,6 @@ Compare with sleuthkit and autopsy tools :
 | **Extensibility** | Limited to command-line operations | Supports plugins and modules for added functionality |
 | **Automation** | Better for scripting and automation | Manual analysis with some automation features |
 | **Platform Support** | Windows, Linux, macOS | Windows, Linux, macOS |
-
----
 
 ### **2. Features Comparison**
 | Feature | **SleuthKit (TSK)** | **Autopsy** |
@@ -60,34 +58,10 @@ Compare with sleuthkit and autopsy tools :
 | **Memory Forensics** | No | Limited (via Volatility integration) |
 | **Network Forensics** | No | Limited (support for network artifacts) |
 
----
-
 ### **3. Use Cases**
-| **SleuthKit (TSK)** | **Autopsy** |
-|------------------|-----------|
-| Best for **scripted analysis** and **low-level forensics** | Best for **case investigations** and **collaborative work** |
-| Useful for **automated processing** (e.g., parsing disk images in bulk) | Better for **manual analysis** (e.g., law enforcement, incident response) |
-| Preferred by **advanced users** comfortable with CLI | Suitable for **beginners** and **non-technical investigators** |
-
----
-
-### **4. Pros & Cons**
-#### **SleuthKit (TSK)**
-
-- Lightweight and fast
-- Scriptable (can be integrated into custom workflows)
-- Open-source and free
-- Works well with other forensic tools  
-- Steep learning curve (requires CLI knowledge)
-- No built-in case management
-- Limited visualization capabilities  
-
-#### **Autopsy**
-
-- User-friendly GUI
-- Built-in case management and reporting
-- Supports plugins (e.g., Torrent analysis, EXIF extraction)
-- Good for collaborative investigations  
-- Can be slower for large disk images
-- Requires more system resources
-- Less flexible for automation  
+| **SleuthKit (TSK)**                                                                                                                                                                                                                                                                | **Autopsy**                                                                                                                                                                                                                                                                                       |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Best for **scripted analysis** and **low-level forensics**                                                                                                                                                                                                                         | Best for **case investigations** and **collaborative work**                                                                                                                                                                                                                                       |
+| Useful for **automated processing** (e.g., parsing disk images in bulk)                                                                                                                                                                                                            | Better for **manual analysis** (e.g., law enforcement, incident response)                                                                                                                                                                                                                         |
+| Preferred by **advanced users** comfortable with CLI                                                                                                                                                                                                                               | Suitable for **beginners** and **non-technical investigators**                                                                                                                                                                                                                                    |
+| - Lightweight and fast<br>- Scriptable (can be integrated into custom workflows)<br>- Open-source and free<br>- Works well with other forensic tools  <br>- Steep learning curve (requires CLI knowledge)<br>- No built-in case management<br>- Limited visualization capabilities | - User-friendly GUI<br>- Built-in case management and reporting<br>- Supports plugins (e.g., Torrent analysis, EXIF extraction)<br>- Good for collaborative investigations  <br>- Can be slower for large disk images<br>- Requires more system resources<br>- Less flexible for automation  <br> |

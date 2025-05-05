@@ -774,3 +774,79 @@ Microsoft extended DCE RPC into **MSRPC**, which is used in Windows environments
 - **For web-based visualization**: **FlowViewer**.
 - **For enterprise monitoring**: **CAPLoader**.
 
+
+
+### **Passive Reconnaissance Techniques & Defenses**  
+
+Passive reconnaissance involves gathering information about a target **without direct interaction**, making it hard to detect. Attackers use it to plan attacks (e.g., phishing, exploits). Below are common techniques and how to defend against them.  
+
+---
+
+## **🔍 Common Passive Recon Techniques**  
+
+### **1. Open-Source Intelligence (OSINT)**  
+- **Technique**:  
+  - Harvesting public data from:  
+    - **Social Media** (LinkedIn, Twitter) → Employee roles, tech stack.  
+    - **Job Postings** (e.g., "Seeking AWS engineer") → Infra clues.  
+    - **WHOIS Lookups** → Domain ownership, IP ranges.  
+    - **GitHub/Code Repos** → Exposed API keys, credentials.  
+- **Example Tools**:  
+  - [theHarvester](https://github.com/laramies/theHarvester), [Maltego](https://www.maltego.com/), [Shodan](https://www.shodan.io/).  
+
+### **2. DNS Enumeration**  
+- **Technique**:  
+  - Querying DNS records (`A`, `MX`, `TXT`) to map subdomains (`admin.example.com`).  
+  - Using tools like `nslookup`, `dig`, or [DNSDumpster](https://dnsdumpster.com/).  
+
+### **3. SSL/TLS Certificate Analysis**  
+- **Technique**:  
+  - Extracting domain/hostnames from SSL certs (e.g., via [crt.sh](https://crt.sh/)).  
+
+### **4. Search Engine Dorking**  
+- **Technique**:  
+  - Using Google/Bing operators:  
+    - `site:example.com filetype:pdf` → Leaked documents.  
+    - `intitle:"Login" example.com` → Exposed login portals.  
+
+### **5. Metadata Harvesting**  
+- **Technique**:  
+  - Extracting hidden data from **PDFs, Word docs, images** (e.g., author names, software versions).  
+  - Tools: `exiftool`, [Metagoofil](https://github.com/laramies/metagoofil).  
+
+### **6. Network Traffic Sniffing (Unsecured Wi-Fi)**  
+- **Technique**:  
+  - Capturing unencrypted traffic (HTTP, FTP) in public networks.  
+
+---
+
+## **🛡️ Defense Strategies**  
+
+### **1. Limit Public Data Exposure**  
+- **WHOIS Privacy**: Use domain privacy services (e.g., Cloudflare, WhoisGuard).  
+- **Employee Training**: Restrict sensitive posts on social media.  
+- **GitHub Hygiene**: Scan repos for secrets with [GitGuardian](https://www.gitguardian.com/).  
+
+### **2. Secure DNS & Subdomains**  
+- **DNS Security**:  
+  - Use **DNSSEC** to prevent spoofing.  
+  - Regularly audit DNS records for leaks.  
+- **Subdomain Monitoring**:  
+  - Tools like [Detectify](https://detectify.com/) or [OWASP Amass](https://github.com/OWASP/Amass).  
+
+### **3. Encrypt & Sanitize Metadata**  
+- **SSL/TLS**: Enforce HTTPS (HSTS) to prevent sniffing.  
+- **Metadata Removal**:  
+  - Use tools like `exiftool -all= file.pdf` before sharing files.  
+
+### **4. Search Engine Hardening**  
+- **Robots.txt**: Block sensitive paths (e.g., `/admin/`).  
+- **CAPTCHAs**: Rate-limit automated scraping.  
+
+### **5. Network Protections**  
+- **Wi-Fi**: Use VPNs/WPA3 on public networks.  
+- **Email**: Disable auto-loading remote content (prevents tracking pixels).  
+
+### **6. Threat Intelligence**  
+- **Monitor Pastebin/Dark Web**: Use services like [Have I Been Pwned](https://haveibeenpwned.com/) or [DarkOwl](https://www.darkowl.com/).  
+

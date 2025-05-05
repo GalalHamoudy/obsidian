@@ -626,3 +626,7 @@ This attack takes advantage of the compatibility between NTLM and Kerberos authe
 - RDP Clipboard Abuse – Copy-paste data over Remote Desktop
 - TOR/Proxies – Data routed through anonymity networks.
 
+[Q56] - what is Virtual Address Descriptor (VAD) tree
+
+that tracks memory sections allocated to each process, including heap, stack, and memory-mapped files.
+Analyzing the VAD tree helps in identifying hidden memory regions and injecting code in forensic investigations.

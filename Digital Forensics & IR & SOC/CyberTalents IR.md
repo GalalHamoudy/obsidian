@@ -1,14 +1,3 @@
-### Where to Hunt?
-
-#### 1. Network-based evidence: 
-Look at logs, packet captures (PCAPs), NetFlow, firewall logs, IDS/IPS alerts, DNS logs, and proxy logs for malicious traffic or patterns.
-#### 2. Host-based evidence: 
-Focus on file systems, registry entries, memory dumps, event logs, and installed applications for signs of compromise like malware, unauthorized access, or abnormal behavior.
-#### 3. Directed by initial lead: 
-Investigate based on the nature of the initial alert or lead, such as suspicious IP traffic or unauthorized file modifications.
-#### 4. Use existing resources: 
-Leverage SIEM systems, threat intelligence, and forensic tools to scope the incident effectively and ensure comprehensive analysis across network and host systems
-
 ## Live Response Acquisition
 1. Collect Evidence Suitable for Portable & Rapid Acquisition
 2. Collect Data Only Available While the System is Running
@@ -42,28 +31,22 @@ Leverage SIEM systems, threat intelligence, and forensic tools to scope the inci
 
 **The Master File Table (MFT)** is a critical component of the NTFS (New Technology File System) in Windows, acting as a database that stores information about every file and directory on a volume. It contains file attributes, metadata, and pointers to data, essential for file system operations and forensics.
 
-**Timestamp** stomping is a technique used by attackers to modify file timestamps to cover their tracks. This involves altering one or more of the timestamps (creation, modification, access, MFT modification) to create confusion about the file’s actual activity timeline.
+**Timestamp stomping** is a technique used by attackers to modify file timestamps to cover their tracks. This involves altering one or more of the timestamps (creation, modification, access, MFT modification) to create confusion about the file’s actual activity timeline.
 
 **An Alternate Data Stream (ADS)** in NTFS allows files to store additional data outside the primary file content. This hidden data can store metadata or even entire files, without affecting the file's size in normal views. ADS can be exploited by attackers to hide malicious code or files, making it valuable in forensic investigations.
 
-
 ### Memory Sections
-The contents of a process’s virtual memory space are tracked by the Virtual Address Descriptor (VAD) tree, which is managed by the Windows Memory Manager. The VAD tree is a self-balancing structure that tracks memory sections allocated to each process, including heap, stack, and memory-mapped files.
+The contents of a process’s virtual memory space are tracked by the **Virtual Address Descriptor (VAD)** tree, which is managed by the Windows Memory Manager. The VAD tree is a self-balancing structure that tracks memory sections allocated to each process, including heap, stack, and memory-mapped files.
 Key components include:
-
 - Control Areas: Store information about the backing storage for memory-mapped regions.
 - File Objects: Link memory regions to files on disk, such as DLLs or executables.
-
 Analyzing the VAD tree helps in identifying hidden memory regions and injecting code in forensic investigations.
-
 
 ### Persistence
 
 In Windows, the Registry plays a key role in managing autoruns, which are programs or scripts set to execute automatically during system startup or user login. These autoruns are often defined in specific registry keys that control how and when certain applications run. Common registry locations for autorun entries include:
-
 1. HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run (System-wide autoruns)
 2. HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run (User-specific autoruns)
-
 
 ## Common Persistence Mechanisms
 
@@ -99,8 +82,9 @@ LSA Packages
 
 ShimCache, also known as the Application Compatibility Cache, is a feature in Windows that tracks executable files for compatibility purposes. It is used by the Windows operating system to determine whether certain files need compatibility adjustments before execution.
 
+---
 
-compare between SOAR and SIEM
+## compare between SOAR and SIEM
 
 SOAR (Security Orchestration, Automation, and Response) and SIEM (Security Information and Event Management) are both critical cybersecurity technologies, but they serve different purposes and complement each other in a security operations center (SOC). Here’s a detailed comparison:
 
@@ -134,10 +118,10 @@ SOAR (Security Orchestration, Automation, and Response) and SIEM (Security Infor
 - **SOAR** acts as a **workflow engine** (integrating with SIEM, firewalls, EDR, ticketing systems).
 
 ### **6. Strengths & Weaknesses**
-| **Aspect**       | **SIEM** | **SOAR** |
-|-------------------|----------|----------|
-| **Strengths**    | - Centralized visibility <br> - Compliance reporting <br> - Historical analysis | - Faster response times <br> - Reduces analyst workload <br> - Standardizes processes |
-| **Weaknesses**   | - High false positives <br> - Requires tuning <br> - Limited automation | - Relies on SIEM/other tools for detection <br> - Complex setup <br> - Needs skilled personnel |
+| **Aspect**     | **SIEM**                                                                      | **SOAR**                                                                                     |
+| -------------- | ----------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| **Strengths**  | - Centralized visibility <br>- Compliance reporting <br>- Historical analysis | - Faster response times <br>- Reduces analyst workload <br>- Standardizes processes          |
+| **Weaknesses** | - High false positives <br>- Requires tuning <br>- Limited automation         | - Relies on SIEM/other tools for detection <br>- Complex setup <br>- Needs skilled personnel |
 
 ### **7. Do You Need Both?**
 - **SIEM alone** → Good for monitoring but slow at response.
@@ -148,11 +132,9 @@ SOAR (Security Orchestration, Automation, and Response) and SIEM (Security Infor
 - **SIEM** = "What’s happening?" (Detection & Monitoring)  
 - **SOAR** = "What should we do about it?" (Response & Automation)  
 
-For optimal security, organizations should integrate both technologies to enhance threat detection and accelerate incident response.  
 
-
-
-# Compare between zui and Wireshark and NetworkMiner
+---
+## Compare between zui and Wireshark and NetworkMiner
 
 |Feature/Tool|**Zui** (by Brimdata)|**Wireshark**|**NetworkMiner**|
 |---|---|---|---|

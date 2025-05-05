@@ -17,10 +17,9 @@ Tools that are used by security professionals to investigate incidents or even t
 
 One of the main differences between “.evtx” and “.evt” files is the **memory efficiency** as in old “.evt” logs, it requires about 300MB (maximum recommended event log size) to be mapped in memory, while in “.evtx” logs, it consists of a header and 64KB chunk and just mapping current 64KB chunk to memory.
 
+---
 
 As a SOC analyst, understanding **Shim Cache** and **AM Cache** is crucial for forensic investigations, particularly in malware analysis, incident response, and evidence of execution. Below is a detailed comparison:
-
----
 
 ### **1. Shim Cache (Application Compatibility Cache)**
 - **Purpose**:  
@@ -47,8 +46,6 @@ As a SOC analyst, understanding **Shim Cache** and **AM Cache** is crucial for f
 - **Windows Versions**:  
   - **Pre-Windows 8.1/2012 R2**: Shim Cache stored in Registry.  
   - **Windows 8.1+**: Partially replaced by **AM Cache**, but Shim Cache still exists with reduced data.
-
----
 
 ### **2. AM Cache (Amcache.hve)**
 - **Purpose**:  
@@ -78,8 +75,6 @@ As a SOC analyst, understanding **Shim Cache** and **AM Cache** is crucial for f
 - **Windows Versions**:  
   - **Windows 8/2012 and later**.  
 
----
-
 ### **Comparison Summary**
 | Feature               | Shim Cache | AM Cache |
 |-----------------------|------------|----------|
@@ -90,8 +85,6 @@ As a SOC analyst, understanding **Shim Cache** and **AM Cache** is crucial for f
 | **Malware Hunting**   | Useful for deleted files | Better (hashes, execution proof) |
 | **Lateral Movement**  | Helps detect tools like PSExec | More detailed (network paths) |
 | **Windows Support**   | All versions | Windows 8+ |
-
----
 
 ### **SOC Analyst Use Cases**
 1. **Malware Investigation**:  
@@ -108,8 +101,6 @@ As a SOC analyst, understanding **Shim Cache** and **AM Cache** is crucial for f
 4. **Timeline Analysis**:  
    - Correlate Shim Cache (modified time) with AM Cache (execution time).  
 
----
-
 ### **Tools for Analysis**
 - **Shim Cache**:  
   - `AppCompatCacheParser` (Eric Zimmerman)  
@@ -118,21 +109,16 @@ As a SOC analyst, understanding **Shim Cache** and **AM Cache** is crucial for f
   - `AmcacheParser` (Eric Zimmerman)  
   - `KAPE` (for automated collection)  
 
----
-
 ### **Conclusion**
 - **AM Cache** is superior for forensic investigations (post-Windows 8) due to richer data.  
 - **Shim Cache** is still useful for legacy systems and detecting deleted files.  
 - **Combine both** for comprehensive analysis (e.g., if an attacker clears one but not the other).  
 
-
-
+---
 ### **Snort: Overview & SOC Usefulness**  
 
 #### **What is Snort?**  
 Snort is a **free, open-source** **Network Intrusion Detection/Prevention System (NIDS/NIPS)** that monitors network traffic in real-time, detects malicious activity, and alerts security teams.  
-
----
 
 ### **Key Functionalities**  
 1. **Traffic Analysis**  
@@ -146,8 +132,6 @@ Snort is a **free, open-source** **Network Intrusion Detection/Prevention System
 5. **Prevention Mode (NIPS)**  
    - Can **block** malicious traffic (e.g., drop packets from a botnet IP).  
 
----
-
 ### **How Snort Helps in SOC Analysis**  
 1. **Threat Detection**  
    - Alerts on exploits (e.g., EternalBlue), brute-force attacks, or malware callbacks.  
@@ -160,32 +144,24 @@ Snort is a **free, open-source** **Network Intrusion Detection/Prevention System
 5. **Reducing False Positives**  
    - Fine-tuning rules minimizes noise (e.g., excluding benign traffic).  
 
----
-
 ### **Example Snort Rule**  
+
 ```bash  
 alert tcp $EXTERNAL_NET any -> $HOME_NET 445 (msg:"Possible SMB Exploit - EternalBlue"; flow:established; content:"|FF|SMB|2|"; depth:5; reference:cve,2017-0144; sid:1000001;)  
 ```  
 - **Triggers** when detecting EternalBlue exploit traffic on port 445.  
 
----
-
 ### **Why SOCs Use Snort**  
-✅ **Cost-effective** (open-source).  
-✅ **Highly customizable** (adapts to new threats).  
-✅ **Lightweight** (low resource usage).  
-✅ **Community-driven** (shared rule updates).  
+ **Cost-effective** (open-source).  
+ **Highly customizable** (adapts to new threats).  
+ **Lightweight** (low resource usage).  
+ **Community-driven** (shared rule updates).  
 
-**Alternatives**: Suricata (more advanced), Zeek (protocol analysis).  
-
-
-
+---
 ### **Zeek (formerly Bro): Overview & SOC Usefulness**  
 
 #### **What is Zeek?**  
 Zeek is a **powerful open-source network analysis framework** that operates as a **Network Security Monitor (NSM)**. Unlike Snort (which focuses on signature-based detection), Zeek provides **protocol-level visibility**, logging, and behavioral analysis.  
-
----
 
 ### **Key Functionalities**  
 1. **Protocol Analysis**  
@@ -200,8 +176,6 @@ Zeek is a **powerful open-source network analysis framework** that operates as a
 5. **Custom Scripting**  
    - Uses **Zeek scripts** (`.zeek`) for custom detections.  
 
----
-
 ### **How Zeek Helps in SOC Analysis**  
 1. **Threat Hunting**  
    - Analyze **DNS exfiltration, C2 traffic, lateral movement**.  
@@ -214,53 +188,29 @@ Zeek is a **powerful open-source network analysis framework** that operates as a
 5. **SIEM Integration**  
    - Logs feed into Splunk, ELK, etc., for correlation.  
 
----
-
 ### **Example Zeek Use Cases**  
-| **Attack** | **Zeek Logs** | **Detection Method** |
-|------------|--------------|----------------------|
-| **Phishing** | `http.log` (suspicious URLs) | `files.log` (malicious attachments) |  
-| **DNS Tunneling** | `dns.log` (long TXT queries) | Anomaly in query length |  
-| **RDP Brute Force** | `conn.log` (many short-lived connections) | High failed login attempts |  
-| **Malware Download** | `files.log` (EXE from shady domain) | File extraction + VirusTotal check |  
+| **Attack**           | **Zeek Logs**                             | **Detection Method**                |
+| -------------------- | ----------------------------------------- | ----------------------------------- |
+| **Phishing**         | `http.log` (suspicious URLs)              | `files.log` (malicious attachments) |
+| **DNS Tunneling**    | `dns.log` (long TXT queries)              | Anomaly in query length             |
+| **RDP Brute Force**  | `conn.log` (many short-lived connections) | High failed login attempts          |
+| **Malware Download** | `files.log` (EXE from shady domain)       | File extraction + VirusTotal check  |
 
----
 
 ### **Zeek vs. Snort**  
-| Feature | **Zeek** | **Snort** |  
-|---------|---------|----------|  
-| **Primary Use** | Network traffic analysis & logging | Signature-based IDS/IPS |  
-| **Detection** | Behavioral + protocol anomalies | Rule-based (signatures) |  
-| **Logging** | Structured logs (JSON, TSV) | Alerts + PCAPs |  
-| **Customization** | Zeek scripting | Snort rules |  
-| **Performance** | Higher resource usage | Lightweight |  
-
-**Best for SOC?**  
-- **Zeek** → Deep forensic analysis, threat hunting.  
-- **Snort** → Real-time blocking, signature alerts.  
+| Feature           | **Zeek**                           | **Snort**               |
+| ----------------- | ---------------------------------- | ----------------------- |
+| **Primary Use**   | Network traffic analysis & logging | Signature-based IDS/IPS |
+| **Detection**     | Behavioral + protocol anomalies    | Rule-based (signatures) |
+| **Logging**       | Structured logs (JSON, TSV)        | Alerts + PCAPs          |
+| **Customization** | Zeek scripting                     | Snort rules             |
+| **Performance**   | Higher resource usage              | Lightweight             |
 
 ---
-
-### **Why SOCs Use Zeek**  
-✅ **Granular visibility** (beyond just alerts).  
-✅ **Extracts files & metadata** (e.g., JA3 SSL fingerprints).  
-✅ **Flexible scripting** (custom detections).  
-✅ **Complements Snort/Suricata** (log what they miss).  
-
-**Example Zeek Command** (to monitor HTTP traffic):  
-```bash  
-zeek -i eth0 http  
-```  
-(Generates `http.log` with all HTTP transactions.)  
-
-
-
 ### **Suricata: Overview & SOC Usefulness**  
 
 #### **What is Suricata?**  
 Suricata is a **high-performance, open-source** **Network Intrusion Detection/Prevention System (NIDS/NIPS)** and **Network Security Monitoring (NSM)** tool. It combines **signature-based detection** (like Snort) with **advanced threat detection** (like Zeek), making it a **versatile SOC tool**.  
-
----
 
 ## **Key Functionalities**  
 ### **1. Multi-Threat Detection**  
@@ -285,18 +235,14 @@ Suricata is a **high-performance, open-source** **Network Intrusion Detection/Pr
 ### **5. High-Performance & Scalability**  
 - Supports **multi-threading** for high-speed networks (10Gbps+).  
 
----
-
 ## **How Suricata Helps in SOC Analysis**  
-| **SOC Use Case** | **Suricata’s Role** |  
-|------------------|---------------------|  
-| **Threat Detection** | Alerts on malware C2, exploits, brute-force attacks. |  
-| **Incident Response** | Provides PCAPs and logs for forensic analysis. |  
-| **Threat Hunting** | Metadata (JA3 fingerprints, DNS queries) helps track adversaries. |  
-| **Malware Analysis** | Extracts malicious files from network traffic. |  
-| **SIEM Integration** | Sends structured logs (EVE JSON) to Splunk, ELK, etc. |  
-
----
+| **SOC Use Case**      | **Suricata’s Role**                                               |
+| --------------------- | ----------------------------------------------------------------- |
+| **Threat Detection**  | Alerts on malware C2, exploits, brute-force attacks.              |
+| **Incident Response** | Provides PCAPs and logs for forensic analysis.                    |
+| **Threat Hunting**    | Metadata (JA3 fingerprints, DNS queries) helps track adversaries. |
+| **Malware Analysis**  | Extracts malicious files from network traffic.                    |
+| **SIEM Integration**  | Sends structured logs (EVE JSON) to Splunk, ELK, etc.             |
 
 ## **Suricata vs. Snort vs. Zeek**  
 | Feature             | **Suricata**                   | **Snort**               | **Zeek**                  |
@@ -311,6 +257,7 @@ Suricata is a **high-performance, open-source** **Network Intrusion Detection/Pr
 ---
 
 ## **Example Suricata Rule**  
+
 ```bash  
 alert http $HOME_NET any -> $EXTERNAL_NET any (  
   msg:"Malicious User-Agent - Emotet";  
@@ -325,21 +272,7 @@ alert http $HOME_NET any -> $EXTERNAL_NET any (
 
 ---
 
-## **Why SOCs Use Suricata**  
-✅ **Hybrid approach** (IDS + IPS + logging).  
-✅ **Faster than Snort** (multi-threading).  
-✅ **More actionable logs than Zeek** (EVE JSON).  
-✅ **File extraction & threat intelligence integration**.  
-
-**Deployment Tip**:  
-- Use **Suricata for real-time blocking** (IPS mode).  
-- Pair with **Zeek for deeper forensic analysis**.  
-
-
-
-When working with **SIEM (Security Information and Event Management) solutions**, the most important **source types (log types)** to monitor depend on your organization's infrastructure and security priorities. However, here are the **most critical log sources** you should focus on in a SOC environment:
-
----
+When working with **SIEM (Security Information and Event Management) solutions**, the most important **source types (log types)** to monitor depend on your organization's infrastructure and security priorities. However, here are the **most critical log sources** you should focus on in a SOC environment :
 
 ### **1. Endpoint Logs**  
 **Source Examples:**  
@@ -348,11 +281,6 @@ When working with **SIEM (Security Information and Event Management) solutions**
 - **EDR/XDR Logs** (CrowdStrike, SentinelOne, Microsoft Defender)  
   - Detects malware, suspicious processes, lateral movement.  
 - **Sysmon Logs** (Enhanced process tracking, file changes, network connections).  
-
-**Why?**  
-- Detects **malware, brute-force attacks, lateral movement**.  
-
----
 
 ### **2. Network Security Logs**  
 **Source Examples:**  
@@ -363,11 +291,6 @@ When working with **SIEM (Security Information and Event Management) solutions**
 - **Proxy/Web Filter Logs** (Zscaler, Blue Coat, Squid)  
   - Malicious URLs, phishing attempts, data exfiltration.  
 
-**Why?**  
-- Identifies **external attacks, C2 beacons, data leaks**.  
-
----
-
 ### **3. Authentication & Identity Logs**  
 **Source Examples:**  
 - **Active Directory (AD) Logs**  
@@ -376,11 +299,6 @@ When working with **SIEM (Security Information and Event Management) solutions**
   - Failed logins, unusual locations.  
 - **Multi-Factor Authentication (MFA) Logs** (Duo, Okta)  
   - Bypass attempts, suspicious MFA fatigue attacks.  
-
-**Why?**  
-- Detects **credential stuffing, Golden Ticket attacks, insider threats**.  
-
----
 
 ### **4. Cloud & SaaS Logs**  
 **Source Examples:**  
@@ -391,22 +309,12 @@ When working with **SIEM (Security Information and Event Management) solutions**
 - **SaaS Apps (Slack, GitHub, Salesforce)**  
   - Insider data theft, API abuse.  
 
-**Why?**  
-- Cloud environments are **high-risk targets** for breaches.  
-
----
-
 ### **5. Email Security Logs**  
 **Source Examples:**  
 - **Microsoft Exchange / M365 Defender**  
   - Phishing emails, malicious attachments.  
 - **Proofpoint / Mimecast Logs**  
   - URL clicks, impersonation attempts.  
-
-**Why?**  
-- **90% of attacks start with phishing**—critical for early detection.  
-
----
 
 ### **6. Database & Application Logs**  
 **Source Examples:**  
@@ -415,46 +323,19 @@ When working with **SIEM (Security Information and Event Management) solutions**
 - **Web Server Logs** (Apache, Nginx, IIS)  
   - Web shells, HTTP exploits (Log4j, etc.).  
 
-**Why?**  
-- Prevents **data breaches, API abuse, and app-layer attacks**.  
-
----
-
 ### **7. Threat Intelligence Feeds**  
 **Source Examples:**  
 - **TI Platforms** (AlienVault OTX, MISP, ThreatFox)  
 - **IOC Feeds** (Malware hashes, malicious IPs/domains).  
 
-**Why?**  
-- Enables **proactive blocking** of known bad actors.  
-
----
 
 ### **Prioritization for SOC Analysts**  
-| **Log Source** | **Top Use Case** |  
-|---------------|------------------|  
-| **Windows Event Logs** | Detect lateral movement, malware execution. |  
-| **Firewall/Proxy Logs** | Block C2 traffic, data exfiltration. |  
-| **AD/Azure AD Logs** | Spot credential theft, privilege escalation. |  
-| **EDR Logs** | Endpoint threat detection & response. |  
-| **Email Logs** | Stop phishing & BEC (Business Email Compromise). |  
+| **Log Source**          | **Top Use Case**                                 |
+| ----------------------- | ------------------------------------------------ |
+| **Windows Event Logs**  | Detect lateral movement, malware execution.      |
+| **Firewall/Proxy Logs** | Block C2 traffic, data exfiltration.             |
+| **AD/Azure AD Logs**    | Spot credential theft, privilege escalation.     |
+| **EDR Logs**            | Endpoint threat detection & response.            |
+| **Email Logs**          | Stop phishing & BEC (Business Email Compromise). |
 
 ---
-
-### **SIEM Integration Tips**  
-1. **Normalize Logs** (Use CIM - Common Information Model).  
-2. **Correlate Alerts** (e.g., "Failed login + EDR malware detection = Credential theft").  
-3. **Tune False Positives** (Adjust rules to reduce noise).  
-
-**Popular SIEMs & Their Key Sources:**  
-- **Splunk** → Best for custom parsing (supports all log types).  
-- **Microsoft Sentinel** → Optimized for Azure/M365.  
-- **QRadar** → Strong network-focused analytics.  
-- **Elastic SIEM** → Cost-effective for open-source users.  
-
----
-
-### **Final Advice**  
-- Start with **endpoints + network logs** (covers 80% of threats).  
-- Add **cloud logs** if using AWS/Azure/GCP.  
-- Use **threat intel** to enrich alerts.  

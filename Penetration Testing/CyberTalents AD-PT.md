@@ -16,19 +16,19 @@ Active Directory (AD) is a **directory service** by Microsoft, primarily used 
 7. **DNS & Network Services**
     - Helps in locating resources (like servers) within the network.
 
-Domain: 
+**Domain:** 
 A domain is a logical grouping of network objects (computers, users, devices) that share a common security database. Each domain has its own unique name and security policies.
 
-Domain Controller (DC): 
+**Domain Controller (DC):** 
 A domain controller is a server that runs the Active Directory Domain Services (AD DS) role. It stores a copy of the Active Directory database and authenticates users and computers in the domain.
 
-Organizational Units (OUs): 
+**Organizational Units (OUs):** 
 OUs are containers within a domain that allow administrators to organize and manage objects such as users, groups, and computers. OUs can have their own policies applied to them.
 
-Group Policy: 
+**Group Policy:** 
 Group Policies are a set of configurations that define how computers and users operate within an Active Directory environment. They control various aspects of the user interface, desktop environment, security, and other settings.
 
-Active Directory Authentication: 
+**Active Directory Authentication:** 
 Authentication is the process of verifying the identity of users, computers, and services attempting to access resources within an Active Directory environment. It ensures secure access to network resources and helps protect against unauthorized access. 
 - NTLM
 - Kerberos
@@ -80,7 +80,7 @@ Techniques:
 - Kerberoasting
 - Golden Ticket
 
-
+---
 
 # Some attacks in Active Directory :
 
