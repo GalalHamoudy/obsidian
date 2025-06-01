@@ -33,7 +33,7 @@ There are 3 types of SQL Injections. These are:
 
 [Q4] - Explain XSS types.
 There are 3 types of XSS. These are:
-1. **Reflected XSS (Non-Persistent)**: It is a non-persistent XSS type that the XSS payload must contain in the request. It is the most common type of XSS.
+1. **Reflected XSS (Non-Persistent)**: It is a non-persistent XSS type that the XSS payload must contain in the **request**. It is the most common type of XSS.
 2. **Stored XSS (Persistent)**: It is a type of XSS where the attacker can permanently upload the XSS payload to the web application. Compared to other types, the most dangerous type of XSS is Stored XSS.
 3. **DOM Based XSS**: DOM Based XSS is an XSS attack wherein the attack payload is executed as a result of modifying the DOM “environment” in the victim’s browser used by the original client side script, so that the client side code runs in an “unexpected” manner. (OWASP)
 
@@ -183,13 +183,14 @@ Data carving is different than data mining in that data carving searches **throu
 |**Usage**|Used for **understanding & troubleshooting** networks|Used in **real-world networking** (e.g., the Internet)|
 
  Key Takeaways:
-1. **OSI is a 7-layer theoretical model**, while **TCP/IP is a 4-layer practical model**.
-2. **TCP/IP combines OSI's Application, Presentation, and Session layers** into a single **Application layer**.
-3. **TCP/IP's Internet layer ≈ OSI's Network layer** (both handle IP addressing & routing).
-4. **TCP/IP is the foundation of the modern Internet**, while OSI is used mainly for **education and network design**.
-5. **OSI is more detailed**, but **TCP/IP is more widely implemented**.
+1. OSI is a 7-layer theoretical model, while TCP/IP is a 4-layer practical model.
+2. TCP/IP combines OSI's Application, Presentation, and Session layers into a single Application layer.
+3. TCP/IP's Internet layer ≈ OSI's Network layer (both handle IP addressing & routing).
+4. TCP/IP is the foundation of the modern Internet, while OSI is used mainly for education and network design.
+5. OSI is more detailed, but TCP/IP is more widely implemented.
 
 [Q26] - Which event logs are available default on Windows?
+
 - Security
 - Application
 - System
@@ -357,7 +358,10 @@ These **email authentication protocols** prevent spoofing/phishing by verifyin
 - **104**: System, Security, and Application log file cleared
 - **106**: New scheduled task created
 - **1102**: Audit log cleared
+- **1116**: Malware detected in system
+- **1117**: Protection action taken on malware
 - **4104**: Command line auditing for PowerShell
+
 - **4624**: Successful logon
 - **4625**: Failed logon
 - **4634**: Logoff events
@@ -367,6 +371,7 @@ These **email authentication protocols** prevent spoofing/phishing by verifyin
 - **4672**: Special privileges assigned to a user (e.g., Admin login)
 - **4688**: A new process was created
 - **4698**: New scheduled task was created
+
 - **4720**: New user account created
 - **4722**: Account was enabled (previously disabled)
 - **4723/4724**: Password changes or reset attempts
@@ -380,8 +385,7 @@ These **email authentication protocols** prevent spoofing/phishing by verifyin
 - **5140**: Network share object was accessed
 - **5145**: Network share object access checked for permissions
 - **7045**: New service installed
-- **1116**: Malware detected in system
-- **1117**: Protection action taken on malware
+
 
 
 [Q39] - **Windows Search order for DLLs**
@@ -412,7 +416,7 @@ These **email authentication protocols** prevent spoofing/phishing by verifyin
 - Fileless Persistence (Using PowerShell, macros, or in-memory techniques to avoid disk writes)
 
 [Q41] - Compare between Sigma Rules and yara rules
-Sigma Rules and YARA Rules are both used in threat detection and analysis, but they serve different purposes and operate in distinct ways.
+Sigma Rules and YARA Rules are both used in **threat detection and analysis**, but they serve different purposes and operate in distinct ways.
 
 | Feature                | Sigma Rules                                                               | YARA Rules                                                                         |
 | ---------------------- | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
@@ -498,17 +502,17 @@ The **Unified Kill Chain (UKC)** is a cybersecurity framework that combines and 
 
 [Q45] - Compare between HIPS and EDR
 
-| Feature                   | **HIPS (Host-Based IPS)**                                                       | **EDR (Endpoint Detection & Response)**                                                        |
-| ------------------------- | ------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| **Primary Purpose**       | Prevents attacks by blocking malicious activity in real-time.                   | Detects, investigates, and responds to advanced threats.                                       |
-| **Detection Method**      | - Signature-based  <br>- Behavior-based (heuristics)  <br>- Rule-based policies | - Behavioral analytics  <br>- Machine learning (ML)  <br>- Threat intelligence correlation     |
-| **Response Capabilities** | - Blocks/terminates malicious processes  <br>- Prevents unauthorized changes    | - Automated response (quarantine, kill process)  <br>- Forensic analysis  <br>- Threat hunting |
-| **Scope**                 | Focuses on **preventing** known and some unknown threats.                       | Focuses on **detecting, analyzing, and remediating** advanced threats.                         |
-| **Data Collected**        | - Process activity  <br>- File/registry changes  <br>- Network connections      | - Process execution chains  <br>- Memory analysis  <br>- User behavior analytics (UEBA)        |
-| **Forensic Capabilities** | Limited (logs basic events).                                                    | Extensive (timeline analysis, attack reconstruction).                                          |
-| **Integration**           | Often standalone or part of traditional antivirus.                              | Integrates with SIEM, SOAR, and threat intelligence platforms.                                 |
-| **Threat Intelligence**   | Relies on predefined rules/signatures.                                          | Uses real-time threat feeds and AI-driven analysis.                                            |
-| **Examples**              | - Symantec HIPS  <br>- McAfee HIPS                                              | - CrowdStrike Falcon  <br>- Microsoft Defender for Endpoint  <br>- SentinelOne                 |
+| Feature                   | **HIPS (Host-Based IPS)**                                                       | **EDR (Endpoint Detection & Response)**                                                                |
+| ------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| **Primary Purpose**       | Prevents attacks by blocking malicious activity in real-time.                   | Detects, investigates, and responds to advanced threats.                                               |
+| **Detection Method**      | - Signature-based  <br>- Behavior-based (heuristics)  <br>- Rule-based policies | - Behavioral analytics  <br>- **Machine learning** (ML)  <br>- **Threat intelligence** correlation     |
+| **Response Capabilities** | - Blocks/terminates malicious processes  <br>- Prevents unauthorized changes    | - Automated response (quarantine, kill process)  <br>- **Forensic analysis**  <br>- **Threat hunting** |
+| **Scope**                 | Focuses on **preventing** known and some unknown threats.                       | Focuses on **detecting, analyzing, and remediating** advanced threats.                                 |
+| **Data Collected**        | - Process activity  <br>- File/registry changes  <br>- Network connections      | - Process execution chains  <br>- Memory analysis  <br>- User behavior analytics (UEBA)                |
+| **Forensic Capabilities** | Limited (logs basic events).                                                    | Extensive (timeline analysis, attack reconstruction).                                                  |
+| **Integration**           | Often standalone or part of traditional antivirus.                              | Integrates with SIEM, SOAR, and threat intelligence platforms.                                         |
+| **Threat Intelligence**   | Relies on predefined rules/signatures.                                          | Uses real-time threat feeds and AI-driven analysis.                                                    |
+| **Examples**              | - Symantec HIPS  <br>- McAfee HIPS                                              | - CrowdStrike Falcon  <br>- Microsoft Defender for Endpoint  <br>- SentinelOne                         |
 
 
 [Q46] - **How XDR Differs from EDR & SIEM**
@@ -616,13 +620,13 @@ This attack takes advantage of the compatibility between NTLM and Kerberos authe
 [Q55] - common data exfiltration techniques :
 
 - DNS Tunneling – Data hidden in DNS queries.
-- HTTPS Exfiltration – Data smuggled through encrypted web traffic.
-- FTP/SFTP Uploads – Files sent to attacker-controlled servers.
+- **HTTPS** Exfiltration – Data smuggled through encrypted web traffic.
+- **FTP**/SFTP Uploads – Files sent to attacker-controlled servers.
 - Cloud Storage Abuse – Data synced to Dropbox, Google Drive, etc.
 - Webhooks/API Abuse – Data sent via legitimate APIs (Slack, Discord).
 - ICMP Tunneling – Data hidden in ping packets.
 - USB Exfiltration – Physical theft via USB drives.
-- Email Exfiltration – Sensitive data sent as email attachments.
+- **Email** Exfiltration – Sensitive data sent as email attachments.
 - RDP Clipboard Abuse – Copy-paste data over Remote Desktop
 - TOR/Proxies – Data routed through anonymity networks.
 
@@ -630,3 +634,14 @@ This attack takes advantage of the compatibility between NTLM and Kerberos authe
 
 that tracks memory sections allocated to each process, including heap, stack, and memory-mapped files.
 Analyzing the VAD tree helps in identifying hidden memory regions and injecting code in forensic investigations.
+
+
+[Q57] - why Image Base Usually 0x00400000
+
+- When **32-bit Windows (Win32)** was introduced with Windows NT, the address space expanded to **4GB** (`0x00000000` to `0xFFFFFFFF`).
+- **`0x00400000` (4MB)** was chosen as the default base address to:
+    - Avoid conflicts with **lower memory areas** (e.g., `0x00000000`–`0x0000FFFF`), which were reserved for **NULL pointer checks** and **DOS compatibility**.
+    - Leave space for **16-bit code segments** (though Win32 eventually phased out Win16 support).
+- **System DLLs** (like `kernel32.dll`, `user32.dll`) traditionally loaded at **higher addresses** (e.g., `0x7xxxxxxx`).
+- Keeping EXEs at `0x00400000` reduced the chance of **address space collisions** with DLLs.
+- **64-bit executables** often use `0x0000000140000000` as the default (due to larger address space).

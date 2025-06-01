@@ -339,3 +339,5 @@ When working with **SIEM (Security Information and Event Management) solutions**
 | **Email Logs**          | Stop phishing & BEC (Business Email Compromise). |
 
 ---
+
+[SOC Multi-tool](https://github.com/zdhenard42/SOC-Multitool) : Introducing SOC Multi-tool, a free and open-source browser extension that makes investigations faster and more efficient. Now available on the Chrome Web Store and compatible with all Chromium-based browsers such as Microsoft Edge, Chrome, Brave, and Opera.
