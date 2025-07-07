@@ -168,4 +168,10 @@ SCAS,CMPS,LOOP use ZF flag
 2- control flag DF
  \= 1 the string instructions auto decrement  (0 by std )
  \= 0 the string instructions auto increment (0 by cld )
- 
+
+---
+injection techniques :
+- Image file execution options (IFEO)
+- APC injection and AtomBombing
+- Extra Window Memory Injection (EWMI)
+- API hooking

@@ -456,3 +456,47 @@ print(" \n "  + " URL: " + url + " \n " + " Username: " + username + "\n " + " D
 
  we need to first find any potential mail databases in the User’s directory. On Microsoft, these are often ost or pst files.
 The Thunderbird database is named ‘INBOX’.
+
+
+[ Note ! ] =========================================
+we can get it by filtering by the event = 3 
+< that will print all network connection detected.
+
+|   |   |   |
+|---|---|---|
+|Sysmon|[1](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90001)|[Process creation](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90001)|
+|Sysmon|[2](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90002)|[A process changed a file creation time](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90002)|
+|Sysmon|[3](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90003)|[Network connection detected](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90003)|
+|Sysmon|[4](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90004)|[Sysmon service state changed](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90004)|
+|Sysmon|[5](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90005)|[Process terminated](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90005)|
+|Sysmon|[6](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90006)|[Driver loaded](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90006)|
+|Sysmon|[7](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90007)|[Image loaded](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90007)|
+|Sysmon|[8](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90008)|[CreateRemoteThread](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90008)|
+|Sysmon|[9](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90009)|[RawAccessRead](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90009)|
+|Sysmon|[10](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90010)|[ProcessAccess](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90010)|
+|Sysmon|[11](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90011)|[FileCreate](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90011)|
+|Sysmon|[12](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90012)|[RegistryEvent (Object create and delete)](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90012)|
+|Sysmon|[13](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90013)|[RegistryEvent (Value Set)](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90013)|
+|Sysmon|[14](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90014)|[RegistryEvent (Key and Value Rename)](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90014)|
+|Sysmon|[15](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90015)|[FileCreateStreamHash](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90015)|
+|Sysmon|[16](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90016)|[Sysmon config state changed](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90016)|
+|Sysmon|[17](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90017)|[Pipe created](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90017)|
+|Sysmon|[18](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90018)|[Pipe connected](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90018)|
+|Sysmon|[19](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90019)|[WmiEventFilter activity detected](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90019)|
+|Sysmon|[20](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90020)|[WmiEventConsumer activity detected](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90020)|
+|Sysmon|[21](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90021)|[WmiEventConsumerToFilter activity detected](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90021)|
+|Sysmon|[22](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90022)|[DNSEvent](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90022)|
+|Sysmon|[23](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90023)|[FileDelete](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90023)|
+|Sysmon|[24](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90024)|[ClipboardChange](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90024)|
+|Sysmon|[25](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90025)|[Process Tampering](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90025)|
+|Sysmon|[26](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90026)|[File Delete Logged](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90026)|
+|Sysmon|[27](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90027)|[File Block Executable](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90027)|
+|Sysmon|[28](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90028)|[File Block Shredding](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90028)|
+|Sysmon|[29](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90029)|[File Executable Detected](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90029)|
+|Sysmon|[225](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90225)|[Error](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=90225)|
+
+[ Note ! ] =========================================
+
+Hadoop: The Apache Hadoop software library is a framework that allows for the distributed processing of large data sets across clusters of computers using simple programming models.
+
+Hadoop YARN: Apache Hadoop YARN is the resource management and job scheduling technology in the open source Hadoop distributed processing framework. One of Apache Hadoop’s core components, YARN is responsible for allocating system resources to the various applications running in a Hadoop cluster and scheduling tasks to be executed on different cluster nodes.

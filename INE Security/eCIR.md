@@ -102,14 +102,6 @@ application level ( app logs )
 | **Recovery**        | - Verify system restoration <br> - Close tickets post-recovery    |
 | **Lessons Learned** | - Generate reports <br>- Update playbooks                         |
 
-## RTIR vs. Other Incident Management Tools  
-| **Tool**        | **RTIR**     | **TheHive**     | **Jira (with IR Plugins)**    |
-| --------------- | ------------ | --------------- | ----------------------------- |
-| **Type**        | Open-source  | Open-source     | Commercial                    |
-| **Focus**       | Security IR  | SOC & DFIR      | General IT + IR               |
-| **Integration** | SIEM, MISP   | Cortex, MISP    | Limited security integrations |
-| **Workflow**    | Customizable | Playbook-driven | Agile/Kanban                  |
-
 ---
 
 # Incident handling forms :
@@ -158,7 +150,7 @@ application level ( app logs )
 ### **WMIC (Windows Management Instrumentation Command-line) Tool**  
 **WMIC** is a legacy command-line utility in Windows that provides a powerful interface for **system administration, diagnostics, and incident response** using **WMI (Windows Management Instrumentation)**. It allows querying system information, managing processes, services, hardware, and more.  
 
-#### ** Key Features of WMIC**  
+#### **Key Features of WMIC**  
 - **System/Process Management**: Query running processes, services, and hardware.  
 - **Remote Administration**: Manage other Windows machines (if permissions allow).  
 - **Incident Response**: Useful for **forensics, malware analysis, and live system checks**.  
@@ -211,7 +203,7 @@ wmic product get name,version   # Installed software
 ```
 
 
-### ** WMIC in Incident Response (SOC Use Cases)**  
+### **WMIC in Incident Response (SOC Use Cases)**  
  **Malware Analysis**:  
    - Find hidden processes (`wmic process`).  
    - Check auto-start programs (`wmic startup`).  
@@ -385,8 +377,7 @@ Please note that an automated tool like chkrootkit can never guarantee a system 
 
 **GRR** is an **open-source remote live forensics and incident response tool** developed by Google. It enables security teams to **remotely investigate endpoints** (Windows, macOS, Linux) at scale, collect forensic artifacts, and analyze compromised systems without physical access.  
 
-
-## ** Key Features of GRR**  
+## **Key Features of GRR**  
 
 ### **1. Remote Forensic Data Collection**  
 - **File System Access**: Download files, directory listings, and analyze timestamps.  
@@ -408,14 +399,14 @@ Please note that an automated tool like chkrootkit can never guarantee a system 
 - **SIEM & SOAR**: Export data to Splunk, ELK, Chronicle, or custom tools.  
 - **Automation**: Scriptable via API (Python client library).  
 
-## ** How GRR Works?**  
+## **How GRR Works?**  
 1. **Deploy Agents** (`grr-client`) on endpoints.  
 2. **Admin Console** schedules tasks (e.g., "Collect all `cmd.exe` executions").  
 3. **Clients** asynchronously respond with data (even if offline initially).  
 4. **Analyst** reviews collected artifacts in the **web UI** or exports for deeper analysis.  
 
 
-## ** Use Cases for SOC/IR Teams**  
+## **Use Cases for SOC/IR Teams**  
 **Malware Investigations**:  
    - Retrieve malware samples from infected hosts.  
    - Scan memory with YARA rules.  
@@ -428,12 +419,12 @@ Please note that an automated tool like chkrootkit can never guarantee a system 
 
 
 ## **GRR vs. Other IR Tools**  
-| **Tool**       | **GRR**                          | **Velociraptor**          | **Osquery**               |  
-|---------------|----------------------------------|--------------------------|--------------------------|  
-| **Type**      | Agent-based, async collection   | Real-time live response  | SQL-based querying       |  
-| **Scalability**| Designed for large fleets       | Medium-scale deployments | Best for ad-hoc queries  |  
-| **Forensics** | Deep file/memory analysis       | Flexible artifact collection | Lightweight checks   |  
-| **Complexity**| Moderate (Python server)        | Low (Go-based)           | Very low                 |  
+| **Tool**        | **GRR**                       | **Velociraptor**             | **Osquery**             |
+| --------------- | ----------------------------- | ---------------------------- | ----------------------- |
+| **Type**        | Agent-based, async collection | Real-time live response      | SQL-based querying      |
+| **Scalability** | Designed for large fleets     | Medium-scale deployments     | Best for ad-hoc queries |
+| **Forensics**   | Deep file/memory analysis     | Flexible artifact collection | Lightweight checks      |
+| **Complexity**  | Moderate (Python server)      | Low (Go-based)               | Very low                |
 
 
 ## **Example Commands (Admin UI)**  
@@ -516,13 +507,13 @@ Please note that an automated tool like chkrootkit can never guarantee a system 
 ---
 
 ## **Velociraptor vs. GRR vs. Osquery**  
-| **Feature**       | **Velociraptor**          | **GRR**                  | **Osquery**              |  
-|-------------------|--------------------------|--------------------------|--------------------------|  
-| **Speed**         | Real-time                | Async (delayed)          | Real-time                |  
-| **Language**      | VQL (SQL-like)           | Python                   | SQL                      |  
-| **Forensics**     | Deep (memory, disk)      | Deep (async collection)  | Lightweight (logs only)  |  
-| **Deployment**    | Lightweight (Go)         | Heavy (Python server)    | Very lightweight         |  
-| **Use Case**      | IR & Threat Hunting      | Large-scale forensics    | Compliance monitoring    |  
+| **Feature**    | **Velociraptor**    | **GRR**                 | **Osquery**             |
+| -------------- | ------------------- | ----------------------- | ----------------------- |
+| **Speed**      | Real-time           | Async (delayed)         | Real-time               |
+| **Language**   | VQL (SQL-like)      | Python                  | SQL                     |
+| **Forensics**  | Deep (memory, disk) | Deep (async collection) | Lightweight (logs only) |
+| **Deployment** | Lightweight (Go)    | Heavy (Python server)   | Very lightweight        |
+| **Use Case**   | IR & Threat Hunting | Large-scale forensics   | Compliance monitoring   |
 
 ---
 
@@ -567,16 +558,16 @@ ICMP (Internet Control Message Protocol) is used for **error reporting, diagnost
 
 ## **🔹 Key Differences Between ICMPv4 and ICMPv6**  
 
-| **Feature**               | **ICMPv4** (IPv4)                          | **ICMPv6** (IPv6)                          |  
-|--------------------------|--------------------------------------------|--------------------------------------------|  
-| **Purpose**              | Error reporting, diagnostics (e.g., `ping`, `traceroute`). | Same as ICMPv4 + **Neighbor Discovery (NDP)**, **Path MTU Discovery**, and **Multicast Listener Discovery (MLD)**. |  
-| **Message Types**        | Types 0-255 (e.g., `Echo Request/Reply` = 8/0, `Destination Unreachable` = 3). | Types 1-255, but some repurposed (e.g., `Echo Request/Reply` = 128/129, `Neighbor Solicitation/Advertisement` = 135/136). |  
-| **Error Reporting**      | Reports errors like `Host Unreachable`, `Time Exceeded`. | Similar but with more detailed codes (e.g., `Address Unreachable`). |  
-| **Neighbor Discovery**   | Uses **ARP** (Layer 2) for MAC resolution. | Built into ICMPv6 (**NDP** replaces ARP). |  
-| **Multicast Handling**   | Limited multicast support. | Uses **MLD (Multicast Listener Discovery)** for efficient multicast management. |  
-| **Fragmentation**        | Routers can fragment packets. | Only source nodes fragment (Path MTU Discovery required). |  
-| **Security**             | No built-in security (vulnerable to attacks like Smurf). | Includes **IPsec support** for authentication. |  
-| **Checksum**             | Covers only the ICMP header. | Covers **ICMPv6 header + IPv6 pseudo-header** (more robust). |  
+| **Feature**            | **ICMPv4** (IPv4)                                                              | **ICMPv6** (IPv6)                                                                                                         |
+| ---------------------- | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------- |
+| **Purpose**            | Error reporting, diagnostics (e.g., `ping`, `traceroute`).                     | Same as ICMPv4 + **Neighbor Discovery (NDP)**, **Path MTU Discovery**, and **Multicast Listener Discovery (MLD)**.        |
+| **Message Types**      | Types 0-255 (e.g., `Echo Request/Reply` = 8/0, `Destination Unreachable` = 3). | Types 1-255, but some repurposed (e.g., `Echo Request/Reply` = 128/129, `Neighbor Solicitation/Advertisement` = 135/136). |
+| **Error Reporting**    | Reports errors like `Host Unreachable`, `Time Exceeded`.                       | Similar but with more detailed codes (e.g., `Address Unreachable`).                                                       |
+| **Neighbor Discovery** | Uses **ARP** (Layer 2) for MAC resolution.                                     | Built into ICMPv6 (**NDP** replaces ARP).                                                                                 |
+| **Multicast Handling** | Limited multicast support.                                                     | Uses **MLD (Multicast Listener Discovery)** for efficient multicast management.                                           |
+| **Fragmentation**      | Routers can fragment packets.                                                  | Only source nodes fragment (Path MTU Discovery required).                                                                 |
+| **Security**           | No built-in security (vulnerable to attacks like Smurf).                       | Includes **IPsec support** for authentication.                                                                            |
+| **Checksum**           | Covers only the ICMP header.                                                   | Covers **ICMPv6 header + IPv6 pseudo-header** (more robust).                                                              |
 
 ---
 
@@ -613,7 +604,7 @@ ICMP (Internet Control Message Protocol) is used for **error reporting, diagnost
 2. **ICMPv4 is simpler** but lacks IPv6 features.  
 3. **Security**: ICMPv6 supports IPsec; ICMPv4 is often blocked due to abuse.  
 
-Need a **deep dive into ICMP attacks**? Ask! 🚀
+
 
 ---
 Here’s a **clear, concise comparison table** between **IPv4 and IPv6**:
@@ -767,14 +758,6 @@ Microsoft extended DCE RPC into **MSRPC**, which is used in Windows environments
 | **nfdump**   | NetFlow, IPFIX      | CLI-based, flexible filtering | Network forensics |
 
 ---
-
-### **Which One Should You Use?**
-- **For large-scale security analysis**: **SiLK + YAF** (used by CERT teams).
-- **For quick CLI-based analysis**: **nfdump**.
-- **For web-based visualization**: **FlowViewer**.
-- **For enterprise monitoring**: **CAPLoader**.
-
-
 
 ### **Passive Reconnaissance Techniques & Defenses**  
 
