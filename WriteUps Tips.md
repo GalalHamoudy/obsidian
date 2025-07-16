@@ -500,3 +500,57 @@ we can get it by filtering by the event = 3
 Hadoop: The Apache Hadoop software library is a framework that allows for the distributed processing of large data sets across clusters of computers using simple programming models.
 
 Hadoop YARN: Apache Hadoop YARN is the resource management and job scheduling technology in the open source Hadoop distributed processing framework. One of Apache Hadoop’s core components, YARN is responsible for allocating system resources to the various applications running in a Hadoop cluster and scheduling tasks to be executed on different cluster nodes.
+
+
+
+[ Note ! ] =========================================
+
+`C\Windows\System32\config` directory, which is the directory where the registry files are stored. Inside, we’ll find that the folder contains a dump of the system-wide **Windows** [**Registry Hives**](https://learn.microsoft.com/en-us/windows/win32/sysinfo/registry-hives) (SYSTEM, SAM, SOFTWARE, SECURITY, etc.) >> we use Registry Explorer
+
+the **Security Account Manager (SAM) Hive** which contains user information like username, group membership, and login information. 
+
+the **SOFTWARE hive** which contains the information, settings, and preferences for software installed on the system, including the operating system. 
+
+The **SYSTEM hive** contains the system’s configuration settings including the network interfaces.
+
+the `Software\Microsoft\Windows\CurrentVersion\Uninstall` key would be the best place to identify installed applications.
+
+**Shellbags** are a set of registry keys that store information about the view settings and preferences of folders as they are viewed in Windows Explorer.
+
+Windows creates a number of additional artifacts when storing these properties in the registry, giving the investigator great insight into the folder, browsing history of a suspect, as well as details for any folder that might no longer exist on a system (due to deletion, or being located on a removable device).
+
+ the shellbags stored within the **UsrClass.dat** hive. >> we use ShellBags Explorer.
+`C\Users\Administrator\AppData\Local\Microsoft\Windows\UsrClass.dat`
+
+to discover the modification time of a file executed from within the Downloads directory. To do this, we’re going to analyze the **Application Compatibility Cache (AppCompatCache)**, part of the SYSTEM registry hive. >> we use AppCompatCacheParser
+
+Once the CSV file is generated, we’ll open it with yet another Eric Zimmerman tool, **Timeline Explorer**. This tool is a CSV viewer with robust filtering and sorting capabilities.
+
+we need to identify the SHA1 file hash of a malicious file installed on the PC. The first step here is to determine which file is malicious. To do this, we’re going to check the **AmCache hive** to gain an understanding of the files that have been executed on the system. >> we use AmcacheParser
+
+`C:\Windows\AppCompat\Programs\Amcache.hve`
+
+To identify the file opened on the specified date/time, we’ll need to jump back to Registry Explorer and load the **NTUSER.DAT** artifact. This hive can be located at: `C\Users\Administrator\NTUSER.DAT`
+
+we now need to determine the exact time a user on the system opened MSPaint. To accomplish this, we’ll continue using the available bookmarks to search against the `NTUSER.DAT` hive, this time selecting the “**RunMRU (Most recently run programs)**” bookmark.
+to determine how long the application was open. For this task, we’ll use the “**UserAssist (Recently accessed items)**” bookmark to analyze the artifacts.
+
+UserAssist is a feature in Windows that tracks the usage of executable files and applications launched by the user. It stores this information in the Windows Registry, which can be accessed by forensic analysts to reconstruct a timeline of application usage and user activity.
+
+
+
+
+[ Note ! ] =========================================
+List of Sysmon Event IDs for Threat Hunting :
+https://systemweakness.com/list-of-sysmon-event-ids-for-threat-hunting-4250b47cd567
+
+
+
+[ Note ! ] =========================================
+By default Windows maintains a journal of filesystem activities in a file called \$Extend$UsnJrnl in a special data stream called $J. This stream contains records of filesystem operations, primarily to allow backup applications visibility into the files that have been changed since the last time a backup was run.
+
+we’ll use Eric Zimmerman’s **_MFTECmd_** to parse and extract some information about the _Confidential_ directory and the files within it
+
+ Since we are pointing to the \**\$J** (journal) file, we’ll also provide the path to the **$MFT** so we can resolve the parent path as suggested by the help file.
+ 
+MFTECmd.exe -f "C:\Users\LetsDefend\Desktop\ChallengeFile\C\$Extend\$J" -m "C:\Users\LetsDefend\Desktop\ChallengeFile\C\$MFT" --csv C:\Users\LetsDefend\Desktop\<name-of-output>.csv
