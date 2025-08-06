@@ -35,7 +35,3 @@ there are many way to collect Data :
 10. IoC data collection through external sources 
 11. IoC data collection through internal sources 
 12. Data collection through building custom IoCs 
-
-
-bulk data management and visualization
-Tableau

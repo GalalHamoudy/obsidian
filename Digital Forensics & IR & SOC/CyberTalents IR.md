@@ -29,7 +29,7 @@
 
 **Prefetch files** are Windows system files used to speed up the loading of applications by caching key data about recently executed programs. Location: C:\Windows\Prefetch
 
-**The Master File Table (MFT)** is a critical component of the NTFS (New Technology File System) in Windows, acting as a database that stores information about every file and directory on a volume. It contains file attributes, metadata, and pointers to data, essential for file system operations and forensics.
+**The Master File Table (MFT)** is a critical component of the NTFS (New Technology File System) in Windows, acting as a **database that stores information about every file** and directory on a volume. It contains file attributes, metadata, and pointers to data, essential for file system operations and forensics.
 
 **Timestamp stomping** is a technique used by attackers to modify file timestamps to cover their tracks. This involves altering one or more of the timestamps (creation, modification, access, MFT modification) to create confusion about the file’s actual activity timeline.
 
@@ -42,9 +42,14 @@ Key components include:
 - File Objects: Link memory regions to files on disk, such as DLLs or executables.
 Analyzing the VAD tree helps in identifying hidden memory regions and injecting code in forensic investigations.
 
+
+> [!NOTE]
+> **windows memory manager > virtual address descriptor > process’s virtual memory space**
+
 ### Persistence
 
 In Windows, the Registry plays a key role in managing autoruns, which are programs or scripts set to execute automatically during system startup or user login. These autoruns are often defined in specific registry keys that control how and when certain applications run. Common registry locations for autorun entries include:
+
 1. HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run (System-wide autoruns)
 2. HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run (User-specific autoruns)
 
@@ -80,7 +85,7 @@ LSA Packages
 
 
 
-ShimCache, also known as the Application Compatibility Cache, is a feature in Windows that tracks executable files for compatibility purposes. It is used by the Windows operating system to determine whether certain files need compatibility adjustments before execution.
+**ShimCache**, also known as the Application Compatibility Cache, is a feature in Windows that tracks executable files for compatibility purposes. It is used by the Windows operating system to determine whether certain files need compatibility adjustments before execution.
 
 ---
 

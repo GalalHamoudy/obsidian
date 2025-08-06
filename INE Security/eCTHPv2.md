@@ -1,5 +1,5 @@
 ### **What is Risk Assessment?**  
-**Risk Assessment** is the process of identifying, analyzing, and evaluating potential risks to an organization’s assets (data, systems, personnel) to determine their impact and likelihood. It helps prioritize security measures and allocate resources effectively.  
+**Risk Assessment** is the process of identifying, analyzing, and evaluating potential risks to an organization’s assets (data, systems, personnel) to determine their **impact and likelihood**. It helps prioritize security measures and allocate resources effectively.  
 ## **Key Components of Risk Assessment**  
 ### **1. Identify Assets**  
 - What needs protection? (e.g., servers, customer data, intellectual property)  
@@ -115,7 +115,7 @@ Threat hunting teams vary in structure and focus, depending on an organization's
 ---
 
 ### **What is Punycode?**  
-**Punycode** is a method for converting **Unicode (international) domain names** into an **ASCII-compatible format** (RFC 3492). Since DNS only supports ASCII characters (A-Z, 0-9, hyphens), Punycode allows domains with non-ASCII characters (e.g., Cyrillic, Chinese) to work.  
+**Punycode** is a method for converting **Unicode (international) domain names** into an **ASCII-compatible format** (RFC 3492). Since **DNS only supports ASCII** characters (A-Z, 0-9, hyphens), Punycode allows domains with non-ASCII characters (e.g., Cyrillic, Chinese) to work.  
 
 #### **Example:**  
 - **Unicode Domain:** `россия.рф` (Russian)  
@@ -363,12 +363,12 @@ Analyzing **past data** (days/weeks/months) to uncover **stealthy, long-term com
 - **Hunt:** Review **all RDP/VPN logs** for unusual access patterns.  
 
 ## **Comparison Table**  
-| **Factor**          | **Point-in-Time** | **Real-Time**       | **Historic**        |  
-|---------------------|------------------|---------------------|---------------------|  
-| **Timeframe**       | Hours/days       | Live                | Days/months         |  
-| **Best For**        | Known threats    | Active attacks      | Stealthy breaches   |  
-| **Data Needed**     | Recent logs      | Live telemetry      | Archived logs       |  
-| **Speed**          | Fast             | Immediate           | Slow                |  
+| **Factor**      | **Point-in-Time** | **Real-Time**  | **Historic**      |
+| --------------- | ----------------- | -------------- | ----------------- |
+| **Timeframe**   | Hours/days        | Live           | Days/months       |
+| **Best For**    | Known threats     | Active attacks | Stealthy breaches |
+| **Data Needed** | Recent logs       | Live telemetry | Archived logs     |
+| **Speed**       | Fast              | Immediate      | Slow              |
 
 ---
 
@@ -647,12 +647,12 @@ Microsoft ATA (now integrated into **Microsoft Defender for Identity**) is an **
 ---
 
 ### **Comparison: Defender ATP vs. ATA**  
-| **Feature**               | **Microsoft Defender for Endpoint (ATP)** | **Microsoft Defender for Identity (ATA)** |  
-|---------------------------|------------------------------------------|------------------------------------------|  
-| **Scope**                 | Endpoints (Windows, macOS, Linux)        | Active Directory / Identity              |  
-| **Deployment**            | Cloud-based (with on-prem options)       | On-premises (now cloud-integrated)       |  
-| **Primary Use Case**      | Malware, ransomware, zero-days          | AD attacks (Kerberos, NTLM exploits)     |  
-| **Detection Focus**       | Process behavior, fileless malware       | Lateral movement, credential theft       |  
+| **Feature**          | **Microsoft Defender for Endpoint (ATP)** | **Microsoft Defender for Identity (ATA)** |
+| -------------------- | ----------------------------------------- | ----------------------------------------- |
+| **Scope**            | Endpoints (Windows, macOS, Linux)         | Active Directory / Identity               |
+| **Deployment**       | Cloud-based (with on-prem options)        | On-premises (now cloud-integrated)        |
+| **Primary Use Case** | Malware, ransomware, zero-days            | AD attacks (Kerberos, NTLM exploits)      |
+| **Detection Focus**  | Process behavior, fileless malware        | Lateral movement, credential theft        |
 
 ---
 
@@ -685,10 +685,10 @@ Set-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows\PowerShell\Tra
 ✔ Timestamp.  
 
 ### **Pros & Cons:**  
-| ✅ **Pros** | ❌ **Cons** |  
-|------------|------------|  
-| Helps in **incident response** | Does **not block** malicious scripts |  
-| Detects **living-off-the-land (LOLBAS)** attacks | Logs can be **deleted by attackers** |  
+| ✅ **Pros**                                       | ❌ **Cons**                           |
+| ------------------------------------------------ | ------------------------------------ |
+| Helps in **incident response**                   | Does **not block** malicious scripts |
+| Detects **living-off-the-land (LOLBAS)** attacks | Logs can be **deleted by attackers** |
 
 
 ## **2. Constrained Language Mode**  
@@ -774,10 +774,10 @@ PowerShell is widely used by attackers, making it critical for defenders to have
 - After detecting a breach, quickly gather **process, network, and log data** from multiple hosts.  
 
 ### **Pros & Cons:**  
-| ✅ **Pros** | ❌ **Cons** |  
-|------------|------------|  
-| **Fast, lightweight data collection** | **No built-in analysis** (just collects data) |  
-| **Open-source & customizable** | Requires **PowerShell remoting (WinRM)** |  
+| ✅ **Pros**                            | ❌ **Cons**                                    |
+| ------------------------------------- | --------------------------------------------- |
+| **Fast, lightweight data collection** | **No built-in analysis** (just collects data) |
+| **Open-source & customizable**        | Requires **PowerShell remoting (WinRM)**      |
 
 ---
 

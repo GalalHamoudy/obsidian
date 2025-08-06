@@ -5,11 +5,11 @@
 - Presentation: The process by which the examiner shares the results of this analysis.
 ---
 
-Steganography is the art and science of embedding secret messages in a cover message in such a way that no one, apart from the sender and intended recipient, suspects the existence of the message.
+**Steganography** is the art and science of embedding secret messages in a cover message in such a way that no one, apart from the sender and intended recipient, suspects the existence of the message.
 
-KAPE (Kroll Artifact Parser and Extractor) is a digital forensics and incident response (DFIR) tool designed to quickly collect and process forensic artifacts from Windows systems.
+**KAPE** (Kroll Artifact Parser and Extractor) is a digital forensics and incident response (DFIR) tool designed to quickly collect and process forensic artifacts from Windows systems.
 
-Guymager is an open-source forensic imaging tool designed for creating and verifying disk images. It is known for its speed, efficiency, and ease of use, making it a popular choice among digital forensic professionals.
+**Guymager** is an open-source forensic imaging tool designed for creating and verifying disk images. It is known for its speed, efficiency, and ease of use, making it a popular choice among digital forensic professionals.
 
 ---
 ### Security identifier (SID)
@@ -35,13 +35,13 @@ Guymager is an open-source forensic imaging tool designed for creating and verif
 **SleuthKit (TSK)** and **Autopsy** are both digital forensics tools used for analyzing disk images and file systems, but they have some key differences in terms of functionality, usability, and use cases. Below is a comparison of the two:
 
 ### **1. Overview**
-| Feature       | **SleuthKit (TSK)** | **Autopsy** |
-|--------------|------------------|-----------|
-| **Type** | Command-line tool | GUI-based tool (built on SleuthKit) |
-| **Primary Use** | Low-level disk analysis, file system forensics | User-friendly digital forensics case management |
-| **Extensibility** | Limited to command-line operations | Supports plugins and modules for added functionality |
-| **Automation** | Better for scripting and automation | Manual analysis with some automation features |
-| **Platform Support** | Windows, Linux, macOS | Windows, Linux, macOS |
+| Feature              | **SleuthKit (TSK)**                            | **Autopsy**                                          |
+| -------------------- | ---------------------------------------------- | ---------------------------------------------------- |
+| **Type**             | Command-line tool                              | GUI-based tool (built on SleuthKit)                  |
+| **Primary Use**      | Low-level disk analysis, file system forensics | User-friendly digital forensics case management      |
+| **Extensibility**    | Limited to command-line operations             | Supports plugins and modules for added functionality |
+| **Automation**       | Better for scripting and automation            | Manual analysis with some automation features        |
+| **Platform Support** | Windows, Linux, macOS                          | Windows, Linux, macOS                                |
 
 ### **2. Features Comparison**
 | Feature | **SleuthKit (TSK)** | **Autopsy** |

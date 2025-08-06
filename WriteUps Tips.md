@@ -44,7 +44,6 @@ I use this site to search for information about phone numbers. [Phone number](h
 I checked the URLs of the site on the wayback URL.
 kail>waybackurls hi.org >wayback.txt
 
-
 [ Note ! ] =========================================
 By using **[ViperMonkey](https://github.com/decalage2/ViperMonkey)** I was able to extract the VBA macros
 ViperMonkey is a VBA Emulation engine written in Python, designed to analyze and deobfuscate malicious VBA Macros contained in Microsoft Office files (Word, Excel, PowerPoint, Publisher, etc).

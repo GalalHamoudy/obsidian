@@ -160,8 +160,8 @@ application level ( app logs )
 #### **1. System Information**  
 ```cmd
 wmic computersystem list brief   # OS, manufacturer, model  
-wmic os get name,version        # OS details  
-wmic bios get serialnumber      # BIOS serial (useful for asset tracking)  
+wmic os get name,version         # OS details  
+wmic bios get serialnumber       # BIOS serial (useful for asset tracking)  
 ```
 
 #### **2. Process Management (Malware Hunting)**  
@@ -328,7 +328,7 @@ C:\Users\system>wevtutil qe security
 
 # For Linux (useful investigation software)
 
-### chkrootkit
+### [chkrootkit](https://www.kali.org/tools/chkrootkit/)
 
 The chkrootkit security scanner searches for signs that the system is infected with a ‘rootkit’. Rootkits are a form of malware that seek to exploit security flaws to grant unauthorised access to a computer or its services, generally for malicious purposes.
 
@@ -336,7 +336,7 @@ chkrootkit can identify signs of over 70 different rootkits (see the project’s
 
 Please note that an automated tool like chkrootkit can never guarantee a system is uncompromised. Nor does every report always signify a genuine problem: human judgement and further investigation will always be needed to assure the security of your system.
 
-### Tripwire & AIDE: File Integrity Monitoring (FIM) Tools
+### [Tripwire](https://github.com/Tripwire/tripwire-open-source) & [AIDE](https://aide.github.io/): File Integrity Monitoring (FIM) Tools
 
 #### **1. Tripwire**
 - **Purpose**: Monitors file/system changes to detect unauthorized modifications (malware, breaches, misconfigurations).
@@ -364,18 +364,18 @@ Please note that an automated tool like chkrootkit can never guarantee a system 
     - 
 ### **Comparison: Tripwire vs. AIDE**
 
-|**Feature**|**Tripwire**|**AIDE**|
-|---|---|---|
-|**License**|Commercial (Open Source version exists)|Open-Source (GPL)|
-|**OS Support**|Linux, Windows, macOS|Linux/UNIX only|
-|**Configuration**|Complex policy files|Simpler config (`/etc/aide.conf`)|
-|**Integration**|SIEM, enterprise tools|Manual log parsing|
+| **Feature**       | **Tripwire**                            | **AIDE**                          |
+| ----------------- | --------------------------------------- | --------------------------------- |
+| **License**       | Commercial (Open Source version exists) | Open-Source (GPL)                 |
+| **OS Support**    | Linux, Windows, macOS                   | Linux/UNIX only                   |
+| **Configuration** | Complex policy files                    | Simpler config (`/etc/aide.conf`) |
+| **Integration**   | SIEM, enterprise tools                  | Manual log parsing                |
 
 ---
 
 ### **GRR (Google Rapid Response) - Incident Response Framework**  
 
-**GRR** is an **open-source remote live forensics and incident response tool** developed by Google. It enables security teams to **remotely investigate endpoints** (Windows, macOS, Linux) at scale, collect forensic artifacts, and analyze compromised systems without physical access.  
+**[GRR](https://www.grr-response.com/)** is an **open-source remote live forensics and incident response tool** developed by Google. It enables security teams to **remotely investigate endpoints** (Windows, macOS, Linux) at scale, collect forensic artifacts, and analyze compromised systems without physical access.  
 
 ## **Key Features of GRR**  
 
@@ -1320,5 +1320,3 @@ The location where credentials are stored depends on the operating system and th
 - **T1106** (Execution via API)  
 
 **Conclusion:** Event ID 1 is a goldmine for detecting malicious activity. SOC analysts should **filter for anomalies** in `Image`, `CommandLine`, and `ParentProcess` fields to uncover threats.
-
-Would you like a sample query (Splunk, KQL, Sigma) for hunting? 🚠️

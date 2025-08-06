@@ -3,6 +3,8 @@
 2. https://nixhacker.com/malware-analysis-interview-questions-2/
 3. https://nixhacker.com/malware-analysis-interview-questions-3/
 4. https://nixhacker.com/malware-analysis-interview-questions-4/
+5. https://www.multisoftsystems.com/interview-questions/certified-threat-intelligence-analyst-interview-questions-answers
+6. 
 
 
 ## Q & A
@@ -113,14 +115,14 @@ A security baseline defines the **minimum security standards** and **configurati
 	- Often **cloud-based (SaaS)** for real-time updates.
 	- Needs **security team expertise** for full effectiveness.
 
-[Q14] - Can you walk me through the threat intelligence analysis process?
+[Q14] - **Can you walk me through the threat intelligence analysis process?**
 1. **Collect Data:** This is the first step in any threat intelligence analysis process. I need to collect data from various sources such as open-source intelligence, threat intelligence feeds, and reports. This data should be relevant to the organization's environment and business operations.
 2. **Analyze data:** With the data collected, I will analyze it to identify potential threats. I will use various tools and techniques to identify patterns, anomalies, and suspicious activities. This includes the use of data visualization tools that can help in pattern recognition.
 3. **Classification:** After analyzing the data, I will classify the threats into different categories to **prioritize** them. This classification may be based on the probability and impact of the threat on the organization's operations, assets, and reputation.
 4. **Validation:** Before reporting the threats to the organization or management, I will **validate the accuracy**, reliability, and credibility of the information collected. This may involve verifying the source of the data and cross-checking it with other sources.
 5. **Reporting and Recommendations:** Finally, I will prepare a detailed report that summarizes the findings of my analysis and provides recommendations on how to mitigate or eliminate the identified threats. This report may include technical details, such as indicators of compromise or attack signatures, and non-technical information, such as business impacts and financial losses.
 
-[Q15] - How do you prioritize threats based on potential impact?
+[Q15] - **How do you prioritize threats based on potential impact?**
 - Gathering information about the threat
 - Assessing the **likelihood of an attack**
 - Determining the **potential impact of threat**
@@ -195,7 +197,7 @@ Data carving is different than data mining in that data carving searches **throu
 - Application
 - System
 
-[Q27] - Compare between Normal URLs (Surface Web), v2 Onion, and v3 Onion addresses
+[Q27] - **Compare between Normal URLs (Surface Web), v2 Onion, and v3 Onion addresses**
 
 |Feature|**Normal Web URL** (e.g., `google.com`)|**v2 Onion Address** (e.g., `facebookcorewwwi.onion`)|**v3 Onion Address** (e.g., `facebookwkhpilnemxj7...onion`)|
 |---|---|---|---|
@@ -352,7 +354,7 @@ These **email authentication protocols** prevent spoofing/phishing by verifyin
 3. **DMARC Action**: If both fail, reject/quarantine the email.
 
 
-[Q38] - Important Windows Events Every SOC Analyst Should Know
+[Q38] - **Important Windows Events Every SOC Analyst Should Know**
 
 - **100**: Scheduled task started
 - **104**: System, Security, and Application log file cleared
@@ -542,7 +544,13 @@ The **Unified Kill Chain (UKC)** is a cybersecurity framework that combines and 
 
 [Q48] - What do you have in your home network?
 
-I set up a very strong user name and password for my router and Wi-Fi, its broadcasting feature is disabled. I set up MAC address filtering on the router and I use WPA2 (Wi-Fi protected access 2) security encryption technology. It encrypts the traffic on wi-fi networks. I disabled the remote access feature. I use a firewall and configure its security measures and it is always on.
+I set up a very strong user name and password for my router and Wi-Fi, 
+its broadcasting feature is disabled. 
+I set up MAC address filtering on the router 
+I use WPA2 (Wi-Fi protected access 2) security encryption technology. 
+It encrypts the traffic on wi-fi networks. 
+I disabled the remote access feature. 
+I use a firewall and configure its security measures and it is always on.
 
 
 [Q49] - How **Pass the Hash** Works
@@ -617,7 +625,7 @@ This attack takes advantage of the compatibility between NTLM and Kerberos authe
 1. can be found in the Windows registry or in specific file system locations under `%WINDIR%\\System32\\config\\`
 2. It holds information regarding applications installed on the machine, tracking their installation and execution details. This can include versioning, patching, and metadata about software components that have been installed.
 
-[Q55] - common data exfiltration techniques :
+[Q55] - **common data exfiltration techniques **
 
 - DNS Tunneling – Data hidden in DNS queries.
 - **HTTPS** Exfiltration – Data smuggled through encrypted web traffic.
@@ -636,7 +644,7 @@ that tracks memory sections allocated to each process, including heap, stack, an
 Analyzing the VAD tree helps in identifying hidden memory regions and injecting code in forensic investigations.
 
 
-[Q57] - why Image Base Usually 0x00400000
+[Q57] - **why Image Base Usually 0x00400000**
 
 - When **32-bit Windows (Win32)** was introduced with Windows NT, the address space expanded to **4GB** (`0x00000000` to `0xFFFFFFFF`).
 - **`0x00400000` (4MB)** was chosen as the default base address to:
@@ -645,3 +653,85 @@ Analyzing the VAD tree helps in identifying hidden memory regions and injecting 
 - **System DLLs** (like `kernel32.dll`, `user32.dll`) traditionally loaded at **higher addresses** (e.g., `0x7xxxxxxx`).
 - Keeping EXEs at `0x00400000` reduced the chance of **address space collisions** with DLLs.
 - **64-bit executables** often use `0x0000000140000000` as the default (due to larger address space).
+
+
+
+[Q58] -  what is the contain of Shim Cache and AMCache
+
+Both Shim Cache (Application Compatibility Cache) and AMCache (AMCache.hve) are Windows artifacts that store information about executed applications. They are used for compatibility purposes but are also valuable in digital forensics for identifying program execution history.
+
+1. **Shim Cache (Application Compatibility Cache)**
+**Location:**  
+Registry: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\AppCompatCache  
+File: %SystemRoot%\AppCompat\Programs\Amcache.hve (in newer Windows versions)  
+
+**Contents of Shim Cache** :
+File path (full path of the executable)  
+Last modification time (when the file was last modified)  
+File size  
+Last execution time (in some Windows versions)  
+Flag values (indicates whether the file was executed)  
+
+**Forensic Significance:**  
+Helps determine if a program was executed, even if the file was deleted.  
+Useful for detecting malware execution or identifying user activity.  
+
+**Windows Version Differences:**  
+Windows XP/2003: Limited entries, no execution timestamps.  
+Windows 7/8/10/11: More detailed, may include execution time.  
+
+
+2. **AMCache (AMCache.hve)**  
+Location:  
+C:\Windows\AppCompat\Programs\Amcache.hve (Windows 8/10/11)  
+
+**Contents of AMCache :**  
+Executable file names & paths  
+SHA-1 hashes of executables (useful for identifying known malware)  
+Program installation & execution timestamps  
+File creation/modification times  
+Publisher information (e.g., Microsoft, Adobe)  
+Volume information (if the file was run from USB/external drives)  
+
+Forensic Significance:  
+More detailed than Shim Cache, providing SHA-1 hashes for file validation.  
+Tracks both executed and installed applications.  
+Can reveal evidence of program execution even after deletion.  
+
+Key Differences Between Shim Cache and AMCache  
+
+| Feature          | Shim Cache | AMCache |
+|-----------------|-----------|---------|
+| **Storage**    | Registry  | Hive file (AMCache.hve) |
+| **SHA-1 Hashes** | No | Yes |
+| **Execution Time** | Sometimes | Yes |
+| **USB/External Drive Tracking** | Limited | Yes |
+| **Windows Versions** | XP+ | Windows 8+ |
+
+Forensic Use Cases  
+Malware Detection: Identify suspicious executables.  
+Program Execution Analysis: Determine if a file was run.  
+Incident Response: Track lateral movement via USB drives.  
+
+Both artifacts are critical in forensic investigations, with AMCache providing richer data in modern Windows systems.  
+
+
+[Q59] -  comparison table between Suricata and Snort:
+
+| **Feature**               | **Suricata**                          | **Snort**                          |
+|---------------------------|---------------------------------------|------------------------------------|
+| **Type**                  | IDS/IPS, Network Security Monitoring (NSM) | Primarily IDS, with limited IPS capabilities |
+| **Performance**           | Multi-threaded (better for high-speed networks) | Single-threaded (can struggle with high traffic) |
+| **Protocol Support**      | More extensive (e.g., HTTP, TLS, DNS, etc.) | Focuses on basic protocols |
+| **Rule Language**         | Supports Snort rules + extended Suricata rules | Uses Snort rule syntax |
+| **Logging & Output**      | JSON, EVE (Elasticsearch-friendly), Syslog | Mostly plaintext, unified2 binary format |
+| **File Extraction**       | Yes (built-in file carving)           | No (requires additional tools) |
+| **TLS/SSL Decryption**    | Yes (with proper key setup)           | Limited (requires pre-processing) |
+| **Community & Support**   | Growing, backed by OISF (Open Information Security Foundation) | Mature, large community, backed by Cisco (formerly) |
+| **Hardware Requirements** | Higher (due to multi-threading)       | Lower (single-threaded efficiency) |
+| **Use Case**              | Modern high-speed networks, full packet capture | Legacy systems, basic IDS needs |
+
+Key Takeaways:
+Choose Suricata if you need multi-threading, modern protocol analysis, and better performance in high-traffic environments.  
+Choose Snort if you need a lightweight, well-established IDS with a large rule database.  
+

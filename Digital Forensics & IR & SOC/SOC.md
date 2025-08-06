@@ -272,6 +272,8 @@ alert http $HOME_NET any -> $EXTERNAL_NET any (
 
 ---
 
+# source types (log types)
+
 When working with **SIEM (Security Information and Event Management) solutions**, the most important **source types (log types)** to monitor depend on your organization's infrastructure and security priorities. However, here are the **most critical log sources** you should focus on in a SOC environment :
 
 ### **1. Endpoint Logs**  

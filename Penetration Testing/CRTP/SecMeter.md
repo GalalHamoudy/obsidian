@@ -12,6 +12,22 @@ ctrl + L > clean
 
 [-] put your tools in `/var/www/html` and run `service apache2 start` 
 
+[-] after download PowerUp.ps1 we run Invoke-AllChecks 
+
+[-] cmd> `sc qc "service name"` toget info about this service
+[-] cmd> `icacls "path"`  to view the privilages
+[-] we use msfvenom tool in kali to create shell
+[-] if we are in anonymous network , we use nmap to scan network and use enum4linux to enumerate the network
+[-] we can add the domain name and ip in /etc/hosts
+
+[-] https://github.com/ropnop/kerbrute
+A tool to quickly bruteforce and enumerate valid Active Directory accounts through Kerberos Pre-Authentication
+
+[-] we use GetNPUsers.py from impacket to enumerate users and their As RES
+[-] we use "evil-winrm" tool to login using lm hash
+[-] we use smbexec.py from impacket
+[-] we use ntdustil to obtaining access to back-up 
+
 ---
 
 ### Domain Enumeration
