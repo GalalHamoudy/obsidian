@@ -4,7 +4,9 @@
 3. https://nixhacker.com/malware-analysis-interview-questions-3/
 4. https://nixhacker.com/malware-analysis-interview-questions-4/
 5. https://www.multisoftsystems.com/interview-questions/certified-threat-intelligence-analyst-interview-questions-answers
-6. 
+6. https://hellointern.in/blog/top-interview-questions-and-answers-for-cyber-threat-intelligence
+7. https://www.crowdstrike.com/en-us/cybersecurity-101/threat-intelligence/
+8. https://www.crowdstrike.com/en-us/cybersecurity-101/
 
 
 ## Q & A

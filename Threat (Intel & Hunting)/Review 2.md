@@ -348,4 +348,72 @@ Keep the threat landscape updated.
 
 This structured approach ensures **Company X** gets a **comprehensive, actionable threat intelligence report** tailored to its risk exposure.  
 
-Would you like a sample report template or deeper dive into any step? 🚀**
+
+
+####  Do you have any experience developing threat models for organizations?
+
+Threat modeling is an essential part of a threat intelligence analyst’s job. It involves understanding the potential threats an organization might face, and then developing strategies to mitigate those risks. It’s important for potential hires to have a good understanding of the process
+
+
+---
+
+**Q:** _How would you assess the quality of a threat intelligence feed before integrating it into your SIEM/SOC?_
+**A:**
+- **Relevance:** Does it align with our industry (e.g., financial sector vs. healthcare)?
+- **False Positive Rate:** Test a sample of IOCs in a sandbox to see if they trigger malicious activity.
+- **Timeliness:** Are indicators stale (e.g., domains registered years ago with no recent activity)?
+- **Context:** Does it include TTPs, actor attribution, or just raw IOCs?
+- **Operational Impact:** Will it overwhelm analysts with noise? (Example: A feed with 10,000 IPs but only 5% malicious is low-value.)
+
+
+**Q:** _How would you differentiate between a state-sponsored attack and a cybercriminal operation based on incident artifacts?_
+**A:**
+- **Tradecraft:** State-sponsored actors use custom malware (e.g., APT29’s “WellMess”), while cybercriminals rely on commodity malware (e.g., Emotet, TrickBot).
+- **Targeting:** APTs focus on long-term espionage (lateral movement, data exfiltration), while criminals go for quick financial gain (ransomware, credential theft).
+- **Infrastructure:** APTs use bulletproof hosting or compromised legitimate domains; criminals favor disposable domains.
+- **Persistence:** APTs invest in stealthy backdoors (e.g., webshells), while criminals may rely on scheduled tasks.
+- **Intel Sources:** Check reports from Mandiant, CrowdStrike, or government advisories (CISA, NCSC) for overlaps.
+
+
+**Q:** _You discover two malware campaigns using similar C2 infrastructure. How would you determine if they’re from the same threat actor or a false flag?
+**A:**
+- **Code Analysis:**
+    - Compare **code signing certificates**, obfuscation methods, or API hashing.
+- **Infrastructure Overlap:**
+    - Check **shared IPs, registrant emails**, or TLS certificate issuers.
+- **Victimology:**
+    - Same industries? Geographic focus?
+- **TTPs:**
+    - Do both use **Cobalt Strike with similar sleep timers**?
+    - Differences in **lateral movement** (WMI vs. PsExec)?
+- **Attribution Warnings:**
+    - **False flags** may mimic known groups (e.g., Chinese APTs using Russian malware).
+
+
+
+**Q:** _How would you integrate OSINT, HUMINT, and SIGINT to profile a threat actor?_
+**A:**
+- **OSINT:**
+    - **Dark web forums** (RaidsForums, XSS) for chatter.
+    - **GitHub leaks** (malware source code, configs).
+- **HUMINT:**
+    - **Law enforcement liaisons** for insider info (e.g., arrested affiliates).
+    - **Trusted industry sharing** (ISACs, closed Telegram groups).
+- **SIGINT:**
+    - **Intercepted C2 traffic** (if legally obtainable).
+    - **SSL certificate patterns** (e.g., APT29’s use of Let’s Encrypt).
+- **Correlation:**
+    - Combine **forum aliases** with malware hashes.
+    - Cross-check **Bitcoin wallets** from ransom payments with blockchain analysis.
+
+
+
+
+
+
+
+
+
+
+
+
