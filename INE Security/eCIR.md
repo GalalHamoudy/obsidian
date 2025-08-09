@@ -1133,8 +1133,6 @@ curl --data-binary @payload.bin http://vuln-app/deserialize
 - **NetNTLM** and **Heartbleed** exploit protocol weaknesses.  
 - **DNS amplification** is a network-layer DDoS tactic.  
 
-Would you like a hands-on lab for any of these attacks?
-
 
 ---
 

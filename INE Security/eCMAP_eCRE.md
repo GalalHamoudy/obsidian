@@ -79,7 +79,7 @@ In the **PE (Portable Executable)** file format, the **Sections** contain the ac
 ### **3. `.rdata` (Read-Only Data)**
 - Contains **read-only data**, such as:
   - String literals (`"Hello, World!"`).
-  - Constants (`const int y = 10;`).
+  - ==Constants (`const int y = 10;`).==
   - Import/export directory tables (in some cases).
 - Marked as **read-only** (R).
 
@@ -87,7 +87,7 @@ In the **PE (Portable Executable)** file format, the **Sections** contain the ac
 
 ### **4. `.idata` (Import Directory)**
 - Stores **imported functions** (DLL dependencies).
-- Contains **Import Address Table (IAT)** and **Import Name Table (INT)**.
+- ==Contains **Import Address Table (IAT)** and **Import Name Table (INT)**.==
 - Used by the loader to resolve external function calls.
 - Sometimes merged with `.rdata`.
 
@@ -168,10 +168,3 @@ SCAS,CMPS,LOOP use ZF flag
 2- control flag DF
  \= 1 the string instructions auto decrement  (0 by std )
  \= 0 the string instructions auto increment (0 by cld )
-
----
-injection techniques :
-- Image file execution options (IFEO)
-- APC injection and AtomBombing
-- Extra Window Memory Injection (EWMI)
-- API hooking

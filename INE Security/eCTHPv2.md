@@ -1193,7 +1193,7 @@ ADS is a **favorite hiding technique** for malware due to its stealth.
   ```  
   Then execute:  
   ```powershell
-  powershell -c Get-Content .\cleanfile.txt:evil.ps1 \| Invoke-Expression
+  powershell -c Get-Content .\cleanfile.txt:evil.ps1 | Invoke-Expression
   ```
 
 ### **3. Persistence Mechanisms**  
