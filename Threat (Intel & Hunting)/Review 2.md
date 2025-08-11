@@ -97,8 +97,6 @@ A well-rounded threat intelligence program leverages a mix of OSINT tools, comme
 
 ---
 
-Here’s a structured Q&A format for your questions:  
-
 ---  
 
 ### **1. Can you explain the key stages of the cyber threat intelligence lifecycle and how you would implement it in your role?**  
@@ -217,7 +215,7 @@ Example: Conducted a tabletop exercise with IR to test response to a supply chai
 
 ---  
 
-Creating a **Threat Intelligence Landscape Report** for **Company X** involves a structured approach to identify, analyze, and mitigate potential cyber threats. Below is a **detailed, technical step-by-step guide**, including the tools and methodologies used at each stage.
+# Creating a **Threat Intelligence Landscape Report** for **Company X** involves a structured approach to identify, analyze, and mitigate potential cyber threats. Below is a **detailed, technical step-by-step guide**, including the tools and methodologies used at each stage.
 
 ---
 

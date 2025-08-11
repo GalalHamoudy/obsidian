@@ -5,8 +5,7 @@
 4. https://nixhacker.com/malware-analysis-interview-questions-4/
 5. https://www.multisoftsystems.com/interview-questions/certified-threat-intelligence-analyst-interview-questions-answers
 6. https://hellointern.in/blog/top-interview-questions-and-answers-for-cyber-threat-intelligence
-7. https://www.crowdstrike.com/en-us/cybersecurity-101/threat-intelligence/
-8. https://www.crowdstrike.com/en-us/cybersecurity-101/
+7. https://www.crowdstrike.com/en-us/cybersecurity-101/
 
 
 ## Q & A
@@ -45,11 +44,11 @@ There are 3 types of XSS. These are:
 SSL and TLS are **cryptographic protocols** that provide secure communication over a network (e.g., the internet). They ensure that data transmitted between a client (like your browser) and a server (like a website) is **encrypted, authenticated, and tamper-proof**.
 
 SSL → 
-Supports weak algorithms (RC4, MD5)
+Supports weak algorithms (==RC4, MD5==)
 Slow and Mostly deprecated
 
 TLS → 
-Uses stronger algorithms (AES, SHA-256)
+Uses stronger algorithms (==AES, SHA-256==)
 Fast and Modern standard (required for PCI compliance)
 
 [Q6] - How would you handle network security in a company that allows employees to bring their own devices?
@@ -720,20 +719,27 @@ Both artifacts are critical in forensic investigations, with AMCache providing r
 
 [Q59] -  comparison table between Suricata and Snort:
 
-| **Feature**               | **Suricata**                          | **Snort**                          |
-|---------------------------|---------------------------------------|------------------------------------|
-| **Type**                  | IDS/IPS, Network Security Monitoring (NSM) | Primarily IDS, with limited IPS capabilities |
-| **Performance**           | Multi-threaded (better for high-speed networks) | Single-threaded (can struggle with high traffic) |
-| **Protocol Support**      | More extensive (e.g., HTTP, TLS, DNS, etc.) | Focuses on basic protocols |
-| **Rule Language**         | Supports Snort rules + extended Suricata rules | Uses Snort rule syntax |
-| **Logging & Output**      | JSON, EVE (Elasticsearch-friendly), Syslog | Mostly plaintext, unified2 binary format |
-| **File Extraction**       | Yes (built-in file carving)           | No (requires additional tools) |
-| **TLS/SSL Decryption**    | Yes (with proper key setup)           | Limited (requires pre-processing) |
+| **Feature**               | **Suricata**                                                   | **Snort**                                           |
+| ------------------------- | -------------------------------------------------------------- | --------------------------------------------------- |
+| **Type**                  | IDS/IPS, Network Security Monitoring (NSM)                     | Primarily IDS, with limited IPS capabilities        |
+| **Performance**           | Multi-threaded (better for high-speed networks)                | Single-threaded (can struggle with high traffic)    |
+| **Protocol Support**      | More extensive (e.g., HTTP, TLS, DNS, etc.)                    | Focuses on basic protocols                          |
+| **Rule Language**         | **Supports Snort rules** + extended Suricata rules             | Uses Snort rule syntax                              |
+| **Logging & Output**      | JSON, EVE (Elasticsearch-friendly), Syslog                     | Mostly plaintext, unified2 binary format            |
+| **File Extraction**       | Yes (built-in file carving)                                    | No (requires additional tools)                      |
+| **TLS/SSL Decryption**    | Yes (with proper key setup)                                    | Limited (requires pre-processing)                   |
 | **Community & Support**   | Growing, backed by OISF (Open Information Security Foundation) | Mature, large community, backed by Cisco (formerly) |
-| **Hardware Requirements** | Higher (due to multi-threading)       | Lower (single-threaded efficiency) |
-| **Use Case**              | Modern high-speed networks, full packet capture | Legacy systems, basic IDS needs |
+| **Hardware Requirements** | Higher (due to multi-threading)                                | Lower (single-threaded efficiency)                  |
+| **Use Case**              | Modern high-speed networks, full packet capture                | Legacy systems, basic IDS needs                     |
 
 Key Takeaways:
 Choose Suricata if you need multi-threading, modern protocol analysis, and better performance in high-traffic environments.  
 Choose Snort if you need a lightweight, well-established IDS with a large rule database.  
 
+
+[Q60] - **What are the main components of a Cyber Threat Intelligence program?**
+- **Data Collection:** Gathering data from various sources, such as open-source intelligence (OSINT), threat feeds, and internal systems.
+- **Data Analysis:** Processing and analyzing collected data to identify patterns, trends, and potential threats.
+- **Threat Modeling:** Creating profiles of threat actors, their motives, tactics, and techniques.
+- **Threat Reporting:** Communicating threat information to relevant stakeholders in a clear and concise manner.
+- **Threat Response:** Providing guidance and recommendations for mitigating identified threats.

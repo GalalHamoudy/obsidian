@@ -198,7 +198,7 @@ In summary, OPSEC is a vital component of cybersecurity that focuses on protecti
 Tor services :
 Email : ProtonMail & TorBox
 Drop Services : SecureDrop
-ZeroBin  is a minimalist, open source online pastebin where the server has zero knowledge of pasted data. Data is encrypted/decrypted in the browser using 256 bits AES
+ZeroBin is a minimalist, open source online pastebin where the server has zero knowledge of pasted data. Data is encrypted/decrypted in the browser using 256 bits AES
 
 search engine : Ahmia,tor66 and Darksearch (they are not as thorough as a public internet search engine as Google)
 
