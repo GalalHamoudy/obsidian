@@ -26,7 +26,7 @@ https://www.youtube.com/@OpenSecurityTraining/playlists
 https://www.youtube.com/@0x6d696368/playlists
 https://www.youtube.com/@hasherezade/playlists
 https://www.youtube.com/@jstrosch/playlists
-https://www.youtube.com/@MalwareAnalysisForHedgehogs/playlists
+1--- https://www.youtube.com/@MalwareAnalysisForHedgehogs/playlists
 https://www.youtube.com/@OALABS/videos
 
 

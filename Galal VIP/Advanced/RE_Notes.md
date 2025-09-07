@@ -1,0 +1,270 @@
+All injection have the same concept :
+1- need to handle the target process (create or open)
+2- have injected data (code, dll)
+3- transfer data to the target process (map, write)
+4- execution 
+
+---
+We use [Regex 101](https://regex101.com/) to make and test regex 
+
+---
+
+### For XLM Macros
+
+We can use `msoffcrypto-tool -t -v sample1-.bin` to check if the file is encrypted or not and use `msoffcrypto-crack.py sample1-.bin` to decrypt it .
+
+Run `olevba` on the document to extract details about hidden sheets: `olevba sample1-fb5ed444ddc37d748639f624397cff2a.bin > olevba-sample1.txt` To identify hidden sheets, search the output file for references to 'Sheet': `grep -i sheet olevba-sample1.txt`
+
+We use "[https://bazaar.abuse.ch/](https://bazaar.abuse.ch/)" to get more info about malware from IOCs
+
+
+if The document uses reg.exe. What registry key is it checking?
+Using xlmdeobfuscator tool > xlmdeobfuscator -f sample2.bin > we got the path of the key
+
+
+### For MS Office documents Macros
+
+we use  `oledump sample.bin > sample.txt` to see the streams contain macros in this document
+it's important to note that streams with M (uppercase)are used to show macro with a code while m(lowercase) are used to show macro with a user denoted form.
+
+for extracting and analyzing VBA macro source code for MS Office documents. we use `olevba --deobf sample.bin > vba.txt`
+
+ we can see that the largest streams are stream 5, 8 and 34. We can look at their contents using **oledump.py** with the -S option `oledump.py -s 5 -S sample.bin`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------
+---
+
+# **assembly**
+
+The processor supports the following data sizes −
+- Word: a 2-byte data item
+- Doubleword: a 4-byte (32 bit) data item
+- Quadword: an 8-byte (64 bit) data item
+- Paragraph: a 16-byte (128 bit) area
+- Kilobyte: 1024 bytes
+- Megabyte: 1,048,576 bytes
+
+An assembly program can be divided into three sections −
+- The **data** section
+	- This data does not change at runtime.
+- The **bss** section, and
+- The **text** section.
+	- used for keeping the actual code. This section must begin with the declaration **global _start**, which tells the kernel where the program execution begins.
+
+
+The Hello World Program in Assembly :
+
+
+```
+; Hello World in Assembly (Pure System Calls)
+
+section .data
+    msg db 'Hello, World!', 10, 0
+    msg_len equ $ - msg - 1
+
+section .text
+    global _start
+  
+_start:
+    ; write system call
+    mov rax, 1          ; sys_write
+    mov rdi, 1          ; stdout
+    mov rsi, msg        ; message
+    mov rdx, msg_len    ; message length
+    syscall
+
+    ; exit system call
+    mov rax, 60         ; sys_exit
+    mov rdi, 0          ; exit status
+    syscall
+```
+
+or
+
+```  
+section .text
+	global _start ;must be declared for linker (ld) 
+
+_start: ;tells linker entry point 
+	mov edx,len ;message length 
+	mov ecx,msg ;message to write 
+	mov ebx,1 ;file descriptor (stdout) 
+	mov eax,4 ;system call number (sys_write) 
+	int 0x80 ;call kernel 
+
+	mov eax,1 ;system call number (sys_exit) 
+	int 0x80 ;call kernel 
+
+section .data 
+msg db 'Hello, world!', 0xa ;string to be printed 
+len equ $ - msg ;length of the string
+```
+
+
+The two code snippets are both assembly language programs that print "Hello, World!" but they differ in several important ways:
+
+| **Feature**              | **First Code (64-bit)**         | **Second Code (32-bit)**       |
+|---------------------------|---------------------------------|--------------------------------|
+| **Architecture**          | x86-64                          | x86 (32-bit)                   |
+| **Kernel Call Method**    | `syscall`                       | `int 0x80`                     |
+| **System Call Numbers**   | write=1, exit=60                | write=4, exit=1                |
+| **Parameter Registers**   | rdi, rsi, rdx                   | ebx, ecx, edx                  |
+| **Return Register**       | rax                             | eax                            |
+| **String Length Calc**    | `$ - msg - 1` (excludes null)   | `$ - msg` (includes newline)   |
+| **Global Symbol**         | `global_start`                  | `global_start` (but uses `_start`) |
+## Summary:
+The first code is modern 64-bit assembly for Linux, while the second is older 32-bit assembly. The 64-bit version uses different system call numbers, register conventions, and a more efficient method of calling the kernel (`syscall` vs `int 0x80`).
+**these codes are not for Windows.** They are both specifically written for **Linux-based operating systems**.
+
+
+Writing a "Hello, World!" in assembly for Windows is more complex than for Linux because Windows does not encourage direct system calls. Instead, you must use the **Windows API**, which is a set of functions provided by system libraries (DLLs).
+
+Here are simplified versions for both 64-bit and 32-bit Windows that print to the **console/terminal**.
+
+---
+
+### 1. 64-bit Windows (Console Output)
+
+```asm
+; Simple Hello World for Windows x64 Console
+; nasm -f win64 hello64.asm -o hello64.obj
+; link hello64.obj kernel32.lib /subsystem:console /out:hello64.exe
+
+section .data
+    msg     db 'Hello, World!', 13, 10  ; Message with CRLF
+    msg_len equ $ - msg                 ; Calculate length
+
+section .text
+    global main
+    extern GetStdHandle
+    extern WriteConsoleA
+    extern ExitProcess
+
+main:
+    sub     rsp, 40         ; Shadow space + alignment
+    
+    ; Get stdout handle
+    mov     rcx, -11        ; STD_OUTPUT_HANDLE = -11
+    call    GetStdHandle
+    mov     rbx, rax        ; Save handle in rbx
+    
+    ; Write to console
+    mov     rcx, rbx        ; Handle
+    lea     rdx, [msg]      ; Message pointer
+    mov     r8, msg_len     ; Message length
+    mov     r9, 0           ; Bytes written (NULL)
+    push    0               ; Reserve space for bytes written
+    call    WriteConsoleA
+    
+    ; Exit
+    mov     rcx, 0          ; Exit code 0
+    call    ExitProcess
+```
+
+---
+
+### 2. 32-bit Windows (Console Output)
+
+```asm
+; Simple Hello World for Windows x86 Console
+; nasm -f win32 hello32.asm -o hello32.obj
+; link hello32.obj kernel32.lib /subsystem:console /out:hello32.exe
+
+section .data
+    msg     db 'Hello, World!', 13, 10  ; Message with CRLF
+    msg_len equ $ - msg                 ; Calculate length
+
+section .text
+    global _main
+    extern _GetStdHandle@4
+    extern _WriteConsoleA@20
+    extern _ExitProcess@4
+
+_main:
+    ; Get stdout handle
+    push    -11             ; STD_OUTPUT_HANDLE = -11
+    call    _GetStdHandle@4
+    mov     ebx, eax        ; Save handle
+    
+    ; Write to console
+    push    0               ; lpReserved (NULL)
+    push    0               ; lpBytesWritten (NULL)
+    push    msg_len         ; Number of chars to write
+    push    msg             ; Message pointer
+    push    ebx             ; Handle
+    call    _WriteConsoleA@20
+    
+    ; Exit
+    push    0               ; Exit code 0
+    call    _ExitProcess@4
+```
+
+---
+
+## Processor Registers
+
+There are  10 * (32-bit) and 6 * (16-bit) processor registers in IA-32 architecture. The registers are grouped into three categories −
+- **General registers**
+	- Data registers
+		- 4 * (32-bit) data registers are used for arithmetic, logical, and other operations : EAX, EBX, ECX, EDX.
+	- Pointer registers
+		- The pointer registers are 32-bit EIP, ESP, and EBP registers
+	- Index registers.
+- **Control registers**
+	- The 32-bit instruction pointer register and the 32-bit flags register combined are considered as the control registers.
+- **Segment registers.**
+
+
+> - IP in association with the CS register (as CS:IP) gives the complete address of the current instruction in the code segment.
+> - SP in association with the SS register (SS:SP) refers to be current position of data or address within the program stack.
+> - The address in SS register is combined with the offset in BP to get the location of the parameter. BP can also be combined with DI and SI as base register for special addressing.
+> - SI and DI, are used for indexed addressing and sometimes used in addition and subtraction.
+> - There are six registers that store the arguments of the system call used. These are the EBX, ECX, EDX, ESI, EDI, and EBP. These registers take the consecutive arguments, starting with the EBX register. If there are more than six arguments, then the memory location of the first argument is stored in the EBX register.
+
+
+
+You can make use of Linux system calls in your assembly programs. You need to take the following steps for using Linux system calls in your program −
+
+- Put the system call number in the EAX register.
+- Store the arguments to the system call in the registers EBX, ECX, etc.
+- Call the relevant interrupt (80h).
+- The result is usually returned in the EAX register.
+
+
+
+The three basic modes of addressing are −
+
+- Register addressing
+- Immediate addressing
+- Memory addressing
+
+
+> - Each byte of character is stored as its ASCII value in hexadecimal.
+> - Each decimal value is automatically converted to its 16-bit binary equivalent and stored as a hexadecimal number.
+> - Processor uses the little-endian byte ordering.
+> - Negative numbers are converted to its 2's complement representation.
+> - Short and long floating-point numbers are represented using 32 or 64 bits, respectively.
+
