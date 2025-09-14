@@ -34,23 +34,42 @@ for extracting and analyzing VBA macro source code for MS Office documents. we u
 
 
 
+Which API does the malware use to mark its process as critical in order to prevent termination or interference?
+there are the many api for that :
+- `RtlSetProcessIsCritical`
+- `RtlAdjustPrivilege`
+- `NtSetInformationProcess`
+- `ZwSetInformationProcess`
+- `NtRaiseHardError`
 
 
+Here are the API names commonly used by malware to insert keyboard hooks:
+
+- `SetWindowsHookEx`
+- `CallNextHookEx`
+- `GetMessage` / `PeekMessage`
+- `UnhookWindowsHookEx`
+
+For low-level keyboard hooks specifically:
+
+- `SetWindowsHookEx` with `WH_KEYBOARD_LL` or `WH_KEYBOARD` hook type.
 
 
+we can use **PDFID**. Which checks and provides us with all the sections of the PDF file.
+The important things to note from the output are:
+1. **/Encrypt** → Total numbers of objects/sections encrypted.
+2. **/JS** → Total number of section containing the JS code.
+3. **/JavaScript** → Total number of section containing the JS code.
+4. **/OpenAction** → Points to the code which will be run when the PDF will be opened.
+5. **/AA** → This points to the defined additional triggers.
 
 
+We can also read the MetaData of the file by using **PDFMETADATA**
+let’s utilize PeePDF to perform thorough analysis of the PDF file.
+open pdf file with PDFStreamDumper, we will see how many objects contains within this pdf file
 
 
-
-
-
-
-
-
-
-
-
+https://medium.com/@chaoskist/cyberdefenders-write-up-getpdf-9749dddde1da
 
 
 
@@ -267,4 +286,69 @@ The three basic modes of addressing are −
 > - Processor uses the little-endian byte ordering.
 > - Negative numbers are converted to its 2's complement representation.
 > - Short and long floating-point numbers are represented using 32 or 64 bits, respectively.
+
+in ASCII representation −
+
+- **AAA** − ASCII Adjust After Addition
+- **AAS** − ASCII Adjust After Subtraction
+- **AAM** − ASCII Adjust After Multiplication
+- **AAD** − ASCII Adjust Before Division
+
+```
+sub ah, ah 
+mov al, '9' 
+sub al, '3' 
+aas 
+or al, 30h 
+mov [res], ax
+```
+
+There are two types of BCD representation −
+- Unpacked BCD representation
+- Packed BCD representation
+In unpacked BCD representation, each byte stores the binary equivalent of a decimal digit. For example, the number 1234 is stored as −
+`01 02 03 04H `
+
+There are two instructions for processing these numbers −
+
+- **AAM** − ASCII Adjust After Multiplication
+- **AAD** − ASCII Adjust Before Division
+
+The four ASCII adjust instructions, AAA, AAS, AAM, and AAD, can also be used with unpacked BCD representation. In packed BCD representation, each digit is stored using four bits. Two decimal digits are packed into a byte. For example, the number 1234 is stored as −
+
+`12	34H`
+
+There are two instructions for processing these numbers −
+
+- **DAA** − Decimal Adjust After Addition
+- **DAS** − decimal Adjust After Subtraction
+
+There is no support for multiplication and division in packed BCD representation.
+
+
+
+## String Instructions
+
+Each string instruction may require a source operand, a destination operand or both. 
+
+For 32-bit segments, string instructions use ESI and EDI registers to point to the source and destination operands, respectively.
+For 16-bit segments, however, the SI and the DI registers are used to point to the source and destination, respectively.
+
+There are five basic instructions for processing strings. They are −
+
+- **MOVS** − This instruction moves 1 Byte, Word or Doubleword of data from memory location to another.
+- **LODS** − This instruction loads from memory. If the operand is of one byte, it is loaded into the AL register, if the operand is one word, it is loaded into the AX register and a doubleword is loaded into the EAX register.
+- **STOS** − This instruction stores data from register (AL, AX, or EAX) to memory.
+- **CMPS** − This instruction compares two data items in memory. Data could be of a byte size, word or doubleword.
+- **SCAS** − This instruction compares the contents of a register (AL, AX or EAX) with the contents of an item in memory.
+
+These instructions use the ES:DI and DS:SI pair of registers, where DI and SI registers contain valid offset addresses that refers to bytes stored in memory. SI is normally associated with DS (data segment) and DI is always associated with ES (extra segment).
+
+The DS:SI (or ESI) and ES:DI (or EDI) registers point to the source and destination operands, respectively. The source operand is assumed to be at DS:SI (or ESI) and the destination operand at ES:DI (or EDI) in memory.
+
+
+- REP: It is the unconditional repeat. It repeats the operation until CX is zero.
+- REPE or REPZ: It is conditional repeat. It repeats the operation while the zero flag indicates equal/zero. It stops when the ZF indicates not equal/zero or when CX is zero.
+- REPNE or REPNZ: It is also conditional repeat. It repeats the operation while the zero flag indicates not equal/zero. It stops when the ZF indicates equal/zero or when CX is decremented to zero.
+
 

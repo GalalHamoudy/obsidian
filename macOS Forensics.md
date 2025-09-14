@@ -1,4 +1,3 @@
-
 ### system
 macOS utilizes a file system known as **Apple File System (APFS)** 
 
@@ -107,7 +106,6 @@ You can find cache files used by applications and information related to data ut
 `/Users/<UserName>/Library/Containers/<bundle_id>/Cache/*`
 `/Users/<UserName>/Library/Caches/`
 
-  
 
 ## Keyboard Dicts
 
@@ -130,7 +128,6 @@ As with all operating systems, MacOS has a structure that allows certain applica
 
 It is important to distinguish between LaunchAgents and LaunchDaemons. LaunchAgents are "user" processes initiated automatically at startup, whereas LaunchDaemons are "system" processes initiated automatically at startup.
 
-  
 
 ## Saved States
 
