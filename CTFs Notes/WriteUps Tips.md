@@ -20,12 +20,11 @@ We can run the following command to get the SHA256 hash value.
 `CertUtil -hashfile ../file.mem sha256`
 
 [ Note ! ] =========================================
-How long did the suspect use Brave browser?
-This one we use the plugin **windows.registry.userassist**
+
 
 [ Note ! ] =========================================
-I found the following useful site with a filter list for **TLS**.  
-[Wireshark Filter for SSL Traffic](https://davidwzhang.com/2018/03/16/wireshark-filte-for-ssl-traffic/)
+
+
 
 [ Note ! ] =========================================
 We can go to the following website to check the MAC address.  
@@ -34,8 +33,8 @@ By a given MAC address/OUI/IAB, retrieve OUI vendor information, detect virtual 
 
 [ Note ! ] =========================================
 There is a file **contacts3.db**
-The .db file is a sqlite database file.  
-So I opened it up in sqlite3 tool
+The **.db** file is a sqlite database file.  
+So I opened it up in **sqlite3 tool**
 
 [ Note ! ] =========================================
 I use this site to search for information about phone numbers. [Phone number](https://www.ipqualityscore.com/user/search)
@@ -45,21 +44,25 @@ I checked the URLs of the site on the wayback URL.
 kail>waybackurls hi.org >wayback.txt
 
 [ Note ! ] =========================================
-By using **[ViperMonkey](https://github.com/decalage2/ViperMonkey)** I was able to extract the VBA macros
-ViperMonkey is a VBA Emulation engine written in Python, designed to analyze and deobfuscate malicious VBA Macros contained in Microsoft Office files (Word, Excel, PowerPoint, Publisher, etc).
+
+
 
 [ Note ! ] =========================================
 
 There is a Plugin called `editbox` in volatility
-
 This plugin extracts text from the edit, combo, and list boxes of GUI applications that run on Windows.
+
+Run Volatility "mftparser" plugin to analyze for potential MFT entries in memory.
+
+How long did the suspect use Brave browser?
+This one we use the plugin **windows.registry.userassist**
 
 [ Note ! ] =========================================
 
 ```
-grep -Eo "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}" > 4 email address
-grep -Eo "([0-9]{1,3}\\.){3}[0-9]{1,3}" > 4 IP
-grep -Eo "\\b[0-9a-fA-F]{32}\\b" > 4 MD5
+grep -Eo "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"          > 4 email address
+grep -Eo "([0-9]{1,3}\\.){3}[0-9]{1,3}"                             > 4 IP
+grep -Eo "\\b[0-9a-fA-F]{32}\\b"                                    > 4 MD5
 ```
 
 **-E:** Enables extended regular expressions.  
@@ -69,7 +72,6 @@ grep -Eo "\\b[0-9a-fA-F]{32}\\b" > 4 MD5
 [ Note ! ] =========================================
  A PST file is a personal storage table, which is a file format Microsoft programs use to store items like calendar events, contacts, and email messages.
 
-[ Note ! ] =========================================
 `pff-tools` , to extract all the emails, contacts, attachments etc
 https://github.com/avranju/pff-tools
 
@@ -78,7 +80,7 @@ python-[oletools](https://github.com/decalage2/oletools) :
 Tools to analyze malicious documents
 
 [ Note ! ] =========================================
-Run Volatility "mftparser" plugin to analyze for potential MFT entries in memory.
+
 
 [ Note ! ] =========================================
 
@@ -236,7 +238,7 @@ sudo ./swap_digger.sh  /path/to/swapfile
 
 [ Note ! ] =========================================
 
-## Artifact Analysis: Credentials
+## ==Artifact Analysis: Credentials==
 
 #### [**Rekall**](https://github.com/google/rekall)
 
@@ -553,3 +555,52 @@ we’ll use Eric Zimmerman’s **_MFTECmd_** to parse and extract some informat
  Since we are pointing to the \**\$J** (journal) file, we’ll also provide the path to the **$MFT** so we can resolve the parent path as suggested by the help file.
  
 MFTECmd.exe -f "C:\Users\LetsDefend\Desktop\ChallengeFile\C\$Extend\$J" -m "C:\Users\LetsDefend\Desktop\ChallengeFile\C\$MFT" --csv C:\Users\LetsDefend\Desktop\<name-of-output>.csv
+
+
+[ Note ! ] =========================================
+it uses **stack strings** — meaning it stores encrypted strings on the stack and decrypts them dynamically at runtime.
+
+[ Note ! ] =========================================
+
+The number of the sections that contains executable code in the file can be found through using `**readelf**`
+
+readelf -a RotaJakiro.malware | grep "AX"
+
+- `**readelf -a RotaJakiro.malware**`**:  
+    **Displays **all possible information** about the ELF file, including headers, sections, segment tables, etc.
+- `**grep "AX"**`**:  
+    Filters for lines that contain segment flags:
+- `**A**`**:** Allocatable (loaded into memory at runtime)
+- `**X**`**:** Executable (contains instructions that can be run)
+
+[ Note ! ] =========================================
+
+In Linux, the `**readlink**` system call is commonly used by binaries to find their own absolute path by reading a symbolic link to themselves.
+
+By calling `**readlink()**` on this path, the binary retrieves its **absolute location on disk**, which can then be used to:
+
+- Hide itself
+- Copy itself
+- Or delete itself
+
+[ Note ! ] =========================================
+
+1. `**find ~ -type f > before.txt**`
+
+This command searches for all regular files under the current user’s home directory (~) and saves the output into a file called before.txt.
+
+4. `**find ~ -type f > after.txt diff before.txt after.txt**`
+
+`**find ~ -type f > after.txt**` is the same as **step 1**, but run after executing the malware.
+
+`**before.txt after.txt**` compares the list of files before and after the malware ran.
+
+**Purpose:  
+**To detect new files created or dropped by the malware. Any file that appears only in after.txt was likely created by the malware.
+
+
+[ Note ! ] =========================================
+
+`**.bashrc**` **is a hidden script that runs automatically every time you open a terminal. It sets up your shell environment and can run custom commands**.
+
+[ Note ! ] =========================================

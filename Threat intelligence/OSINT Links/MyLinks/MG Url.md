@@ -1,5 +1,4 @@
 ## [1] Social Media
-
 - **[birdhunt.co](https://birdhunt.co/)**  Find Tweets By LocationFind Tweets By Location
 - **[YouTube Geofind](https://mattw.io/youtube-geofind/)**  Created to discover youtube videos based on location and later adapted to search videos by specific channels and topic keywords.
 - [OneMillionTweetMap (Twitter)](https://onemilliontweetmap.com/)
@@ -19,7 +18,6 @@
 - **[dnsdumpster.com](https://dnsdumpster.com/)**  a FREE domain research tool that can discover hosts related to a domain. Finding visible hosts from the attackers perspective is an important part of the security assessment process.
 - **[viewdns.info](https://viewdns.info/)**  get many information from ip or subdomains n and many features.
 - **[archive.org](https://archive.org/)**  Search the history of over 742 billion web pages on the Internet.
-
 
 ## [5] Phishing tools
 - **[canarytokens.org](https://canarytokens.org/generate)**  Canarytokens is a free tool that helps you discover you've been breached by having attackers announce themselves. The tokens allow you to implant traps around your network and notifies you as soon as they are triggered.

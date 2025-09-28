@@ -1,1 +1,0 @@
-use https://phishtool.com/ website to check mails .eml
