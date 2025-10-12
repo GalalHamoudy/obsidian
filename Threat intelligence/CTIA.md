@@ -8,8 +8,8 @@ The threat intelligence process begins at unknown unknowns stage at which we do 
 ### Type of threat intelligence
 
 		    High Level   -  Low Level
-Long term :       Strategic           -  Tactical
-short term :       Operational      - Technical
+Long term :          Strategic               -  Tactical
+short term :         Operational          - Technical
 
 
 ### Example: Ransomware Group Threat Intelligence
@@ -277,6 +277,12 @@ Prioritizing requirements needs a combination of analytical and social skills to
 A detailed and focused requirement analysis must be done to divide or categorize the assets according to their importance.
 
 
+
+**Production requirements** should be complete and consist of information about short-term requirements on top of the priority list.
+
+**Intelligence requirements** generally consist of knowns and unknowns about questions to be answered by the intelligence function to provide knowledge and judgement-based decisions.
+
+**Collection requirements** focus on either external or internal sources Collection requirements focusing on external sources include threat actors, while those focusing on internal sources include information on the attack surfaces of an organization.
 ### MoSCoW Method for Prioritizing Requirements
 
 MoSCoW prioritization or MoSCoW analysis is defined as a prioritization method that assists in prioritizing requirements based on iterative and incremental approaches.
@@ -296,6 +302,9 @@ The word "MoSCoW" is an acronym for:
 Rule of Engagement (ROE) is the formal permission to implement a threat intelligence program.
 ROE provides "top-level" guidance for implementing a threat intelligence program.
 ROE helps the intelligence team to overcome legal, federal, and policy-related restrictions to use different tactics, systems, and personnel.
+
+A **nondisclosure agreement** is a security contract signed between two persons or companies for maintaining secrecy in their mutually shared information.
+
 
 
 
@@ -360,7 +369,7 @@ It is a simple data visualization tool that effectively produces interactive vis
 It offers powerful business intelligence, analytics, and enterprise reporting capabilities with a simple and hassle-free user interface.
 
 
-------------[281]
+------------[921]
 
 # Lab V2
 
