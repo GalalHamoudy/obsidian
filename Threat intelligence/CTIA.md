@@ -1,4 +1,9 @@
-https://quizlet.com/678635732/flashcards [33]
+https://quizlet.com/678635732/flashcards [100]
+https://www.youtube.com/watch?v=mHFvIQmp_C0
+https://www.youtube.com/watch?v=zemNLx0-LRw
+https://www.youtube.com/watch?v=niuf8nGTzBw&pp=ugMICgJhchABGAHKBQ50aGVoaXZlINi02LHYrQ%3D%3D
+
+[1433]
 # Module 1 : introduction to Threat Intelligence
 
 ### STAGES OF CYBER THREAT INTELLIGENCE
@@ -369,7 +374,255 @@ It is a simple data visualization tool that effectively produces interactive vis
 It offers powerful business intelligence, analytics, and enterprise reporting capabilities with a simple and hassle-free user interface.
 
 
-------------[921]
+**External Intelligence Feeds**
+
+Includes information that is acquired from globally available sources
+These sources include:
+- Journals, groups, forums, and blogs
+- Law enforcement feeds
+- Business associations
+- Security researchers
+- Underground forums
+- Hash records
+- GEOIP statistics
+
+**Internal Intelligence Feeds**
+
+Includes information that is acquired from locally available sources and from local infrastructure or system
+These sources include:
+- Fraud analysis
+- Security activity data
+- Mailbox misuse information
+- Human intelligence
+- Vulnerability information
+- Sandbox
+
+**Proactive Surveillance Feeds**
+
+Includes information that is acquired using the real-time assessment of system activities and events
+These sources include:
+- Honeynets
+- Malware forensics
+- Brand monitoring
+- P2P monitoring
+- DNS monitoring
+- Watchlist monitoring
+- Infrastructure and application logs
+
+
+### DNS Lookup
+
+- DNS Records provide important information about adversary, location, and type of servers.
+- Use SuperTool, DNS Lookup, nslookup, etc., to perform DNS lookup on any adversary domain.
+- You can perform reverse DNS lookup on adversary IP range in an attempt to locate a DNS PTR record for those IP addresses.
+- Use the Reverse IP Lookup - DomainTools tool to list out the possible domains that are hosted on the same server.
+- Fast-Flux DNS is a camouflage mechanism used by bots to hide their phishing and malware delivery locations in rapidly changing network of compromised bots.
+- It is a DNS-based proxy redirection technique where a single domain name consists of multiple IP addresses.
+- Analysts must collect the log of all the DNS queries and analyze those logs for any unwanted inbound or outbound DNS queries indicating malicious activity.
+- The IP addresses in certain organization dynamically change, and dynamic DNS (DDNS) is a technique of assigning custom domain names to each dynamically changing IP address.
+- As an analyst, you must collect the details regarding an organization's DDNS and also identify the DDNS service provider and its reliability, since a compromised service provider can cause a severe threat to the organization's infrastructure.
+- If an organization's DNS server allows zone transfers, then any one can obtain DNS server names, hostnames, machine names, user names, IP addresses, aliases, etc., assigned within a domain by using the zone transfer technique, posing a threat to the organization.
+- If DNS transfer setting is enabled on target name server, it will give DNS information or else will return an error saying it has failed or refuses the zone transfer.
+- Analyst should collect the DNS zone transfer setting information from the DNS server in order to predict the possible threats.
+
+
+
+### Tools and frameworks that can be used to improve data quality:
+
+**OSSEM Power-up**
+OSSEM Power-up helps the threat analyst by involving more event types, refining the metadata structure, improving data collection methods, or integrating additional data sources to enhance the effectiveness of security event analysis
+
+**DeTT&CT**
+"Detect, Tactics, Techniques, and Combat Threats" (DeTT&CT) is likely a framework or methodology preferred by an analyst for detecting and responding to threats in a systematic and efficient manner
+
+**Sysmon-Modular**
+Sysmon-Modular helps threat experts by customizing Sysmon logs, creating event filtering rules, and tailoring the tool to the specific needs of an organization's security monitoring strategy 
+
+
+
+
+
+### Types of Data Sampling
+
+**Probability Sampling**
+Sampling is random and findings can be generalized
+
+**Purposive Sampling**
+Specific information is chosen through a transparent selection process
+
+**Convenience Sampling**
+Samples are selected based on availability. This is a quick and easy process but is less credible.
+
+
+
+
+---
+# Module 05 : Data Analysis
+
+### Types of Data Analysis
+
+**Descriptive**
+It involves the analysis of real-time data of current activities. It enables analysts to identify ongoing activities in an organization based on the acquired real-time data. 
+
+**Diagnostic**
+It deals with the analysis of data related to past events. This enables analysts to analyze threats and understand their reasons.
+
+**Predictive**
+It analyzes and predicts future events based on the acquired data, thus enabling analysts to predict upcoming attacks on an organization. It only forecasts the type of analysis that will yield estimate results instead of specified ones.
+
+**Prescriptive**
+It involves the application of advanced analytical techniques to make specific recommendations. This enables analysts to execute responses and develop countermeasures to prevent attacks. It employs sophisticated tools and techniques such as machine learning.
+
+**Qualitative**
+It analyzes the quality of the collected data to define the likelihood of threat occurrence based on nonnumeric techniques. It enables analysts to perform data analysis through brainstorming, interviewing, SWOT analysis, and the Delphi technique. It is beneficial in comparison to traditional quantitative analysis methods and provides insights into the organization.
+
+**Quantitative**
+It analyzes large quantities of collected data using numerical techniques, thus enabling analysts to perform data analysis using numerical calculations, statistical modeling, measurements, and research.
+
+**Exploratory**
+It analyzes the relationships between collected data elements based on assumptions. This enables analysts to identify the links between data and discover threat-related information.
+
+**Confirmatory**
+It analyzes hypotheses with specified precision and confidence to produce precise estimates. This enables analysts to perform data analyses using regression analysis, variance analysis, and other methods.
+
+### Statistical Data Analysis Process:
+1. Data Preparation
+2. Data Classification
+3. Data Validation
+4. Data Correlation
+5. Data Scoring
+
+### Analysis of Competing Hypotheses
+
+Analysis of competing hypotheses (ACH) is an analytic process where multiple hypotheses collected by multiple analysts are competed against each other to extract the best hypotheses.
+It helps analysts to overcome major analytic pitfalls and select appropriate hypothesis for further analysis.
+
+ACH Process :
+1. Hypothesis
+2. Evidence
+3. Diagnostics
+4. Refinement
+5. Inconsistency
+6. Sensitivity
+7. Conclusions and Evaluation
+
+
+Threat intelligence Tools :
+https://otx.alienvault.com/dashboard/new
+https://exchange.xforce.ibmcloud.com/
+https://docs.paloaltonetworks.com/autofocus
+https://www.docguard.io/
+
+Listed below are some additional threat intelligence tools:
+
+AlienVault OTX (https://otx.alienvault.com)
+ThreatConnect (https://www.threatconnect.com)
+Recorded Future Threat Intelligence Platform (https://www.recordedfuture.com)
+FireEye iSIGHT Intelligence (https://www.threatprotectworks.com)
+LogRhythm SIEM (https://logrhythm.com)
+Anomali ThreatStream (https://www.anomali.com)
+NetWitness Platform (https://www.netwitness.com)
+Kibana (https://www.elastic.co)
+stoQ (https://stoq.punchcyber.com)
+MANTIS (http://django-mantis.readthedocs.io)
+Yeti (https://yeti-platform.github.io)
+
+
+
+---
+# Module 06 : Intelligence Reporting and Dissemination
+
+Threat information can be categorized based on a four-layer approach.
+
+Strategic Reports
+Advisories
+Detection Indicators
+Low-Level Data
+
+Organizational Trust Models
+There are five different trust models provided by NIST that can be used by organizations to establish a certain
+level of trust before sharing intelligence.
+
+Validated Trust : Uses body of evidence between organizations
+Direct Historical Trust : Uses the history of organizations
+Mediated Trust : A trusted third party provides assurance
+Mandated Trust : A trusted third party issues a specific mandate
+Hybrid Trust : Combination of some or all trust models
+
+
+Machine-readable threat intelligence (MRTI) is the capability that allows various security controls such as SIEM and IDS/IPS to make operational security decisions based on information about the current threat landscape.
+
+MAEC
+Malware Attribute Enumeration and Characterization (MAEC™) is a community-developed structured language for encoding
+and sharing high-fidelity information about malware based on attributes such as behaviors, artifacts, and relationships
+between malware samples
+
+CAPEC
+Common Attack Pattern Enumeration and Classification (CAPEC™) is a publicly available catalog of common attack patterns
+classified in an intuitive manner, along with a comprehensive schema for describing related attacks and sharing information
+about them
+
+
+Managed Incident Lightweight Exchange (MILE)
+The MILE working group mainly focuses on two areas: data formats and transport protocols to enable the secure exchange of indicator and incident information.
+MILE defines a package of standards for threat intelligence that includes:
+
+Incident Object Description and Exchange Format (IODEF)
+IODEF provides a framework that describes how information can be shared using computer security incident response teams (CSIRTs).
+
+Real-time Inter-network Defense (RID)
+It outlines a proactive inter-network communication method to facilitate the sharing of incident-handling data, while integrating existing detection, tracing, source identification, and mitigation mechanisms for a complete incident-handling solution.
+
+IODEF for Structured Cybersecurity Information (IODEF-SCI)
+It increases machine-readability by equipping the capability of embedding identifiers and XMLs in cybersecurity information such as CVE and OVAL.
+
+Resource-oriented Lightweight Information Exchange (ROLIE)
+ROLIE is a standard designed to facilitate the exchange of CTI information and related data in a lightweight, structured, and resource-oriented manner.
+
+
+Vocabulary for Event Recording and Incident Sharing (VERIS) is a set of metrics designed to provide a common language for describing security incidents in a structured and repeatable manner.
+It is used to collect useful incident-related information and share that information anonymously and responsibly with others.
+
+The Intrusion Detection Message Exchange Format (IDMEF) is a standard data format that can be used by automated intrusion detection systems to report alerts about events deemed suspicious.
+
+It is implemented in the data channel between an intrusion detection analyzer (or "sensor") and the manager (or "console") to which it sends alarms.
+
+
+Anomali STAXX
+Anomali STAXX provides an easy way to subscribe to any STIX/TAXII feed.
+It allows users to use its powerful searching capabilities and access STAXX online portal for advanced investigation features.
+https://www.anomali.com/resources/staxx
+
+
+Listed below are some additional intelligence sharing platforms:
+
+AlienVault OTX (https://otx.alienvault.com)
+IBM X-Force Exchange (https://exchange.xforce.ibmcloud.com)
+ThreatConnect (https://www.threatconnect.com)
+Automated Indicator Sharing (AIS) (https://www.cisa.gov)
+Fidelis Elevate (https://www.fidelissecurity.com)
+AbuselO (https://abuse.io)
+YaraEditor (https://www.adlice.com)
+Yeti (https://yeti-platform.github.io)
+CRITs (https://crits.github.io)
+ThreatExchange (https://developers.facebook.com)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
 
 # Lab V2
 
@@ -395,8 +648,6 @@ https://wiki.itarian.com/frontend/web/topic/how-to-use-unknown-file-hunter
 Tableau is a data visualization tool that helps people see and understand data. It is particularly efficient in handling massive and variable data sets used in big data operations with Al and machine learning. Tableau can connect to a wide variety of data sources, including databases, spreadsheets, and cloud-based applications. It can then be used to create interactive visualizations that can be shared with others.
 https://www.tableau.com/
 
-https://www.youtube.com/watch?v=mHFvIQmp_C0
-https://www.youtube.com/watch?v=zemNLx0-LRw
 
 
 Of course. This is an excellent question at the heart of proactive cybersecurity.
@@ -429,15 +680,15 @@ Most methodologies revolve around answering these four questions, often formaliz
 
 Here are the most widely used and discussed methodologies, compared across key dimensions.
 
-| Methodology | Primary Focus / "Lens" | Core Question | Best For | Pros | Cons |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **STRIDE** | **Attacker's Goals** | "What are the types of bad things that can happen?" | **Software & Application Design.** Microsoft's de facto standard. | - **Intuitive & Comprehensive:** Covers a broad range of threat types. <br>- **Easy to learn and apply.** <br>- Great for developers. | - Can be overly generic. <br>- Doesn't prioritize risks. <br>- Can be time-consuming for large systems. |
-| **DREAD** | **Risk Prioritization** | "How bad would it be if this threat happened?" | **Prioritizing STRIDE threats.** (Often used as a supplement). | - **Provides a quantitative score** for risk. <br>- Helps decide what to fix first. | - **Highly subjective** (scoring depends on the person). <br>- Fell out of favor due to inconsistency. |
-| **PASTA** | **Risk & Business Impact** | "How do attacker techniques align with our business impact?" | **Risk Management & aligning security with business objectives.** | - **Very comprehensive & business-focused.** <br>- Integrates attacker perspective with business impact. <br>- Good for compliance. | - **Heavyweight process.** <br>- Can be complex and time-consuming. <br>- Overkill for simple applications. |
-| **TRIKE** | **Risk Management** | "What is our acceptable level of risk?" | **Organizations with a mature risk management program.** | - Focuses on **"acceptable risk"** from a stakeholder perspective. <br>- Very thorough. | - **Very complex** and has a steep learning curve. <br>- Not as widely adopted as STRIDE or PASTA. |
-| **VAST** | **Scalability & Automation** | "How can we scale threat modeling across the entire organization?" | **Large organizations with DevOps/Agile pipelines.** | - **Designed for scalability.** <br>- Integrates well with DevOps (DevSecOps). <br>- Uses visual models from architecture diagrams. | - Requires specialized tools (like ThreatModeler) for full benefit. <br>- Less focus on deep, manual analysis for a single component. |
-| **Attack Trees** | **Specific Attack Scenarios** | "How exactly could an attacker achieve a specific goal?" | **Analyzing specific, high-value attack vectors.** | - **Very detailed and visual.** <br>- Excellent for understanding complex attack paths. <br>- Good for penetration testing. | - **Narrow focus** (one tree per goal). <br>- Doesn't provide a systematic way to find all threats. |
-| **OCTAVE** | **Operational Risk** | "What are our critical assets and how are they threatened?" | **Organizational risk assessment, not just software.** | - **Organization-centric,** not technology-centric. <br>- Focuses on strategic, practice-related risks. | - Not suitable for software design/development lifecycle. <br>- A large, multi-phase process. |
+| Methodology      | Primary Focus / "Lens"        | Core Question                                                      | Best For                                                          | Pros                                                                                                                                  | Cons                                                                                                                                  |
+| :--------------- | :---------------------------- | :----------------------------------------------------------------- | :---------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------ |
+| **STRIDE**       | **Attacker's Goals**          | "What are the types of bad things that can happen?"                | **Software & Application Design.** Microsoft's de facto standard. | - **Intuitive & Comprehensive:** Covers a broad range of threat types. <br>- **Easy to learn and apply.** <br>- Great for developers. | - Can be overly generic. <br>- Doesn't prioritize risks. <br>- Can be time-consuming for large systems.                               |
+| **DREAD**        | **Risk Prioritization**       | "How bad would it be if this threat happened?"                     | **Prioritizing STRIDE threats.** (Often used as a supplement).    | - **Provides a quantitative score** for risk. <br>- Helps decide what to fix first.                                                   | - **Highly subjective** (scoring depends on the person). <br>- Fell out of favor due to inconsistency.                                |
+| **PASTA**        | **Risk & Business Impact**    | "How do attacker techniques align with our business impact?"       | **Risk Management & aligning security with business objectives.** | - **Very comprehensive & business-focused.** <br>- Integrates attacker perspective with business impact. <br>- Good for compliance.   | - **Heavyweight process.** <br>- Can be complex and time-consuming. <br>- Overkill for simple applications.                           |
+| **TRIKE**        | **Risk Management**           | "What is our acceptable level of risk?"                            | **Organizations with a mature risk management program.**          | - Focuses on **"acceptable risk"** from a stakeholder perspective. <br>- Very thorough.                                               | - **Very complex** and has a steep learning curve. <br>- Not as widely adopted as STRIDE or PASTA.                                    |
+| **VAST**         | **Scalability & Automation**  | "How can we scale threat modeling across the entire organization?" | **Large organizations with DevOps/Agile pipelines.**              | - **Designed for scalability.** <br>- Integrates well with DevOps (DevSecOps). <br>- Uses visual models from architecture diagrams.   | - Requires specialized tools (like ThreatModeler) for full benefit. <br>- Less focus on deep, manual analysis for a single component. |
+| **Attack Trees** | **Specific Attack Scenarios** | "How exactly could an attacker achieve a specific goal?"           | **Analyzing specific, high-value attack vectors.**                | - **Very detailed and visual.** <br>- Excellent for understanding complex attack paths. <br>- Good for penetration testing.           | - **Narrow focus** (one tree per goal). <br>- Doesn't provide a systematic way to find all threats.                                   |
+| **OCTAVE**       | **Operational Risk**          | "What are our critical assets and how are they threatened?"        | **Organizational risk assessment, not just software.**            | - **Organization-centric,** not technology-centric. <br>- Focuses on strategic, practice-related risks.                               | - Not suitable for software design/development lifecycle. <br>- A large, multi-phase process.                                         |
 
 ---
 
@@ -549,12 +800,12 @@ This model relies on a **trusted third party to vouch for an otherwise unknown e
 
 ### Summary Table
 
-| Trust Model | Basis of Trust | Key Question | Example |
-| :--- | :--- | :--- | :--- |
-| **Validated Trust** | Proof of attributes or credentials | "Can you prove you are who/what you claim to be?" | Checking a driver's license |
-| **Direct Historical Trust** | Past interactions and behavior | "Have you been trustworthy in the past?" | A seller's review score |
-| **Mandated Trust** | Rule or policy from an authority | "Does the rulebook say I should trust you?" | Corporate IT access policies |
-| **Mediated Trust** | Vouching by a trusted third party | "Does someone I already trust, trust you?" | SSL Certificates on the web |
+| Trust Model                 | Basis of Trust                     | Key Question                                      | Example                      |
+| :-------------------------- | :--------------------------------- | :------------------------------------------------ | :--------------------------- |
+| **Validated Trust**         | Proof of attributes or credentials | "Can you prove you are who/what you claim to be?" | Checking a driver's license  |
+| **Direct Historical Trust** | Past interactions and behavior     | "Have you been trustworthy in the past?"          | A seller's review score      |
+| **Mandated Trust**          | Rule or policy from an authority   | "Does the rulebook say I should trust you?"       | Corporate IT access policies |
+| **Mediated Trust**          | Vouching by a trusted third party  | "Does someone I already trust, trust you?"        | SSL Certificates on the web  |
 
 In practice, most complex systems (like the internet) use a combination of these models. For instance, your browser uses **Mandated Trust** in its list of root CAs, which then enables **Mediated Trust** for websites, which is granted after the CA performs **Validated Trust** checks on the website owner.
 
@@ -628,41 +879,43 @@ Threat Grid is a cloud-based malware analysis and threat intelligence platform, 
 
 ### Summary Table
 
-| Tool / Framework | Primary Domain | Core Function |
-| :--- | :--- | :--- |
-| **SIGVERIF** | OS Security (Windows) | Verify the integrity of system files. |
-| **TC COMPLETE** | Networking (Linux) | Control and shape network traffic. |
-| **Highcharts** | Data Visualization | Create interactive charts for the web. |
-| **Threat Grid** | Cybersecurity | Analyze malware and provide threat intelligence. |
+| Tool / Framework | Primary Domain        | Core Function                                    |
+| :--------------- | :-------------------- | :----------------------------------------------- |
+| **SIGVERIF**     | OS Security (Windows) | Verify the integrity of system files.            |
+| **TC COMPLETE**  | Networking (Linux)    | Control and shape network traffic.               |
+| **Highcharts**   | Data Visualization    | Create interactive charts for the web.           |
+| **Threat Grid**  | Cybersecurity         | Analyze malware and provide threat intelligence. |
 
 
 ---
 
-Type of Data analysis 
+### Type of Data analysis 
 
 **A. Predictive**
-
 - Uses historical data and statistical models to **forecast future outcomes**.
-    
 - Answers: _"What could happen in the future?"_
-    
 
 **B. Diagnostic**
-
 - Looks at past data to **understand why something happened**.
-    
 - Answers: _"Why did this happen?"_
-    
 
 **C. Descriptive**
-
 - Analyzes **real-time or historical data** to summarize what is happening **now** or what has happened.
-    
 - Answers: _"What is happening?"_ or _"What happened?"_
-    
 
 **D. Prescriptive**
-
 - Suggests **actions to take** based on data analysis to affect desired outcomes.
-    
 - Answers: _"What should we do?"_
+
+
+
+**PASTA** : is a seven-stage risk-based modeling approach implemented for dynamic threat detection, enumeration, and scoring process
+
+**Correspondence bias** : is cognitive bias describes a person's inclination to overemphasize personality-centered reasons for actions performed by others
+
+**True attribution** : is a type of threat attribution deals with the identification of the specific person, society, or a country sponsoring a well-planned and executed intrusion or attack over its target
+
+
+
+
+Kendall's Rank Correlation Coefficient : Data Correlation Technique is a correlation statistic for measuring the ordinal relationship between two measured variables.
