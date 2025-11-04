@@ -23,3 +23,7 @@
 https://www.youtube.com/@gralhix/videos
 https://gralhix.com/
 
+
+
+https://www.ransomlook.io/groups
+https://breach.house/country/EG

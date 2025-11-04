@@ -1,9 +1,11 @@
-https://quizlet.com/678635732/flashcards [100]
+https://quizlet.com/678635732/flashcards [200]
 https://www.youtube.com/watch?v=mHFvIQmp_C0
 https://www.youtube.com/watch?v=zemNLx0-LRw
 https://www.youtube.com/watch?v=niuf8nGTzBw&pp=ugMICgJhchABGAHKBQ50aGVoaXZlINi02LHYrQ%3D%3D
-
-[1433]
+What is the difference between a threat landscape report and a threat analysis report?
+what is Proactive surveillance feeds 
+What stage of ACH
+type of threat modeling 
 # Module 1 : introduction to Threat Intelligence
 
 ### STAGES OF CYBER THREAT INTELLIGENCE
@@ -610,6 +612,41 @@ ThreatExchange (https://developers.facebook.com)
 
 
 
+---
+# Module 07 : 
+
+### Threat Hunting Steps
+1. Hypothesis: Make assumptions using TTPs
+2. Collect and process: Collect and analyze data using threat intelligence
+3. Trigger: Based on the hypothesis, threat detection tools trigger an anomaly
+4. Investigation: Investigate malicious files/activities to eliminate the identified threats
+5. Response: Generate a report for future detection
+
+
+### Types of Threat Hunting
+
+**Structured Threat Hunting**
+Structured threat hunting is a proactive approach in cybersecurity that relies on indicators of attacks (loAs) and threat actors' tactics, techniques, and procedures (TTPs)
+**Unstructured Threat Hunting**
+Unstructured threat hunting relies on an alert trigger or indicator of compromise (loC)
+**Situational or Entity-Driven**
+This type of threat hunting focuses on critical assets and users, which are often targeted by attackers
+
+
+
+**The threat hunting maturity model (HMM)** describes the quantity and quality of information collected from a network for investigation
+
+Level 0: Initial
+
+Level 1: Minimal
+
+Level 2: Procedural
+
+Level 3: Innovative
+
+Level 4: Leading
+
+
 
 
 
@@ -919,3 +956,275 @@ Threat Grid is a cloud-based malware analysis and threat intelligence platform, 
 
 
 Kendall's Rank Correlation Coefficient : Data Correlation Technique is a correlation statistic for measuring the ordinal relationship between two measured variables.
+
+Warchalking : Identify the technique to draw symbols in public places for advertising an open Wi-Fi network.
+
+5 Which of the following types of data analysis deals with analyzing the real-time data of the current activities and enables the analyst to identify what is currently happening in the organization based on the acquired real-time data?  
+C. Descriptive
+
+18 Which of the following terms refers to determining security designation and handling requirements by reviewing indicator metadata?  
+C. Categorization
+
+27 Which one of the following performance metric measures the number of relevant IoCs received and prepares the organization to efficiently and effectively defend against various evolving threats?  
+D. Encounter rate
+
+40 Which of the following threat intelligence sharing considerations indicate how the intelligence can be distributed and shared among individuals, communities, or organizations?  
+D. Data handling classification
+
+44 Thomas works as an analyst in Global Trust Trading Company. He wants to perform bulk data integration and data management in coordination with data analytic tool Hadoop. Which of the following tools should Thomas use?  
+D. Talend
+
+48 Which of the following cognitive bias describes a person's inclination to overemphasize personality-centered reasons for actions performed by others?  
+C. Correspondence bias
+
+50 A threat analyst wants to incorporate a requirement in the threat knowledge repository that provides an ability to modify or delete past or irrelevant threat data.  
+Which of the following requirement must he include in the threat knowledge repository to fulfil his needs?  
+C. Data management
+
+54 Which type of threat intelligence uses humans, social media, and chat rooms as major sources for extracting and providing information about organizational threats?  
+C. Operational Threat Intelligence
+
+56 Among the following cyber security threats, identify the one that falls under Host threat category:  
+C. Profiling
+  
+63 Which type of Threat Intelligence Data Collection mechanism provides crucial information about activity related attacks?  
+B. Operational
+
+68 Which of the following Data Correlation Technique is a correlation statistic for measuring the ordinal relationship between two measured variables.  
+C. Kendall's Rank Correlation Coefficient
+
+71 According to threat intelligence information sharing model, the tier that includes a small number of communities such as critical infrastructure industry sectors and focuses on specific needs and security requirements for sharing information is represented as:  
+C. Targeted Tier
+
+69 Kill chain mechanism begins in which of the following stage of Threat Analysis Process?  
+A. Indicator Escalation
+
+1 What type of security testing uses scenarios to mimic attackers?  
+A. Intelligence-led
+
+3 What is the defining characteristic of a risk?   
+D. uncertainty of an adverse event
+
+9 Which of the following are examples of unstructured data?  
+B. images, video, and audio
+  
+11 What is information?  
+A. processed data that has meaning and context
+
+12 Intelligence is .
+B. the output of an analysis process
+
+  
+26 How does cyber threat intelligence help businesses defend their assets and data?  
+B. by converting unknown threats into known threats
+
+31 Choose the best description of the differences between data, information, and intelligence.  
+D. Intelligence supports decision making and is developed from processing data and interpreting / analyzing information.
+
+33 Why is intelligence-led security testing important?  
+B. This type of testing uses contextual intelligence to guide the conduct of security testing and choices of attack methods to be simulated during tests.
+
+  
+34 Which of the following threat intelligence stages would an analyst be most likely to start with when assessing risks associated with an emerging technology?  
+C. Unknown Unknowns
+
+35 Which of the following is NOT an enterprise objective for a Threat Intelligence Program?  
+D. Identifying known unknowns.
+
+  
+3 Which of the following are application threat vectors?    
+D. Hidden-field Manipulation and SQL injection.
+
+29   In the context of the Cyber Kill Chain, what is meant by "weaponization?"  
+D. Tailoring of an exploit using information previously gathered by reconnaissance of a target
+
+34  Why is the preparation phase of the APT lifecyle imperative for the success of an APT attack?  
+A. During the preparation phase, the adversary performs highly complex operations required to avoid detection once the attack is launched.
+
+1 Which of the following project management tools is used to obtain management support for a threat intelligence program?  
+B. Project Charter
+
+9  Which of the following factors can be used to convince management to fund a threat intelligence program?  
+D. All listed choices are correct (Drivers - Obstacles - Benefits)
+
+13  What is the most effective way to identify valuable assets and data?  
+C. Conduct an inventory
+
+14  What is the first step in building an efficient threat intelligence program?  
+C. Requirements gathering NOT ( Establishing rules of engagement  )
+  
+18  What is the MoSCoW method used for?  
+A. to prioritize requirements collaboratively
+
+20  How can a security posture assessment benefit an organization?  
+B. Provide a foundation for budget or resource requests.
+
+21  What is the benefit of applying a strategic lens to the threat intelligence program?  
+C. help align the threat intelligence program with business operations
+
+25  Raw Data Producers belong in which part of the People, Processes, and Technologies framework?  
+B. Technologies
+
+32  Which of the following factors is NOT used when prioritizing requirements for protecting an organization's assets against attacks?  
+B. Insurability
+
+33   The threat assessment team has been asked to identify critical threats to the organization. Which of the following is the best strategy to use?  
+D. Identify organizational assets and threats to those assets then prioritize threats according to potential impact.
+
+Why are NDA's an important tool for threat intelligence sharing?  
+A. Improper disclosure of shared threat intelligence could result in harm to one or both parties to the NDA.
+
+
+---
+
+In a team of threat analysts, two individuals were competing over projecting their own hypotheses on a given malware. However, to find logical proofs to confirm their hypotheses, the threat intelligence manager used a de-biasing strategy that involves learning strategic decision making in the circumstances comprising multistep interactions with numerous representatives, either having or without any perfect relevant information.  
+Which of the following de-biasing strategies the threat intelligence manager used to confirm their hypotheses?
+A. Game theory
+
+Cybersol Technologies initiated a cyber-threat intelligence program with a team of threat intelligence analysts. During the process, the analysts started converting the raw data into useful information by applying various techniques, such as machine-based techniques, and statistical methods.  
+In which of the following phases of the threat intelligence lifecycle is the threat intelligence team currently working?
+C. Processing and exploitation
+
+Sarah is a security operations center (SOC) analyst working at JW Williams and Sons organization based in Chicago. As a part of security operations, she contacts information providers (sharing partners) for gathering information such as collections of validated and prioritized threat indicators along with a detailed technical analysis of malware samples, botnets, DDoS attack methods, and various other malicious tools. She further used the collected information at the tactical and operational levels.  
+Sarah obtained the required information from which of the following types of sharing partner?
+A. Providers of threat data feeds
+
+Henry. a threat intelligence analyst at ABC Inc., is working on a threat intelligence program. He was assigned to work on establishing criteria for prioritization of intelligence needs and requirements.  Which of the following considerations must be employed by Henry to prioritize intelligence requirements?
+A. Understand frequency and impact of a threat
+
+Tech Crunch Inc. has hired John, who is a professional threat intelligence analyst. He was asked to conduct threat intelligence analysis that provides contextual information about the security events and incidents that further help the organization to disclose potential risks, provide greater insight into attacker methodologies, identify past malicious activities, and perform investigations on malicious activities in a more efficient way.  
+Identify the type of threat intelligence John is going to perform for the organization.
+C. Operational threat intelligence
+
+While analyzing a series of security incidents, you notice a pattern of attacks originating from specific geographical locations. To gain deeper insight into the spatial aspects of these threats, what contextualization method would you employ to understand the geographic origin and distribution of the attacks?
+
+A. Policy context
+B. Historical context
+==C. Spatial context==
+D. Temporal context
+
+---
+---
+
+
+Kathy wants to ensure that she shares threat intelligence containing sensitive information with the appropriate audience. Hence, she used traffic light protocol (TLP). Which TLP color would you signify that information should be shared only within a particular community? 
+A. Red 
+B. White 
+C. Green 
+==D. Amber==
+
+ABC is a well-established cyber-security company in the United States. The organization implemented the automation of tasks such as data enrichment and indicator aggregation. They also joined various communities to increase their knowledge about the emerging threats. However, the security teams can only detect and prevent identified threats in a reactive approach.  
+Based on threat intelligence maturity model, identify the level of ABC to know the stage at which the organization stands with its security and vulnerabilities.
+
+==A. Level 2: increasing CTI capabilities==
+B. Level 3: CTI program in place
+C. Level 1: preparing for CTI
+D. Level 0: vague where to start
+
+A company, TechSoft Solutions, implemented a threat intelligence program and began developing operational capabilities obtained in the previous levels and created an organized team approach for strategic analysis. The company also established necessary intelligence processes and workflows to extract their own threat intelligence.  
+  
+Identify the threat intelligence maturity level at which the company stands.
+
+A. Level 4: well-defined CTI program
+==B. Level 3: CTI program in place==
+C. Level 1: preparing for CTI
+D. Level 2: increasing CTI capabilities
+
+Tim is working as an analyst in an ABC organization. His organization had been facing many challenges in converting the raw threat intelligence data into meaningful contextual information. After inspection, he found that it was due to noise obtained from misrepresentation of data from huge data collections. Hence, it is important to clean the data before performing data analysis using techniques such as data reduction. He needs to choose an appropriate threat intelligence framework that automatically performs data collection, filtering, and analysis for his organization.  
+Which of the following threat intelligence frameworks should he choose to perform such task?
+
+A. HighCharts
+B. SIGVERIF
+==C. Threat grid==
+D. TC complete
+
+
+An organization, namely, Highlander, Inc., decided to integrate threat intelligence into the incident response process for rapid detection and recovery from various security incidents.  
+  
+In which of the following phases of the incident response management does the organization utilize operational and tactical threat intelligence to provide context to the alerts generated by various security mechanisms?
+
+==A. Phase 2: event==
+B. Phase 1: preplanning
+C. Phase 3: incident
+D. Phase 4: breach
+
+
+Marie, a threat analyst at an organization named TechSavvy, was asked to perform operational threat intelligence analysis to get contextual information about security events and incidents.  
+Which of the following sources does Marie need to use to perform operational threat intelligence analysis?
+
+A. Attack group reports, attack campaign reports, incident reports, malware samples
+==B. Activity-related attacks, social media sources, chat room conversations==
+C. OSINT, security industry white papers, human contacts
+D. Malware indicators, network indicators, e-mail indicators
+
+
+To extract useful intelligence from the gathered bulk data and to improve the efficiency of the composite bulk data, Sam, a threat analyst, follows a data analysis method where he creates a logical sequence of events based on the assumptions of an adversary’s proposed actions, mechanisms, indicators, and implications. To develop accurate predictions, he further takes into consideration the important factors including bad actors, methods, vulnerabilities, targets, and so on.  
+  
+Which of the following data analysis methods is used by Sam to extract useful intelligence out of bulk data?
+
+==A. Linchpin analysis==
+B. Critical path analysis
+C. Opportunity analysis
+D. Analogy analysis
+
+Organizations must choose a right threat intelligence platform to assess and leverage intelligence information, monitor multiple enforcement points, manage intelligence feeds, and select appropriate security for the digital assets.  
+  
+Which of the following key factors ensures that the TI platform offers a structured way to perform investigations on attacks by processing the threat intelligence and utilizing the internal security controls to automate the detection process?
+
+A. Search
+==B. Workflow==
+C. Scoring
+D. Open
+
+In which of the following levels of the threat hunting maturity model (HMM) does an organization use threat intelligence to search for anomalies in the network, follow the latest threat reports gathered from open and closed sources, and use open-source tools for analysis?
+
+A. Level 2: Procedural
+B. Level 4: Leading
+C. Level 3: Innovative
+D. Level 1: Minimal
+
+Sean works as a threat intelligence analyst. He is assigned a project for information gathering on a client’s network to find a potential threat. He started analysis and was trying to find out the company’s internal URLs, looking for any information about the different departments and business units. He was unable to find any information.  
+  
+What should Sean do to get the information he needs?
+
+A. Sean should use online services such as netcraft.com to find the company’s internal URLs
+B. Sean should use website mirroring tools such as HTTrack Web Site Copier to find the company’s internal URLs
+C. Sean should use e-mail tracking tools such as eMailTrackerPro to find the company’s internal URLs
+==D. Sean should use WayBackMachine in Archive.org to find the company’s internal URLs==
+
+Alison, an analyst in an XYZ organization, wants to retrieve information about a company’s website from the time of its inception as well as the removed information from the target website.  
+What should Alison do to get the information he needs.
+
+- A. Alison should use SmartWhois to extract the required website information.
+- ==B. Alison should use https://archive.org to extract the required website information.==
+- C. Alison should run the Web Data Extractor tool to extract the required website information.
+- D. Alison should recover cached pages of the website from the Google search engine cache to extract the required website information.
+
+
+----------------------
+
+James, a senior threat intelligence officer, was tasked with assessing the success and failure of the threat intelligence program established by the organization. As part of the assessment, James reviewed the outcome of the intelligence program, determined if any improvements were required in the program, and identified the past learnings that can be applied to the future program.  
+Identify the activity performed by James in the above scenario.
+
+A. Determine the costs and benefits associated with the program
+B. Determine the fulfillment of stakeholders
+C. Report findings and recommendations
+**D. Conduct a gap analysis**
+
+Marie, a threat analyst at an organization named TechSavvy, was asked to perform operational threat intelligence analysis to get contextual information about security events and incidents.  
+Which of the following sources does Marie need to use to perform operational threat intelligence analysis?
+
+A. Attack group reports, attack campaign reports, incident reports, malware samples
+**B. Activity-related attacks, social media sources, chat room conversations**
+C. OSINT, security industry white papers, human contacts
+D. Malware indicators, network indicators, e-mail indicators
+
+
+Organizations must choose a right threat intelligence platform to assess and leverage intelligence information, monitor multiple enforcement points, manage intelligence feeds, and select appropriate security for the digital assets.  
+  
+Which of the following key factors ensures that the TI platform offers a structured way to perform investigations on attacks by processing the threat intelligence and utilizing the internal security controls to automate the detection process?
+
+A. Search
+**B. Workflow**
+C. Scoring
+D. Open
