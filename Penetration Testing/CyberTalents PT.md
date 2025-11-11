@@ -1,6 +1,6 @@
 Penetration Testing Steps
 - Information Gathering ->> Passive  & Active
-- Vulnerability Identification ->> Nmap -  Nessus - OpenVas 
+- Vulnerability Identification ->> Nmap -  Nessus - OpenVAS 
 - Exploitation ->> Brute Forcing - Remote Exploit
 - Post Exploitation ->> Persistence - Anti Forensics
 

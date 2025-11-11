@@ -58,7 +58,7 @@ Kerberos tickets are used primarily for authentication and authorization purpose
 
 ### LDAP 
 
-LDAP (Lightweight Directory Access Protocol): LDAP is a protocol used for accessing and managing directory information stored in Active Directory. While not an authentication protocol itself, LDAP can be used in conjunction with other protocols for authentication and directory services.
+LDAP (Lightweight Directory Access Protocol): LDAP is a protocol used for **accessing and managing directory information** stored in Active Directory. While not an authentication protocol itself, LDAP can be used in conjunction with other protocols for authentication and directory services.
 
 - LDAP authentication involves clients sending authentication requests to Active Directory domain controllers using the LDAP protocol. 
 - The domain controllers verify the provided credentials against the directory database and grant access if authentication is successful.

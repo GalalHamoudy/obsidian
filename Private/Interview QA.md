@@ -332,7 +332,7 @@ These **email authentication protocols** prevent spoofing/phishing by verifyin
 - **How It Works**:
     - The domain owner publishes SPF records in DNS (e.g., `v=spf1 include:_spf.google.com ~all`).
     - Recipient servers check if the email’s source IP matches the SPF record.
-- **Limitation**: Doesn’t protect against header spoofing (e.g., fake `From:` addresses).
+- ==**Limitation**: Doesn’t protect against header spoofing (e.g., fake `From:` addresses).==
 
  **DKIM (DomainKeys Identified Mail)**
 - **Purpose**: Ensures email integrity via cryptographic signatures.
@@ -577,7 +577,6 @@ When a user logs in:
 [Q50] - How **Pass the Ticket** Works
 
 1- The attacker dumps Kerberos tickets from the system's memory. Tools like Mimikatz are commonly used. Tickets are stored in the LSASS process and can be extracted directly.
-
 2- The attacker uses the stolen ticket(s) to impersonate the victim user or access network resources. TGTs are particularly valuable because they can be used to request new Service Tickets.
 
 [Q51] - How Overpass-the-Hash Works

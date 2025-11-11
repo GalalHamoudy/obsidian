@@ -7,7 +7,7 @@
 
 **Steganography** is the art and science of embedding secret messages in a cover message in such a way that no one, apart from the sender and intended recipient, suspects the existence of the message.
 
-**KAPE** (Kroll Artifact Parser and Extractor) is a digital forensics and incident response (DFIR) tool designed to quickly collect and process forensic artifacts from Windows systems.
+**KAPE** (Kroll Artifact Parser and Extractor) is a digital forensics and incident response (DFIR) tool designed to quickly **collect and process forensic artifacts** from Windows systems.
 
 **Guymager** is an open-source forensic imaging tool designed for creating and verifying disk images. It is known for its speed, efficiency, and ease of use, making it a popular choice among digital forensic professionals.
 

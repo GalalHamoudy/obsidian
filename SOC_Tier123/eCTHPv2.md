@@ -159,7 +159,7 @@ An **IDN Homograph Attack** (or **Homoglyph Attack**) is a phishing technique wh
 ### **How to Detect & Prevent IDN Homograph Attacks?**  
 #### **For Users:**  
 - **Hover over links** to see the actual URL.  
-- **Check for SSL certificates** (but attackers may use free certs like Let’s Encrypt).  
+- **Check for SSL certificates** (but attackers may use free certs like **Let’s Encrypt**).  
 - **Use password managers** (they won’t auto-fill on fake domains).  
 
 #### **For Organizations:**  

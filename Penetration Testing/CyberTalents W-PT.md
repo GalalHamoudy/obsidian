@@ -7,7 +7,7 @@ Server Side Request Forgery is a web vulnerability that
 ## SSRF Types
 
 #### Basic SSRF
-The attacker is able to fetch the full response of an internal/external resource (File, HTTP, etc)
+The attacker is able to fetch the full response of an internal/external resource (File, HTTP, etc.)
 #### Blind SSRF
 Blind SSRF is harder to exploit. The request is successfully sent but no response is returned to the attacker.
 
@@ -23,11 +23,11 @@ PHP functions that can lead to SSRF:
 There is no perfect way to protect against SSRF but there are some approaches that can be taken into account.
 
 - Make a whitelist for the IPs that the web application needs to access.
-- Disable unnecessary URL schemes (ex: dict:// , file:// , ftp:// ,etc).
+- Disable unnecessary URL schemes (ex: dict:// , file:// , ftp:// ,etc.).
 - Use authentication for the internal resources/services.
 ## Tools
 
-- [SSRFmap](https://github.com/swisskyrepo/SSRFmap): Automatic SSRF fuzzer and exploitation tool.  
+- [SSRFmap](https://github.com/swisskyrepo/SSRFmap) : Automatic SSRF fuzzer and exploitation tool.  
 - [Gopherus](https://github.com/tarunkant/Gopherus) : This tool generates gopher link for exploiting SSRF and gaining RCE in various servers.
 
 --------------------------------------
@@ -46,7 +46,6 @@ There are two types: code injection and command injection. The main difference b
 ## What is XXE? 
 
 XXE injection attack also known as XML External Entity attack is a type of attack that is concerned with exploiting the vulnerable XML parsers in the web applications.
-
 We can force the web application that is vulnerable to XXE to read /dev/random or /dev/urandom which will block the users from accessing the website by repeating multiple requests.
 
 ## Mitigation 
@@ -116,7 +115,6 @@ This category has two techniques:
 #### Out-of-band SQLi
 
 This type of SQLi occurs when the attacker can’t use the channel to launch his attack and it relies on features enabled on the database server. 
-
 For example, the attacker would use the ability of the database to make a DNS / HTTP request to a server controlled by him.
 
 ---
