@@ -577,16 +577,16 @@ Analyzing **past data** (days/weeks/months) to uncover **stealthy, long-term com
 - `regsvr32.exe` loading scripts from the web.  
 
 ## **Summary Table: Legitimate vs. Malicious Indicators**
-| **Process**       | **Legitimate** | **Malicious** |
-|-------------------|---------------|---------------|
-| **`svchost.exe`** | Multiple instances, signed, `System32` | Non-`System32`, unusual `-k` parameter |
-| **`explorer.exe`** | Runs from `System32`, no network calls | Spawns `cmd.exe`, runs from `Temp` |
-| **`lsass.exe`**   | Runs under `wininit.exe` | Accessed by `mimikatz.exe` |
-| **`rundll32.exe`** | Runs signed DLLs | Runs from `AppData`, malicious DLLs |
-| **`powershell.exe`** | Clean commands | Obfuscated, encoded scripts |
-| **`mshta.exe`**   | Rarely used | Runs remote HTA files |
-| **`wscript.exe`**  | Runs `.vbs` scripts | Executes obfuscated JS/VBS |
-| **`regsvr32.exe`** | Registers DLLs | Executes remote `.sct` files |
+| **Process**        | **Legitimate**                         | **Malicious**                          |
+| ------------------ | -------------------------------------- | -------------------------------------- |
+| **svchost.exe**    | Multiple instances, signed, `System32` | Non-`System32`, unusual `-k` parameter |
+| **explorer.exe**   | Runs from `System32`, no network calls | Spawns `cmd.exe`, runs from `Temp`     |
+| **lsass.exe**      | Runs under `wininit.exe`               | Accessed by `mimikatz.exe`             |
+| **rundll32.exe**   | Runs signed DLLs                       | Runs from `AppData`, malicious DLLs    |
+| **powershell.exe** | Clean commands                         | Obfuscated, encoded scripts            |
+| **mshta.exe**      | Rarely used                            | Runs remote HTA files                  |
+| **wscript.exe**    | Runs `.vbs` scripts                    | Executes obfuscated JS/VBS             |
+| **regsvr32.exe**   | Registers DLLs                         | Executes remote `.sct` files           |
 
 ### **Final Tips for SOC Analysts**
 1. **Enable Detailed Logging** (Sysmon, PowerShell logging).  
@@ -913,11 +913,11 @@ Invoke-PSHunt -ScanType Full -OutputFormat CSV
 ---
 
 ## **Tools for Analyzing COM Hijacking**  
-| **Tool**                                                      | **Purpose**                        |
-| ------------------------------------------------------------- | ---------------------------------- |
-| **Autoruns (Sysinternals)**                                   | Scans for hijacked COM entries     |
-| **Process Monitor**                                           | Tracks COM object registry changes |
-| **PowerShell (`Get-ChildItem HKLM:\Software\Classes\CLSID`)** | Manual registry inspection         |
+| **Tool**                                                    | **Purpose**                        |
+| ----------------------------------------------------------- | ---------------------------------- |
+| **Autoruns (Sysinternals)**                                 | Scans for hijacked COM entries     |
+| **Process Monitor**                                         | Tracks COM object registry changes |
+| **PowerShell (Get-ChildItem HKLM:\Software\Classes\CLSID)** | Manual registry inspection         |
 
 ---
 
