@@ -296,12 +296,15 @@ Find-DomainUserLocation -Stealth
 
 List sessions on remote machines (https://github.com/Leo4j/Invoke-SessionHunter)
 ```
+. C:\AD\Tools\Invoke-SessionHunter.ps1
+Invoke-SessionHunter -NoPortScan -RawResults | select Hostname,UserSession,Access
 Invoke-SessionHunter -FailSafe
 ```
 
 An opsec friendly command would be (avoid connecting to all the target machines by specifying targets)
 ```
 Invoke-SessionHunter -NoPortScan -Targets C:\AD\Tools\servers.txt
+Invoke-SessionHunter -NoPortScan -RawResults -Targets C:\AD\Tools\servers.txt | select Hostname,UserSession,Access
 ```
 
 We can connect to dcorp-adminsrv using winrs as the student user
