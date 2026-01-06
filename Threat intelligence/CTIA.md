@@ -1,10 +1,7 @@
 https://www.youtube.com/watch?v=mHFvIQmp_C0
 https://www.youtube.com/watch?v=zemNLx0-LRw
 https://www.youtube.com/watch?v=niuf8nGTzBw&pp=ugMICgJhchABGAHKBQ50aGVoaXZlINi02LHYrQ%3D%3D
-What is the difference between a threat landscape report and a threat analysis report?
-what is Proactive surveillance feeds ?
-What stage of ACH?
-what is the type of threat modeling  ?
+
 # Module 1 : introduction to Threat Intelligence
 
 ### STAGES OF CYBER THREAT INTELLIGENCE
@@ -913,5 +910,75 @@ Threat Grid is a cloud-based malware analysis and threat intelligence platform, 
 
 **Warchalking** : Identify the technique to draw symbols in public places for advertising an open Wi-Fi network.
 
+
 ---
 
+### 1. Difference Between a Threat Landscape Report and a Threat Analysis Report
+
+These are two distinct but related products in the intelligence cycle, differing in **scope, specificity, and audience**.
+
+| Feature | Threat Landscape Report | Threat Analysis Report |
+| :--- | :--- | :--- |
+| **Definition** | A **broad, strategic overview** of the threats facing a sector, region, or technology over a specific period (e.g., quarter, year). | A **focused, tactical/operational examination** of a **specific threat actor, campaign, malware, or vulnerability.** |
+| **Scope** | **Wide.** "The forest." Covers multiple actors, TTPs, trends, and emerging risks. | **Narrow.** "A single tree (or group of trees) in the forest." |
+| **Timeframe** | Retrospective and trends-based (e.g., last 6 months). Often includes future projections. | Often real-time or recent. Focused on an active or imminent threat. |
+| **Audience** | **Strategic leadership** (CISO, CIO, Board), for risk management and budget planning. | **Technical defenders** (SOC, IR teams, threat hunters), for immediate detection and response. |
+| **Content** | Trends in attack vectors, sectoral risk comparisons, geopolitical factors, macroeconomic drivers of cybercrime, regulatory impacts. | Detailed IOCs (hashes, IPs, domains), malware breakdowns, attack chain steps (Kill Chain/MITRE ATT&CK mapping), mitigation recommendations. |
+| **Analogy** | **Weather forecast & climate trends** for a large region. | **Severe storm warning** with specific path, wind speeds, and safety instructions. |
+
+**Example:**
+*   **Threat Landscape Report:** "Q1 2024 Financial Sector Threat Landscape: Rise in ransomware-as-a-service targeting cloud backups, increasing state-sponsored espionage from Actor Group A, and exploitation of critical vulnerabilities in payment gateways."
+*   **Threat Analysis Report:** "Deep Dive: APT29's 'Midnight Blizzard' Campaign Using 'WINELOADER' Backdoor – IOCs, TTPs, and Detection Rules."
+
+---
+
+### 2. What are Proactive Surveillance Feeds?
+
+Proactive surveillance feeds are **streams of intelligence data designed to identify threats *before* they impact your organization**. They move beyond reactive IOCs (like malicious IPs from last week's attack).
+
+*   **Purpose:** To enable **threat hunting** and **preventive controls**, not just alerting on known-bad indicators.
+*   **Content Includes:**
+    *   **Emerging TTPs:** New techniques being discussed in forums or used in early attacks.
+    *   **Vulnerability Research:** New CVEs, proof-of-concept exploits, and chaining possibilities.
+    *   **Threat Actor Chatter:** Monitoring underground forums, telegram channels, or code repositories for planning, tool releases, or targeting discussions.
+    *   **Brand & Domain Monitoring:** Early detection of typosquatting domains, phishing kit deployments, or fake social media profiles targeting your company.
+    *   **Geopolitical & Cybercriminal Trends:** Intelligence that suggests an increase in attack likelihood (e.g., hacktivist mobilization due to a world event).
+*   **Key Difference from Traditional Feeds:** They require **analysis and enrichment** by security teams. A feed might provide raw data on a new malware family; a proactive team uses that to hypothesize and hunt for related activity in their network.
+
+---
+
+### 3. What Stage of ACH? (Analysis of Competing Hypotheses)
+
+Your question "what stage of ACH?" likely refers to which step in the **ACH methodology** a given piece of information or analysis belongs to.
+
+ACH is an 8-step structured analytic technique to avoid cognitive bias by evaluating all reasonable hypotheses equally.
+
+**The 8 Stages of ACH are:**
+1.  **Identify the possible hypotheses.** (Brainstorm all explanations.)
+2.  **List the significant evidence/arguments for and against each.**
+3.  **Prepare a matrix** with hypotheses across the top and evidence down the side. Rate consistency.
+4.  **Refine the matrix.** Reconsider hypotheses and evidence.
+5.  **Draw tentative conclusions** about the relative likelihood of each hypothesis.
+6.  **Analyze sensitivity.** See how conclusions change if key evidence is wrong or missing.
+7.  **Report conclusions.** Discuss all hypotheses, not just the most likely.
+8.  **Identify indicators** for future observation that would sway judgment.
+
+When someone asks "what stage of ACH?" they are asking you to place your current analytical activity within this structured process (e.g., "We are still at **Stage 2**, gathering evidence for the matrix.").
+
+---
+
+### 4. What is the Type of Threat Modeling?
+
+Threat modeling is a process, and there are several **methodologies** (types) for conducting it. The choice depends on the context (software design, system architecture, operational process).
+
+Here are the primary **types/methodologies**:
+
+1.  **STRIDE:** (Microsoft) Focuses on classifying threats into six categories: **S**poofing, **T**ampering, **R**epudiation, **I**nformation Disclosure, **D**enial of Service, **E**levation of Privilege. Most common for software.
+2.  **PASTA:** (Process for Attack Simulation and Threat Analysis) A seven-stage, risk-centric methodology that integrates business objectives, technical requirements, and impact analysis.
+3.  **Trike:** Focuses on a security audit perspective from a risk-management viewpoint, modeling systems as assets, actors, and rules.
+4.  **VAST:** (Visual, Agile, and Simple Threat Modeling) Designed to scale across the organization and integrate with Agile/DevOps pipelines. Uses process-flow and data-flow diagrams.
+5.  **Attack Trees:** A hierarchical, graphical model representing attacks against a system from a root goal (the attack objective) down to leaf nodes (different ways to achieve it).
+6.  **MITRE ATT&CK-Based Modeling:** Using the ATT&CK knowledge base of real-world TTPs to hypothesize how adversaries would operate against your specific architecture.
+
+**In summary:**
+You choose a **threat modeling methodology** (like STRIDE or PASTA) to **systematically identify threats** within your **threat landscape** (the big picture), potentially using **ACH** (a structured analytic technique) to evaluate specific threat hypotheses, and you monitor **proactive surveillance feeds** to ensure your models reflect the latest real-world threats.
