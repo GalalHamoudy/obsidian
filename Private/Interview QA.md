@@ -6,7 +6,7 @@
 5. https://www.multisoftsystems.com/interview-questions/certified-threat-intelligence-analyst-interview-questions-answers
 6. https://hellointern.in/blog/top-interview-questions-and-answers-for-cyber-threat-intelligence
 7. https://www.crowdstrike.com/en-us/cybersecurity-101/
-
+8. https://careers.ncja.org/interview-questions/threat-intelligence-analyst
 
 ## Q & A
 
@@ -742,3 +742,24 @@ Choose Snort if you need a lightweight, well-established IDS with a large rule d
 - **Threat Modeling:** Creating profiles of threat actors, their motives, tactics, and techniques.
 - **Threat Reporting:** Communicating threat information to relevant stakeholders in a clear and concise manner.
 - **Threat Response:** Providing guidance and recommendations for mitigating identified threats.
+
+# [Latest threats]
+
+@unit42 :
+1- VVS Discord Malware Stealer Using Pyarmor for Obfuscation and Detection Evasion
+The stealer is written in Python and targets Discord users
+2-  Hamas-Affiliated Ashen Lepus Targets Middle Eastern Diplomatic Entities With New AshTag Malware Suite
+
+@crowdstrike:
+1- # WARP PANDA: A New level up of China-Nexus Adversary
+In addition to _BRICKSTORM_, WARP PANDA has also deployed JSP web shells and two new implants for ESXi environments — now named _Junction_ and _GuestConduit_ — during their operations.
+2- # CrowdStrike Identifies Campaign Targeting Oracle E-Business Suite via Zero-Day Vulnerability (now tracked as CVE-2025-61882)
+
+@cloud.google:
+1- React2Shell (CVE-2025-55182) by China-nexus actor 
+
+@securelist:
+1- The HoneyMyte APT evolves with a kernel-mode rootkit and a ToneShell backdoor
+2- Evasive Panda APT poisons DNS requests to deliver MgBot
+3- in Turkey with a new Android banking Trojan we dubbed “Frogblight”
+

@@ -176,8 +176,7 @@ Intelligence Buy-In
 
 ### Threat Intelligence Maturity Model
 
-The Threat Intelligence Maturity Model describes the levels of the threat intelligence applicability in an organization and
-shows how much an organization is secure from the emerging threats.
+The Threat Intelligence Maturity Model describes the levels of the threat intelligence applicability in an organization and shows how much an organization is secure from the emerging threats.
 
 Maturity Level 0 : Vague Where to Start
 Maturity Level 1 : Preparing for CTI
@@ -188,9 +187,9 @@ Maturity Level 4 : Well-Defined CTI Program
 
 ### Collective Intelligence Framework (CIF)
 
-Collective Intelligence Framework (CIF) is a cyber threat intelligence management system that allows you to combine known malicious threat information from many sources and use that information for incident response, detection, and mitigation.
+Collective Intelligence Framework (CIF) is a cyber threat intelligence **management system** that allows you to combine known malicious threat information from many sources and use that information for incident response, detection, and mitigation.
 
-CIF helps you to parse, normalize, store, post process, query, share, and produce data sets of threat intelligence.
+CIF helps you to parse, normalize, store, post process, query, share, and produce **data** sets of threat intelligence.
 
 TI Platform :
 - crowd Strike
@@ -285,7 +284,7 @@ A detailed and focused requirement analysis must be done to divide or categorize
 **Collection requirements** focus on either external or internal sources Collection requirements focusing on external sources include threat actors, while those focusing on internal sources include information on the attack surfaces of an organization.
 ### MoSCoW Method for Prioritizing Requirements
 
-MoSCoW prioritization or MoSCoW analysis is defined as a prioritization method that assists in prioritizing requirements based on iterative and incremental approaches.
+MoSCoW prioritization or MoSCoW analysis is defined as a **prioritization method** that assists in prioritizing requirements based on iterative and incremental approaches.
 This method is about setting the requirements based on the order of priority, where the most important requirement be met first, for a greater chance of success.
 It plays a vital role in agile project management, software development, and business analytics.
 
@@ -296,7 +295,6 @@ The word "MoSCoW" is an acronym for:
 	WON'T Have (Can be postponed or can be suggested for future project execution)
 
 
-
 ### Rule of Engagement
 
 Rule of Engagement (ROE) is the formal permission to implement a threat intelligence program.
@@ -304,8 +302,6 @@ ROE provides "top-level" guidance for implementing a threat intelligence program
 ROE helps the intelligence team to overcome legal, federal, and policy-related restrictions to use different tactics, systems, and personnel.
 
 A **nondisclosure agreement** is a security contract signed between two persons or companies for maintaining secrecy in their mutually shared information.
-
-
 
 
 ### Project charter
@@ -355,7 +351,7 @@ Encodes and communicates information on cyber observables Offers a common soluti
 
 **TAXII (Trusted Automated eXchange of Indicator Information)**
 Includes a set of technical specification and messages by MITRE
-Used as a protocol for security sharing of intelligence in STIX and CybOX
+Used as a protocol for security sharing of intelligence in **STIX and CybOX**
 
 **Tableau**
 It is a simple data visualization tool that effectively produces interactive visualizations for complex data analytics as compared to general BI solutions.
@@ -618,16 +614,6 @@ Level 1: Minimal
 Level 2: Procedural
 Level 3: Innovative
 Level 4: Leading
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -55,7 +55,7 @@ A whois record often contains information about the person or company that regis
 [Wappalyzer](https://www.wappalyzer.com/) identifies technologies on websites, such as CMS, web frameworks, e-commerce platforms, JavaScript libraries, analytics tools, and more.
 
 
-A Sock Puppet is an important component in SOCMINT investigations. It is a fake online identity (fake account) that is used to add a layer of anonymity to the investigators because it is not linked to them.
+A **Sock Puppet** is an important component in SOCMINT investigations. It is a fake online identity (fake account) that is used to add a layer of anonymity to the investigators because it is not linked to them.
 ###  [This Person Does Not Exist](https://www.thispersondoesnotexist.com/)
 This tool displays a new AI-generated face on each web page reload.
 
@@ -455,7 +455,7 @@ Investigate based on the nature of the initial alert or lead, such as suspicious
 #### 4. Use existing resources: 
 Leverage SIEM systems, threat intelligence, and forensic tools to scope the incident effectively and ensure comprehensive analysis across network and host systems
 
-# **Tools and Technologies Used in Threat Intelligence (Interview Answer)**
+# **Tools and Technologies Used in Threat Intelligence**
 
 Threat Intelligence (TI) involves collecting, analyzing, and disseminating information about cyber threats to help organizations defend against attacks. Various tools and technologies are used at different stages of the threat intelligence lifecycle (collection, processing, analysis, and dissemination). Below is a detailed breakdown:
 
