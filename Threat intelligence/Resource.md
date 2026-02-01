@@ -3,7 +3,7 @@
 - [ ] (Book) intelligence handbook (fourth edition) 
 - [ ] (Book) practical threat intelligence and data driven threat hunting 
 - [ ] (Book) Visual Threat Intelligence 
-- [x] **[eCTHPv2] - Threat Hunting Professional**
+- [ ] **[eCTHPv2] - Threat Hunting Professional**
 - [ ] TH-200 Threat Hunting Concepts and Practices
 - [ ] (FOR578) Cyber Threat Intelligence
 - [ ] (SEC497) Practical Open-Source Intelligence (OSINT)
@@ -27,6 +27,4 @@ https://gralhix.com/
 
 https://www.ransomlook.io/groups
 https://breach.house/country/EG
-
-
 

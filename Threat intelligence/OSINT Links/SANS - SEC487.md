@@ -10,7 +10,6 @@
 
 [Analysis of competing hypothesis](https://en.wikipedia.org/wiki/Analysis_of_competing_hypotheses)
 
-[Psychology of Intelligence Analysis](https://www.cia.gov/library/center-for-the-study-of-intelligence/csi-publications/books-and-monographs/psychology-of-intelligence-analysis/art3.html)
 
 ## Data Sources
 
@@ -20,13 +19,11 @@
 
 [Archive.org](https://archive.org/web/)
 
-## Vehical Research
+## Vehicle Research
 
 [Autocheck VIN/Plate Lookup](https://www.autocheck.com/vehiclehistory/?siteID=0)
 
-[AutoDNA VIN Check](https://www.autodna.com/)
 
-[Carfax](https://www.carfax.com/)
 
 [VIN Decoder](https://www.decodethis.com/)
 
@@ -52,13 +49,10 @@
 
 [Legacy Obituaries](https://www.legacy.com/search)
 
-[Family Tree Now](https://www.familytreenow.com/)
-
 [Search by Name / Phone](https://www.intelius.com/)
 
 [Search People / Businesses and Places in the UK with 192](https://192.com)
 
-[My Wedding registry](https://www.myregistry.com/)
 
 [Peekyou](https://www.peekyou.com/)
 
@@ -66,9 +60,6 @@
 
 [Search Systems](http://publicrecords.searchsystems.net/)
 
-[People Search and More](https://thatsthem.com/)
-
-[TruePeopleSearch](https://www.truepeoplesearch.com/)
 
 
 ## Public Safety Live Audio Streams

@@ -14,7 +14,7 @@
 ---
 ### Security identifier (SID)
 
-- Security identifier in Windows is a unique value used to identify any security entity that the Windows operating system (OS) can authenticate.
+- Security identifier in Windows is a **unique value** used to identify any security entity that the Windows operating system (OS) can authenticate.
 
 ### Antimalware Scan Interface (AMSI) 
 

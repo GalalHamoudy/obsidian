@@ -11,20 +11,13 @@ I went to a website called https://www.gps-coordinates.net/ and entered the GPS 
 
 [ Note ! ] ========================================= 
 find **Angry IP Scanner** and **Nmap**
-Having some basic powershell knowledge I immediatley thought to check the **ConsoleHost_history.txt** file for any commands run by the user.
+Having some basic powershell knowledge I immediately thought to check the **ConsoleHost_history.txt** file for any commands run by the user.
 
  ...../Users/John Doe/AppData/Roaming/Microsoft/windows/powershell/PSRedline
 
 [ Note ! ] =========================================
 We can run the following command to get the SHA256 hash value.
 `CertUtil -hashfile ../file.mem sha256`
-
-[ Note ! ] =========================================
-
-
-[ Note ! ] =========================================
-
-
 
 [ Note ! ] =========================================
 We can go to the following website to check the MAC address.  

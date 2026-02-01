@@ -1,3 +1,9 @@
+# More
+1. Awesome OSINT https://github.com/jivoi/awesome-osint
+2. OSINT Framework https://osintframework.com/
+3. OSINT Team https://github.com/IVMachiavelli/OSINT_Team_Links
+
+
 ## [1] Social Media
 - **[birdhunt.co](https://birdhunt.co/)**  Find Tweets By LocationFind Tweets By Location
 - **[YouTube Geofind](https://mattw.io/youtube-geofind/)**  Created to discover youtube videos based on location and later adapted to search videos by specific channels and topic keywords.
@@ -23,3 +29,40 @@
 - **[canarytokens.org](https://canarytokens.org/generate)**  Canarytokens is a free tool that helps you discover you've been breached by having attackers announce themselves. The tokens allow you to implant traps around your network and notifies you as soon as they are triggered.
 - **[temporary-phone-number.com](https://temporary-phone-number.com/)**  Temporary phone number for verification code
 - **[temp-mail.org](https://temp-mail.org/en/)**  Temp Mail provides temporary, secure, anonymous, free, disposable email address.
+
+## [6] Temporary Services
+
+- [10minutemail.com](https://10minutemail.com)
+- [20minutemail.com](https://20minutemail.com)
+
+## [7] Vehicle Osint
+
+- [Autocheck VIN/Plate Lookup](https://www.autocheck.com/vehiclehistory/?siteID=0)
+- [VIN Decoder](https://www.decodethis.com/)
+- [Fax Vin](https://www.faxvin.com/)
+
+## [8] people Osint
+
+- [Been Verified](https://www.beenverified.com/)
+- [Free Public Records](http://www.brbpub.com/)
+- [Cubib / Xlek - Massive Public Record Search](https://www.xlek.com/)
+- [Legacy Obituaries](https://www.legacy.com/search)
+- [Search by Name / Phone](https://www.intelius.com/)
+- [Search People / Businesses and Places in the UK with 192](https://192.com)
+- [Peekyou](https://www.peekyou.com/)
+- [Radaris](https://radaris.com/)
+- [Search Systems](http://publicrecords.searchsystems.net/)
+
+## [9] Location Osint 
+
+[IPVM](https://calculator.ipvm.com/) (CAM)
+[Wigle](https://wigle.net/) (WIFI)
+## [10] aircraft Osint 
+
+[FAA Registry](https://registry.faa.gov/aircraftinquiry/)
+
+## [11] Website Monitoring and Automated Notifications
+
+[Versionista](https://versionista.com/)
+
+[VisualPing](https://visualping.io/login)
