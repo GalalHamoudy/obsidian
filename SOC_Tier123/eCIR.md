@@ -361,7 +361,7 @@ Please note that an automated tool like chkrootkit can never guarantee a system 
     - **Logging**: Outputs to `/var/log/aide` for analysis.
 - **SOC Use Case**:
     - Identify **backdoor installations** or **tampered system binaries**.
-    - 
+
 ### **Comparison: Tripwire vs. AIDE**
 
 | **Feature**       | **Tripwire**                            | **AIDE**                          |
