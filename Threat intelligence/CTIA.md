@@ -1,7 +1,9 @@
-https://www.youtube.com/watch?v=mHFvIQmp_C0
-https://www.youtube.com/watch?v=zemNLx0-LRw
-https://www.youtube.com/watch?v=niuf8nGTzBw&pp=ugMICgJhchABGAHKBQ50aGVoaXZlINi02LHYrQ%3D%3D
-
+Tableau  https://www.youtube.com/watch?v=mHFvIQmp_C0
+Maltego https://www.youtube.com/watch?v=zemNLx0-LRw 
+THE HIVE https://www.youtube.com/watch?v=niuf8nGTzBw&pp=ugMICgJhchABGAHKBQ50aGVoaXZlINi02LHYrQ%3D%3D
+Yara
+MISP
+OPENCTI
 # Module 1 : introduction to Threat Intelligence
 
 ### STAGES OF CYBER THREAT INTELLIGENCE
@@ -10,7 +12,7 @@ The threat intelligence process begins at unknown unknowns stage at which we do 
 
 ### Type of threat intelligence
 
-		    High Level   -  Low Level
+		    High Level   - Low Level
 Long term :          Strategic               -  Tactical
 short term :         Operational          - Technical
 
@@ -301,7 +303,7 @@ Rule of Engagement (ROE) is the formal permission to implement a threat intellig
 ROE provides "top-level" guidance for implementing a threat intelligence program.
 ROE helps the intelligence team to overcome legal, federal, and policy-related restrictions to use different tactics, systems, and personnel.
 
-A **nondisclosure agreement** is a security contract signed between two persons or companies for maintaining secrecy in their mutually shared information.
+A **nondisclosure agreement** (NDA) is a security contract signed between two persons or companies for maintaining secrecy in their mutually shared information.
 
 
 ### Project charter
