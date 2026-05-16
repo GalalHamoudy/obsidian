@@ -54,3 +54,128 @@ The sources highlight several critical CTI lessons from this case:
 *   **Intrusions are not isolated:** Suspicious activity must be analyzed as part of a larger cluster that may span years.
 *   **Value of "Old" Data:** Artifacts and indicators can prove useful for identifying and linking threat actors even decades after the original event.
 *   **Adversary Evolution:** Just as defenders learn, adversaries also learn from these incidents to improve their operational security (OPSEC) and C2 infrastructure.
+
+---
+
+# Operation Aurora
+
+Operation Aurora is a landmark case study in Cyber Threat Intelligence (CTI), recognized for changing how the industry views state-sponsored threats against the private sector.
+
+### **Overview and Discovery**
+
+Publicly disclosed in **January 2010**, the operation came to light after Google released a report stating they had been targeted. While Google was the most prominent victim, their internal investigation revealed that the campaign was much broader, targeting the **Gmail accounts of Chinese human rights activists**.
+
+The scope of the attack was massive, involving multiple intertwined campaigns against over 30 major U.S. companies, including **Northrop Grumman, Morgan Stanley, Dow Chemical**, and others. By 2011, researchers realized that several other major intrusion sets—such as the Elderwood Project, Operation Shady RAT, and the RSA SecurID breach—were all linked to this same activity.
+
+### **Tools and Tradecraft**
+
+The attackers demonstrated a high level of sophistication through their technical methods:
+
+- **Zero-Day Exploits:** The campaign utilized an unprecedented number of zero-day exploits—initially eight were identified—targeting vulnerabilities in applications like Internet Explorer and Adobe.
+- **Malware Families:** The exploits were used to deliver various malware, most notably **PoisonIvy** and **Hydraq**.
+- **Tactics:** The actors combined **spear-phishing emails** with **"watering hole" style exploitation** to gain access to target networks.
+- **The Name "Aurora":** The name was not given by the attackers; rather, it was a common file folder path found within the malware used in the campaign.
+
+### **Attribution to China**
+
+The sources state that analysis across these campaigns placed attribution on **China’s PLA Unit 61398**. Key evidence included:
+
+- **Infrastructure:** Forensics revealed a string of command-and-control (C2) servers leading back to IP addresses owned by the Chinese government.
+- **Operational Failures:** The attackers made frequent operational security (OPSEC) mistakes, such as using the same "call signs" (nicknames) in their attacks as they used on social media and gaming platforms.
+- **Leaked Communications:** Intercepted and leaked communications reportedly showed Chinese government officials directing the campaign.
+
+### **Key Lessons Learned**
+
+Operation Aurora was a "wake-up call" for the cybersecurity industry for several reasons:
+
+- **Private Sector as a Target:** It proved that state-sponsored digital espionage was not just a threat to military and government networks, but also to civilian and private companies.
+- **Value of Victim Data:** It highlighted that the most valuable data for understanding an intrusion is often found **within the victim's own network logs**, not in classified government documents.
+- **Cross-Sector Analysis:** The case showed that sharing threat information across different industries (cross-sector) is essential, as attackers often target multiple verticals simultaneously.
+
+---
+
+# **how an analyst should think** and the mental processes involved in turning information into intelligence.
+
+1. Kent’s Analytic Doctrine 
+Sherman Kent, a famous intelligence figure, created a set of rules for analysts to ensure their work is professional and accurate. The key points are:
+- **Focus on what leaders need:** Intelligence must be useful for decision-makers.
+- **Avoid personal agendas:** Don't let your own opinions change the facts.
+- **Be rigorous and admit mistakes:** Always check your work carefully and be honest if you get something wrong.
+
+2. Analysis vs. Synthesis
+- **Analysis:** This is the act of **breaking something down** into small pieces to understand how it works (e.g., looking at the specific steps of a single hack).
+- **Synthesis:** This is **putting the pieces together** to see the "big picture," such as identifying a long-term campaign or a specific group's profile.
+
+3. Analytical Judgment
+Analysts almost never have all the facts. **Analytical judgment** is the process of using a **repeatable method** to make a smart guess (hypothesis) even when information is missing. A good analyst "shows their work" so others can see how they reached their conclusion.
+
+4. Two Types of Analysis
+- **Data-Driven:** Used for simple problems where you have plenty of accurate data (e.g., counting how many times an IP address appeared).
+- **Conceptually-Driven:** Used for complex problems with many unknowns. It relies on **mental models** and is very common in cyber intelligence because information changes so fast.
+
+5. Perception and The Brain
+- **Active Perception:** Our brains are not cameras; we often **see what we expect to see**. The "Paris in the the spring" exercise shows that our brains might ignore a mistake (like a double word) because we expect the sentence to be correct.
+- **Working Memory:** This part of the brain processes new information and decides if it should be saved as a long-term memory.
+- **Pattern Recognition:**
+    - **Template matching:** Looking for an exact match.
+    - **Prototype matching:** Looking for something that is "close enough".
+    - **Top-down matching:** Using context to **"fill in the gaps"** when information is missing, which can sometimes lead to mistakes.
+
+6. Biases and Mental Shortcuts
+- **Everyone has biases:** It is impossible to be 100% objective. Our brains use shortcuts to make quick decisions, but these shortcuts can lead to errors.
+- **Example:** In the 2020 US Election, people saw ransomware and immediately assumed it was "election hacking" because that fit their fears (confirmation bias), even though there wasn't enough evidence yet.
+- **Solution:** Using diverse teams with different backgrounds helps reduce the impact of these biases.
+
+7. System 1 vs. System 2 Thinking
+- **System 1 (Fast):** This is "intuitive" thinking or autopilot. It is fast and often accurate for daily life (like checking the sky for rain).
+- **System 2 (Slow):** This is **"analytic" thinking**. It is slow, methodical, and requires effort. Intelligence analysts must train themselves to use System 2 for complex problems to avoid jumping to the wrong conclusions.
+
+8. Mental Models
+Mental models are the **"mindsets" or frames of reference** we develop over time based on our experiences.
+- **How they help:** They allow analysts to quickly process vast amounts of information and get into productive habits.
+- **The Risk:** A mental model can cause a responder to focus only on what they _perceive_ is important, potentially missing small but critical details.
+- **The Solution:** Analysts must constantly review and update these models as they gain new experience.
+
+9. Structured Models: "Data into Buckets" 
+Structured models help analysts organize information so it can be analyzed more easily.
+- **Cyber Kill Chain:** A military concept used to understand the specific steps an adversary must take to be successful in an attack.
+- **Diamond Model:** A model used to categorize information into four main components: **Adversary, Infrastructure, Capability, and Victim**.
+
+10. Structured Analytic Techniques (SATs) 
+SATs are specific methods used to evaluate information while **reducing the impact of bias**.
+- **Goal:** To make analytic judgments transparent, testable, and easy to defend.
+- **Two Key Tasks:**
+    - **Decomposition:** Breaking a big problem into small parts so they can be looked at separately.
+    - **Visualization:** Creating a visual map of a problem to see how different parts relate to each other.
+
+11. The Intelligence Life Cycle
+This is the standard five-stage process used by the intelligence community (including the NSA and CIA):
+- **Planning and Direction:** Identifying what information is missing and creating a plan to find it.
+- **Collection:** Executing the plan to gather raw data (e.g., setting up network logs).
+- **Processing and Exploitation:** Cleaning the raw data and turning it into a usable format.
+- **Analysis and Production:** Evaluating the information to answer the original questions.
+- **Dissemination:** Delivering the final "intelligence product" to the customer who needs it
+
+12. Field of View Bias
+Every organization has a limited "field of view" based on where they collect data.
+- **Example:** A security company with mostly U.S. customers will see different threats than a company with customers in the Middle East. This is not a "bad" thing, but analysts must be aware of it when performing strategic analysis.
+
+13. Data vs. Information vs. Intelligence
+It is critical to know the difference between these three levels:
+- **Data:** Raw facts (e.g., an IP address).
+- **Information:** Data with context (e.g., "This IP address is a command-and-control server").
+- **Intelligence:** **Analyzed information** that meets a specific requirement (e.g., "We assess that this adversary is not targeting us directly; this is an incidental infection").
+
+14. Defining Cyber Threat Intelligence
+The course provides a specific definition of CTI:
+**"Analyzed information about the hostile intent, opportunity, and capability of an adversary that satisfies a requirement"**.
+The key takeaway here is that the focus must always be on the **threat** and the **customer's needs**, not just on what "looks cool".
+
+
+
+
+
+
+
+
+
