@@ -26,7 +26,6 @@
 # Moonlight Maze 
 
 Moonlight Maze is described as "The Dawn of State-Sponsored Digital Espionage". It represents one of the first major public cases of a highly sophisticated, long-term foreign intelligence operation targeting sensitive networks.
-
 Here are the comprehensive details of the case:
 
 ### **Overview and Discovery**
