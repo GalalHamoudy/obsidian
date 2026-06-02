@@ -61,39 +61,32 @@ The sources highlight several critical CTI lessons from this case:
 Operation Aurora is a landmark case study in Cyber Threat Intelligence (CTI), recognized for changing how the industry views state-sponsored threats against the private sector.
 
 ### **Overview and Discovery**
-
 Publicly disclosed in **January 2010**, the operation came to light after Google released a report stating they had been targeted. While Google was the most prominent victim, their internal investigation revealed that the campaign was much broader, targeting the **Gmail accounts of Chinese human rights activists**.
 
 The scope of the attack was massive, involving multiple intertwined campaigns against over 30 major U.S. companies, including **Northrop Grumman, Morgan Stanley, Dow Chemical**, and others. By 2011, researchers realized that several other major intrusion sets—such as the Elderwood Project, Operation Shady RAT, and the RSA SecurID breach—were all linked to this same activity.
 
 ### **Tools and Tradecraft**
-
 The attackers demonstrated a high level of sophistication through their technical methods:
-
 - **Zero-Day Exploits:** The campaign utilized an unprecedented number of zero-day exploits—initially eight were identified—targeting vulnerabilities in applications like Internet Explorer and Adobe.
 - **Malware Families:** The exploits were used to deliver various malware, most notably **PoisonIvy** and **Hydraq**.
 - **Tactics:** The actors combined **spear-phishing emails** with **"watering hole" style exploitation** to gain access to target networks.
 - **The Name "Aurora":** The name was not given by the attackers; rather, it was a common file folder path found within the malware used in the campaign.
 
 ### **Attribution to China**
-
 The sources state that analysis across these campaigns placed attribution on **China’s PLA Unit 61398**. Key evidence included:
-
 - **Infrastructure:** Forensics revealed a string of command-and-control (C2) servers leading back to IP addresses owned by the Chinese government.
 - **Operational Failures:** The attackers made frequent operational security (OPSEC) mistakes, such as using the same "call signs" (nicknames) in their attacks as they used on social media and gaming platforms.
 - **Leaked Communications:** Intercepted and leaked communications reportedly showed Chinese government officials directing the campaign.
 
 ### **Key Lessons Learned**
-
 Operation Aurora was a "wake-up call" for the cybersecurity industry for several reasons:
-
 - **Private Sector as a Target:** It proved that state-sponsored digital espionage was not just a threat to military and government networks, but also to civilian and private companies.
 - **Value of Victim Data:** It highlighted that the most valuable data for understanding an intrusion is often found **within the victim's own network logs**, not in classified government documents.
 - **Cross-Sector Analysis:** The case showed that sharing threat information across different industries (cross-sector) is essential, as attackers often target multiple verticals simultaneously.
 
 ---
 
-# **how an analyst should think** and the mental processes involved in turning information into intelligence.
+# **How an analyst should think** and the mental processes involved in turning information into intelligence.
 
 1. Kent’s Analytic Doctrine 
 Sherman Kent, a famous intelligence figure, created a set of rules for analysts to ensure their work is professional and accurate. The key points are:
@@ -205,7 +198,7 @@ Analysts use different ways to "group" attacks together:
 
 ---
 
-Case Study: PROMETHIUM and NEODYMIUM
+## Case Study: PROMETHIUM and NEODYMIUM
 
 **Background and Shared Links**
 - **The Groups:** PROMETHIUM (operating since 2012) and NEODYMIUM (operating since 2016) are two distinct entities.
@@ -230,7 +223,7 @@ The source provides a visual map of a NEODYMIUM attack:
 4. The exploit runs **shellcode** that connects to a remote server.
 5. This server downloads additional code to eventually install the final **malicious payload** used to steal data.
 
-**4. Analyzing with the Diamond Model **
+**4. Analyzing with the Diamond Model**
 Using the **Diamond Model**, Microsoft was able to "cluster" these intrusions into two groups.
 - **Clustering:** They focused on two points of the diamond: **Victims** (both targeted individuals in Turkey) and **TTPs/Capability** (both used the same exploit but different malware).
 - **Value for Defenders:** This analysis shows that "one size does not fit all" in defense. If an organization is told to protect against PROMETHIUM, they would focus on blocking instant messenger links. If they are protecting against NEODYMIUM, they would focus on better email security.
