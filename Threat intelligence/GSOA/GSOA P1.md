@@ -79,7 +79,82 @@ Opposite (Ignore, Accept, Support)
 
 Psychological Operations (PSYOP)
 
+A PSYOP campaign is in essence running an information warfare campaign against a target (individual, group, organization, government) to influence that target in your favor. 
+PSYOP goals are to influence emotions, motives, andobjective reasoning to change the behavior of an adversary.
+
+---
+
+Forms of Disinformation
+
+Impostor
+Fabricated
+Misleading
+Satire
+Context
+Manipulated
+
+Impostor
+Official or genuine sources can be impersonated.
+This can be done using Deep Fake computer algorithms, as well as the editing of a photo. 
+
+There are even programs1, 2 that can make a piece of audio sound like someone else’s voice, based upon audio samples of the original living person
+https://www.resemble.ai/
+https://www.descript.com/regenerate
 
 
+Fabricated
+Information that has been newly made
+Fabricated news is, on average, easier to detect since most official sources will not speak or write about the same information.
 
 
+Misleading
+The general purpose of misleading information is to frame someone or something.
+
+
+Satire
+Satire has no intention to cause harm. It is meant to be funny
+
+
+Context
+Genuine information gets shared with a false or manipulated context.
+Correct headline
+Correct picture
+False or manipulated parts
+Propaganda
+
+
+Manipulated
+This is most common with images and video. The original footage can be altered or manipulated to deceive
+
+
+---
+
+How to Examine Images (Pictures / Videos)
+Context
+Altered – Manipulated – Edited
+Staged
+Fake/Deep fake
+Correct video, wrong narrative
+
+
+If we sum up the examination of this account, we have found five tells that this might be a fake account and two pieces of information that might tell us that this is not a fake account. The next step could be to examine the overall behavior of this account, rather than the account characteristics
+
+Nonhuman behavior:
+Always online (never sleeps)
+Instant reply/share/like (bot)
+Strange sentence structure or wording
+Lack of personal information
+No real (human) interaction
+
+
+Tools and Techniques
+Critical thinking
+CrowdTangle
+Hoaxy
+Botometer
+Reverse image search
+Evaluating websites
+Archiving tools
+
+
+39
