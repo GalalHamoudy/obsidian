@@ -6,6 +6,8 @@
 4. Application Programming Interfaces
 
 ---
+## Topic 1: Disinformation and fake News
+
 
 Disinformation 
 - is information that is being spread on purpose with a specific narrative to influence the reader and it Has some truth and Not 100 % accurate.
@@ -157,4 +159,178 @@ Evaluating websites
 Archiving tools
 
 
-39
+CrowdTangle
+CrowdTangle is a tool owned by Meta. CrowdTangle has a free Chrome browser extension that will help you pivot. The extension will give you better insight into how certain links on the internet are being spread and by whom on Facebook, Twitter, Reddit, and Instagram
+To use the CrowdTangle Link Checker extension, you must have a Facebook (sock puppet) account. Once installed, you can visit any page on the internet and then open the CrowdTangle Link Checker extension and examine the results.
+
+
+Hoaxy
+Hoaxy is a tool that visualizes the spread of articles online. 
+It’s great for pivoting into who spread a certain message and analyzing who connects to whom.
+
+
+Botometer
+Botometer1 is a tool to check if a Twitter account has the characteristics of being a bot or not. The higher the 
+score, the more likely it is that the account is a bot
+
+
+Archiving Tools
+Sources like archive.org1, archive.is2, and archive-it.org3 keep archives of pages over years.
+
+
+Resources for Disinformation and Fake News
+Snopes.com
+Factcheck.org
+Poynter.org
+Eufactcheck.eu
+Knowyourmeme.com
+
+---
+
+## Topic 2: OSINT Data Types and Data Analysis
+
+
+However, the data can generally be classified into two types:
+
+Structured data:
+Well-defined format
+Readily parsed into discrete data elements
+OSINT-relevant data retrieved via APIs will typically be returned in a structured format.
+JavaScript Object Notation (JSON) data
+Delimited data
+Relational data
+
+Unstructured data:
+Format varies
+Parsing is more challenging; is specific to the source
+
+
+Characteristics of JSON data:
+Often seen as data enclosed in curly braces { }
+Name/value pairs
+Name/value separated by a colon :
+Name/value pairs delimited by a comma ,
+Values can be numbers, strings, or complex data structures called objects.
+Lightweight data interchange format
+Language independent
+Easy to parse with common tools
+Common data format encountered when using APIs
+
+
+Delimited data
+Delimited data is a structured data type with fields separated by a fixed character.
+The fields are consistent in number and in sequence.
+Data may be enclosed inside double quotes.
+This format may include a header row with the field names
+Comma-separated values (CSV) is a common format for delimited data.
+Database output is commonly in a delimited format.
+
+Relational Data
+Relational databases extend the familiar tabular data model.
+Data is organized into tables with rows and columns.
+Each row is a record, and the columns define the attributes of the record.
+Data is typically normalized and stored in multiple tables.
+Databases provide concurrency control and support simultaneous use by multiple users.
+Relational database systems include MySQL, Oracle, SQL Server, and SQLite.
+A lesser common data source for OSINT investigations
+
+
+timestamp
+For consistency, it is strongly recommended to use the ISO 8601 format so that there is no ambiguity as to the month and day position in the date, and the time zone information is included. Normalizing to Universal Coordinated Time (UTC) is a best practice for any type of logging,
+
+
+Create Cryptographic Hash
+Best practice is to use SHA-2, the Secure Hashing Algorithm 2. SHA-2 has an output length of 256 bits, but it can also generate longer outputs. SHA-2 is the successor to SHA-1, which has a fixed output length of 160 bits. 
+MD5 is a legacy protocol that has a fixed output length of 128 bits. MD5 has been deprecated but is still commonly used.
+
+---
+
+## Topic 3: Understanding JSON
+
+JSON has multiple 
+forms:
+A set of name/value pairs delimited by commas enclosed in curly braces
+A comma-separated list of values enclosed in square brackets
+
+Compact JSON is stored as a single line, so utilities such as grep, head, or tail are not effective.
+`cat illy-compact.json | json_pp` 
+It can use the shell pipeline to format the output.
+
+Parsing JSON with jq
+`jq <filter> <input_file>`
+
+the dot (.) means that the contents of the file should be displayed without filtering any results
+`jq '.' simple.json`
+
+Note the use of a new option for jq [-c ]. This tells jq to use compact output.
+CSV data can be read using jq and converted into JSON.
+
+There are many ways to leverage jq to modify data formats:
+JSON input to a different JSON output
+JSON input to CSV output
+CSV input to JSON output
+CSV input to CSV output
+
+
+Note that the input to the @csv operator must be an array—if JSON is passed directly to that operator, it will throw an error.
+The -r parameter tells jq to output in raw format. This is necessary when converting to CSV
+
+`jq -r '.sites[] | [.name, .category, .valid] | @csv' Galal.json`
+
+
+to practice with jq tool: https://play.jqlang.org/
+
+
+---
+
+## Topic 4:  Application Programming Interfaces (APIs)
+
+APIs hide the complexity of the implementation and focus on what it is that you are asking the software to do
+
+For OSINTers, a RESTful API is often much easier to access and to understand.
+RESTful APIs can return data in many different formats, such as JSON, YAML, and XML.
+
+RESTful APIs are stateless:
+• There is no memory of previous calls.
+• Each call must contain all required information to complete the request
+
+
+Six constraints must be met if an interface is to be considered RESTful:
+1. Client-server 
+2. Stateless
+3. Cacheable
+4. Uniform Interface
+5. Layered system
+6. Code on demand (optional)
+
+
+usage of the API may require pre-approval and registration to obtain an API key, and the number of API calls that you make in a given time period may be limited
+
+People-Centric Search APIs
+People-oriented paid search providers that provide APIs: FullContact, pipl.
+People-oriented paid search providers that do not provide APIs: Intelius, Spokeo
+People-oriented free search providers that do not clearly provide APIs: Radaris, ThatsThem, TruePeopleSearch, Xlek, Zabasearch.
+
+Other services with APIs that have OSINT use cases:
+• Shodan
+• Censys
+• Hunter
+
+
+There are also specialized websites for testing API calls such as https://reqbin.com/ but these should only be used in accordance with your OPSEC requirements. 
+
+
+Internet Storm Center and DShield
+The Internet Storm Center (ISC) is a long-running community service in support of information security. Sponsored by SANS, it features a must-read handler diary that covers current trends and topics in information security. However, attack trends and emerging threats may not be interesting to an OSINT analyst. There are other parts to the ISC that can play a role in OSINT investigations. DShield is a project that collects traffic from sensors around the world and then makes that data available for review and analysis. DShield is a distributed intrusion detection system, so it contains a rich set of network data.
+
+
+DShield API
+The DShield API is a free, unauthenticated API that offers many useful API calls.
+
+The -s option for curl makes the tool run in silent mode, so any messages such as progress bars or status messages are silenced, and only the data is shown. This is a standard practice when making API calls to make sure that the output is only the requested data. 
+
+Adding the -A option to curl customizes the User-Agent string. 
+
+
+Enumerate all email addresses for a specific domain. > Register for a free account at hunter.io
+
