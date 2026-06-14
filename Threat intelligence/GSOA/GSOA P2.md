@@ -453,22 +453,312 @@ Understanding **variables**, **data types**, **lists**, **dictionaries**, and **
 ## Topic 4: Open-Source Software and Git
 
 
+%% 
+
+Continuing from our previous discussion, this section introduces **Git** and **GitHub**, which are essential tools for finding, downloading, and managing the OSINT scripts and software created by the global research community.
+
+### **1. Git Version Control**
+
+**Git** is an open-source "version control" system. While it was originally created for software developers to collaborate on code, it is incredibly useful for OSINT analysts.
+
+- **Purpose:** It tracks changes in files and allows multiple people to work on the same project without overwriting each other's work.
+- **Key Goals:** The creators of Git focused on making it **fast**, **simple** in design, and **distributed** (meaning every user has a full copy of the project history).
+
+### **2. Why OSINT Analysts Use Git**
+
+Most OSINT analysts are not professional programmers, but they still need to know how to use Git because:
+
+- **Tool Access:** Many of the best OSINT tools and scripts are hosted in public **code repositories**.
+- **Customization:** If you find a script on Git, you can download it and modify it to fit your specific investigation needs.
+
+### **3. Installing Git**
+
+Git is available for all major operating systems:
+
+- **Linux/macOS:** It is often pre-installed. If not, it can be added easily using package managers like `apt` or `brew`.
+- **Windows:** You can download a graphical installer or use a package like **GitHub Desktop**.
+
+### **4. GitHub and Repositories**
+
+**GitHub** is a website that hosts millions of Git "repositories" (folders containing code and documentation).
+
+- **Interaction:** You can interact with GitHub through the command line (most common), the website, or a desktop application.
+- **Searching:** You can use the GitHub search bar to find specific tools, such as a "Snapchat map scraper".
+
+### **5. Key Git Operations**
+
+To use Git effectively, you should understand a few basic commands:
+
+- **`git clone`:** This is the most important command for analysts. It downloads a complete copy of a repository from the internet to your local computer.
+- **`git init`:** Creates a brand-new repository.
+- **`git add` & `git commit`:** These are used to save changes you make to your local files.
+- **`git push`:** Sends your local changes back to a remote server (like GitHub).
+
+### **6. How to Clone a Repository**
+
+Downloading a tool from GitHub usually follows these steps:
+
+1. **Find the URL:** On the project page, click the green **"Code"** button and copy the URL ending in **`.git`**.
+2. **Run the Command:** Open your terminal, type `git clone`, and paste the URL.
+3. **Result:** A new folder will appear on your computer containing all the tool's files.
+
+### **7. "Some Assembly Required" (The README File)**
+
+Simply downloading the code is often not enough to make it work. Most repositories include a file called **`README.md`**.
+
+- **Importance:** This file contains the "instruction manual" for the tool. It tells you how to install dependencies and how to run the script.
+- **Evaluation:** A tool with a poor or missing README might be too difficult or risky to use in a professional investigation.
+
+### **8. Updating Your Tools**
+
+Code on GitHub changes frequently as developers fix bugs or add features. Your local copy does **not** update automatically.
+
+- **`git fetch`:** Checks the remote repository for any changes.
+- **`git pull`:** Downloads those changes and merges them into your local files.
+
+### **9. GitHub Pitfalls to Avoid**
+
+While GitHub is a treasure trove of tools, you must be careful:
+
+- **No Quality Guarantee:** Just because code is "open source" does not mean it is high quality or that it works correctly.
+- **Malicious Code:** Anyone can post to GitHub. You should always read through a script to ensure it isn't designed to steal your data or infect your system before running it.
+
+%%
+
+
+
+
+---
+
+## Topic 5: Python and the Web
+
+
+%% 
+
+This section explains how to use **Python** for the full lifecycle of OSINT data: from retrieving it from the web to storing and validating it for your investigation.
+
+### **The OSINT Automation Process**
+
+While previous lessons focused on assessing data already on your computer, this part introduces a complete **Model OSINT Automation Process**. The workflow follows these steps:
+
+1. **Select Data Source:** Identify where the target information lives.
+2. **Perform Web Call:** Use code to "fetch" the data from the internet.
+3. **Save and Hash:** Store the output in a file and immediately create a digital fingerprint (hash) to prove the data hasn't been changed.
+4. **Verify:** Check the file type and ensure the hash matches before performing your final analysis, such as keyword searches or record counts.
+
+---
+
+### **Making Web Requests with Python**
+
+To get data from the web, analysts use the **Requests** library. While Python has built-in tools for this, the third-party `requests` module is much more popular because it is easier to read and use.
+
+- **How it works:** You "import" the library and use a command like `requests.get('URL')`.
+- **Beyond Text:** When you make a call, Python doesn't just get the text of a page; it creates a **Response Object**. This object contains:
+    - **Status Code:** (e.g., 200 means success, 404 means not found).
+    - **Headers:** Metadata about the web server and the data sent.
+    - **Content:** The actual data (HTML, images, or JSON).
+    - **JSON:** If the source is an API, you can use `.json()` to automatically turn the data into a Python dictionary.
+
+---
+
+### **Handling and Validating Data**
+
+Once you have retrieved information, you must handle it professionally to ensure it can be used as evidence.
+
+#### **1. Writing to Disk**
+
+You can save API results directly to a file using only a few lines of code. This ensures you have a local copy of the evidence that you can analyze offline without making repeated calls to the web server.
+
+#### **2. Calculating Hashes**
+
+Integrity is vital in OSINT. Using the **`hashlib`** library, you can create a **SHA-256 hash** of your saved file. By recording this hash immediately after download, you can prove later that your analysis did not accidentally modify the original evidence.
+
+#### **3. Verifying File Types**
+
+Bad actors sometimes try to hide files by giving them the wrong extension (like naming a script "image.jpg"). The **`python-magic`** library identifies a file by its internal "magic bytes" rather than its name, allowing you to verify exactly what you downloaded.
+
+---
+
+### **Python vs. Shell Scripting: The Hunter API**
+
+The course compares the Linux shell script created earlier for the **Hunter.io API** with a new Python version.
+
+- **Why switch to Python?** Linux shell scripts only run on Linux. **Python is cross-platform**, meaning the same script will work for a team using a mix of Windows, Mac, and Linux computers.
+- **The Python Approach:** While the Python script is longer, it is more "extensible" (easier to add new features to). It uses three main components:
+    1. **`argparse`**: To let the user type the target domain (like `illy.com`) directly into the terminal when running the script.
+    2. **`requests`**: To handle the connection to the Hunter.io servers.
+    3. **`json`**: To format the messy web data into a "pretty-printed" version that is easy for a human to read.
+
+### **Section Summary**
+
+Collecting and storing data correctly is the foundation of OSINT. By using Python libraries like `json`, `hashlib`, and `requests`, an analyst can build a fully automated system that fetches data, proves its integrity, and organizes it for analysis. This approach is much faster and more reliable than manual copy-pasting.
+
+%%
+
+
+## Topic 6: Data Analysis with Python
 
 
 
 
 
+%% 
+
+This section of the course covers **Data Analysis with Python**, focusing on how specialized libraries make it much easier and faster to analyze OSINT data compared to standard programming methods.
+
+### **Introduction to Data Analysis with Python**
+
+While Python’s standard library is great for fetching and saving files, it has limitations when it comes to deep analysis. Replicating a simple Linux command like `sort | uniq -c` (which counts how many times each item appears) using only basic Python requires complex nested loops.
+
+For large data sets, these basic loops are "computationally expensive," meaning they are slow and use too much computer power. To solve this, analysts use **Data Science techniques** to load and process information more efficiently.
+
+---
+
+### **Using Data Science Libraries**
+
+Python is the most popular choice for data science because it is easy to use and has massive libraries specifically designed for analysis. Using these tools is essential for OSINT analysts to progress their investigations.
+
+**Key libraries include:**
+
+- **NumPy:** For advanced math.
+- **pandas:** The most important tool for OSINT analysis, designed to handle large, complex data sets.
+- **Jupyter/IPython:** Environments for writing and sharing interactive code.
+
+---
+
+### **The pandas Library and DataFrames**
+
+The **pandas** library is the ideal solution for OSINT because it can handle very high volumes of data. Its core feature is the **DataFrame**, which is a row-and-column structure that looks and acts like a spreadsheet. Because it uses "set operations," it can process thousands of records almost instantly.
+
+#### **1. Loading CSV Data**
+
+Loading a spreadsheet into pandas is a simple one-line operation using `pd.read_csv()`. Even if a file has thousands of lines, pandas automatically recognizes the **header row** (column names) and separates them from the actual data records.
+
+#### **2. Loading and Flattening JSON**
+
+JSON data often has "nested" values (information hidden inside other information). To analyze this in a spreadsheet format, pandas uses a process called **flattening** or **normalization**. The `json_normalize()` function converts these nested values into their own columns in the DataFrame.
+
+---
+
+### **Analyzing Data with pandas**
+
+Once data is in a DataFrame, you can perform powerful assessments with very little code.
+
+- **Inspecting Data:** You can use `.head()` to see the first few rows or `.tail()` to see the last few.
+- **Counting Records:** The `len()` function tells you exactly how many rows of data you have. Analysts should avoid using `.size`, as that counts every single individual piece of data (rows multiplied by columns) rather than the number of records.
+- **Unique Values:** The `.unique()` function extracts a list of all unique items in a column (like every unique password in a breach file).
+- **Frequency Counts:** The `.value_counts()` function creates a histogram, showing which values appear most often. You can even use `normalize=True` to see the **percentage** of times a value occurs rather than just the raw number.
+
+---
+
+### **Searching and Querying Data**
+
+The `.query()` method allows you to search across your data using logic. You can use familiar Python string methods like:
+
+- **`startswith()`**: To find emails beginning with "ant".
+- **`endswith()`**: To find accounts from specific regions, like ".kr".
+- **`contains()`**: For a broad search of any keyword in any position.
+- **Searching Lists:** You can load a text file full of keywords into a Python list and have pandas loop through your data to find matches for every word in that list automatically.
+
+---
+
+### **Data Transformation**
+
+A major part of OSINT is **enriching** your data by breaking it down into more useful parts.
+
+- **Splitting Columns:** You can take an email address and use `.str.split('@')` to separate the **username** from the **domain**.
+- **Creating New Columns:** You can then save these separate parts into brand new columns in your DataFrame, making the data much easier to filter or use in other tools.
+
+---
+
+### **Saving Your Results**
+
+After you have cleaned and enriched your data, saving it back to your computer is a simple step.
+
+- **`to_csv()`**: Saves the data as a spreadsheet.
+- **`to_json()`**: Saves the data as a JSON file.
+
+---
+
+### **Advanced Operations: Joins**
+
+A "Join" is a technique used to connect two different data sources based on a common value. **Example:** If you have one file containing Instagram users and another file containing Twitter users, you can "join" them using their email addresses as the common link. This allows you to instantly see which people have accounts on both platforms and groups their identities together.
+
+---
+
+### **Section Summary**
+
+Python provides the flexibility to fully automate the OSINT data lifecycle. While the standard library handles basic file operations, third-party libraries like **requests** (for fetching web data) and **pandas** (for analysis) provide the high-performance tools needed for modern investigations. By tailoring these scripts to specific data sources, an analyst can significantly enhance their investigative efficiency.
 
 
+Continuing from the summary of Section 2, the following explanation covers the detailed **Python Appendices**, which provide the specific coding skills needed for OSINT automation, focusing on strings, numbers, and collections (lists and dictionaries).
+
+### **1. Appendix: Python Strings**
+
+Strings are sequences of characters, including letters, numbers, and symbols, typically held within single (') or double (") quotes. Analysts use many built-in "methods" to manipulate this text:
+
+- **Changing Case:** You can use `.upper()`, `.lower()`, `.capitalize()`, or `.title()` to standardize text (e.g., making all usernames lowercase for consistent searching).
+- **Concatenation:** To join strings together, you can use the `+` sign or the `.join()` method. For example, joining a username string with a domain string to create a full email address.
+- **Searching Strings:**
+    - **`find('x')`**: Returns the position of a character.
+    - **`startswith()` and `endswith()`**: Return `True` or `False` based on the start or end of the string.
+    - **`'substring' in string`**: A simple way to check if a specific word exists inside a larger block of text.
+- **Indexing and Slicing:** Every character has a number (index) starting at **0**. You can use `` to get the first character or `[-1]` to get the last.
+- **"IS" Tests:** Methods like `.isdigit()`, `.isalpha()`, or `.islower()` allow you to test if a string consists only of numbers, letters, or lowercase characters.
+- **Essential Utilities:**
+    - **`len()`**: Returns the total number of characters.
+    - **`replace()`**: Swaps a specific character or word for another.
+    - **`strip()`**: Removes extra white space or specific characters from the beginning or end of a string.
+- **Printing:** The `print()` function displays output. Using **f-strings** (e.g., `print(f'Hello {name}')`) is a powerful way to embed variables directly into text.
+
+---
+
+### **2. Appendix: Python Numeric Types and Booleans**
+
+Automation often requires mathematical calculations or logical decision-making.
+
+- **Numbers:** Python supports **Integers** (whole numbers) and **Floating-point numbers** (decimals).
+- **Math Operators:** Beyond basic addition and subtraction, analysts use:
+    - **`**`**: Exponents (raising to a power).
+    - **`//`**: Floor division (returns the whole number, dropping the remainder).
+    - **`%`**: Modulo (returns only the remainder, useful for finding patterns in data).
+- **Booleans:** Variables set to `True` or `False`. These can be combined using logical operators: **`and`**, **`or`**, and **`not`**.
+
+---
+
+### **3. Appendix: Python Collections**
+
+Collections are "containers" used to store multiple pieces of data together.
+
+#### **Lists**
+
+A list is a sequence of items separated by commas inside square brackets `[ ]`.
+
+- **Nesting:** Lists can contain other lists or dictionaries, creating complex structures.
+- **Modification:** You can change items using their index, add to the end with `.append()`, or remove items with the `del` command.
+- **Membership:** Use `in` to check if an item is in a list, or `.count()` to see how many times it appears.
+- **Sorting:** You can use `.sort()` to permanently change the order or `sorted()` to create a sorted copy.
+
+#### **Dictionaries**
+
+Dictionaries are better for complex OSINT data because they store information in **key/value pairs** inside curly braces `{ }`.
+
+- **Efficiency:** Unlike lists, you don't need to loop through everything to find a value; you can retrieve it directly using its unique "key" (e.g., `dict['phone']`).
+- **Keys and Values:** Keys are usually strings or numbers, while values can be any Python data type, including nested lists or even other dictionaries.
+- **Accessing Data:**
+    - **`.keys()`**: Returns a list of all labels.
+    - **`.values()`**: Returns a list of all data entries.
+    - **`.items()`**: Returns both keys and values as **tuples** (immutable sequences).
+
+---
+
+### **4. Widespread Use of Dictionaries and JSON**
+
+Understanding dictionaries is the most critical skill for modern OSINT automation because they mirror **JSON data**.
+
+JSON (JavaScript Object Notation) is the standard format for data returned by most web **APIs** (like Twitter, Shodan, or Hunter.io). Since JSON is built on name/value pairs, Python can instantly turn it into a dictionary. This allows an analyst to fetch messy data from the web and immediately use Python's dictionary methods to extract exactly what they need, such as an email address or a location coordinate, with very little code.
 
 
-
-
-
-
-
-
-
-
+%%
 
 
