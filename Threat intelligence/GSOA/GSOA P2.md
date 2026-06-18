@@ -598,7 +598,7 @@ Collecting and storing data correctly is the foundation of OSINT. By using Pytho
 
 ## Topic 6: Data Analysis with Python
 
-
+One of the core data elements in the pandas library is the DataFrame. This is a row and column-based data structure, which lends itself to set operations. That means that even large sets of data can be quickly processed
 
 
 
