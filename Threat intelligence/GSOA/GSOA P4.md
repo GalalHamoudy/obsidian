@@ -214,6 +214,7 @@ By using these tools, analysts can move beyond simple web browsing to "drill dow
 
 %%
 
+## Topic 2: The Dark and Hidden Web
 
 %% 
 
@@ -256,10 +257,122 @@ Unlike the surface web, these environments are not well-indexed or searchable. F
 
 
 
+OpenNIC operates its own DNS servers, which you can configure your system to use to resolve addresses. The  DNS service covers normal internet domains as well as domains within OpenNIC that are not administered by ICANN.
+For more information about OpenNIC, visit https://sec587.info/78
+
+cryptocurrencies have had their blockchains used to create domains resistant to take-downs
 
 
+%% 
 
+This section of the course explores specialized networks and alternative naming systems often used in the dark web and cybercrime underground to achieve anonymity and censorship resistance.
 
+### **1. Challenges of Darknet Access**
 
+While gaining entry to dark networks is usually not technically difficult once the correct software is installed, the primary challenge for investigators is **navigation and discovery**. These environments are not well-indexed; for example, a standard Google search for `.onion` addresses returns no results because standard surface crawlers cannot reach them. Investigators often need to rely on known entry points or specialized search tools to begin gathering intelligence.
 
+### **2. OpenNIC: The User-Controlled Network**
 
+**OpenNIC** is a "user-controlled" alternative top-level domain (TLD) network.
+
+- **Alternative DNS:** It operates its own DNS servers which can resolve standard ICANN domains as well as OpenNIC-specific domains.
+- **TLD Examples:** It supports numerous TLDs, including `.bbs` (its first, created in 2000), `.chan`, `.dyn`, `.free`, `.libre`, `.geek`, `.pirate`, and many others.
+- **Usage:** While many people use OpenNIC DNS servers for privacy, very few users actually visit specific OpenNIC domains.
+
+### **3. Understanding Blockchain DNS**
+
+Cryptocurrencies like **Emercoin**, **Namecoin**, and **Ethereum** have used their decentralized blockchains to create domain names that are **resistant to take-downs**.
+
+- **Scope of Protection:** This system only protects the **domain name** itself; the actual web server and IP address hosting the content are not afforded any special protection by the blockchain DNS.
+- **Major Networks and TLDs:**
+    - **Namecoin:** Supports the **`.bit`** TLD (released in 2018).
+    - **Emercoin (EmerDNS):** Supports **`.coin`**, **`.bazar`**, **`.emc`**, and **`.lib`** (started in 2014).
+    - **Ethereum (ENS):** Supports **`.eth`**, **`.kred`**, **`.luxe`**, **`.art`**, and **`.ceo`** (launched in 2017).
+- **Accessibility:** Because these are nonstandard domains, they cannot be reached using a normal web browser and the regular DNS system without specialized configurations.
+
+### **4. Malicious Use of Blockchain DNS**
+
+Criminals and malware operators have transitioned to these nonstandard TLDs to hide their infrastructure.
+
+- **Criminal Hosting:** These domains are used to host marketplaces and malicious files that are difficult for authorities to seize.
+- **Botnets:** New botnets have been observed using blockchain DNS to hide their **command and control (C2) servers**, making their communications harder to disrupt.
+- **Research:** Analysts like Kevin Perlow have demonstrated how investigators can discover these domains and "pivot" from them to find larger malicious networks.
+
+### **5. Accessing Blockchain DNS Services**
+
+To view content on these networks, investigators use specific methods:
+
+- **Browser Plugins:** Several third-party plugins allow browsers to resolve these addresses, such as **PeerName**, **FriGate**, and **Blockchain DNS**.
+- **Plugin Risks:** These tools are often created by small teams rather than large corporations. They can be buggy, may interfere with each other if multiple are installed, and can sometimes perform suspicious activities, so they should be examined carefully before use in sensitive investigations.
+- **OpenNIC Integration:** You can configure a device to use **OpenNIC DNS servers** to access EmerDNS addresses. However, OpenNIC **stopped** resolving Namecoin (`.bit`) domains in 2019 because they were being used too heavily by malware operators.
+
+%%
+
+Tor hidden services use the ".onion" top-level domain. Currently, each address within the Tor network is identified by a 56-character value derived from that particular Tor service's public encryption key (only 16-character domain names were used prior to the implementation of Tor version 3).1 The benefit to using a Tor service for those seeking anonymity is that web servers running Tor services do not use the DNS system and thus the actual IP the services are running on remains unknown unless a misconfiguration or other operational security issues leak this information
+
+A long with the forums and marketplaces, there are other services that are popular uses of Tor:
+• ProtonMail (email), protonirockerxow.onion
+• SecureDrop (file-sharing site), securedrop.org
+• ZeroBin (paste site), https://3g2upl4pq6kufc4m.onion
+dark.fail, darkfailllnkf4vf.onion
+• webhostingsecretrevealed.net, https://sec587.info/5w
+• onionlist.org/, https://sec587.info/5x
+
+%% 
+
+Continuing Section 4, this part focuses on the **Tor network**, search strategies for hidden services, and the risks associated with using surface-web proxies for dark web research.
+
+### **1. The Tor Network (The Onion Router)**
+
+The **Tor network** is the most widely used dark web system. It is designed to provide **anonymity** by bouncing user traffic through multiple relay nodes (entry, middle, and exit relays), making it difficult for a destination server to identify the original source IP address. Tor hidden services are uniquely identified by the **`.onion`** top-level domain.
+
+### **2. Notable Tor Services**
+
+Beyond criminal forums and markets, several legitimate organizations maintain a presence on Tor to ensure access for users in restrictive environments.
+
+- **Email:** ProtonMail and TorBox.
+- **Drop Services:** SecureDrop (used for anonymous whistleblowing).
+- **Mirrored Sites:** Major organizations like the **CIA**, **Facebook**, **DuckDuckGo**, and **The New York Times** maintain Tor versions of their websites.
+
+### **3. Finding and Navigating Tor Links**
+
+Because Tor sites are not indexed by standard engines like Google, analysts rely on **link lists** and directories.
+
+- **Link Lists:** Sites like **dark.fail**, **onionlist.org**, and **Onion List** provide directories of active forums and marketplaces.
+- **Status Indicators:** These lists often indicate if a site is online, offline, or has been flagged as a **scam**.
+- **OPSEC Alert:** The surface web version of _dark.fail_ was compromised in 2021; analysts are advised to use the Tor-based onion version of such directories to ensure they are getting legitimate links.
+
+---
+
+### **4. Tor Search Engines**
+
+While limited compared to surface web engines, several specialized tools exist for searching the Tor network:
+
+- **Ahmia:** An open-source search engine that indexes both **Tor** and **I2P** pages. It is available on both the surface web and Tor.
+- **Tor66:** This engine provides a useful "Fresh Onions" list showing newly discovered sites and can filter popular sites by **language** (e.g., English, Chinese, Russian).
+- **DarkSearch:** A reliable engine that claims to have indexed millions of Tor pages.
+    - **Advanced Queries:** It supports Boolean operators like **AND**, **OR**, and **NOT** to focus results.
+    - **API Access:** DarkSearch offers a simple API that allows up to **30 queries per minute**, making it a prime target for Python-based automation. The API output is returned in a structured **JSON** format.
+
+---
+
+### **5. Tor Proxies: Benefits and Grave Risks**
+
+Surface net proxies (e.g., sites ending in `.onion.ws`, `.onion.sh`, or `.onion.cab`) allow users to view Tor content without using the Tor Browser.
+
+- **The OSINT Benefit:** Because these proxies bring Tor content to the surface web, they allow hidden services to be **indexed by standard search engines** like Google. An analyst can use the operator `site:onion.ws [keyword]` to find relevant Tor sites via a standard browser.
+- **The OPSEC Risk:** Using these proxies is **highly insecure**.
+    - **Traffic Interception:** Proxies have been caught replacing Bitcoin addresses with their own to steal funds from users.
+    - **Code Injection:** Proxies like _onion.cab_ have been found injecting **malicious JavaScript** and tracking code to deanonymize users and harvest system fingerprints (e.g., screen resolution, cookies, and plugins).
+
+### **6. Direct Scanning and Ingestion**
+
+For large-scale investigations, analysts can use automated open-source projects on GitHub to scan the dark web directly. Notable tools include:
+
+- **OnionIngestor:** For collecting data from multiple hidden services.
+- **TorBot** and **TorCrawl:** For automated crawling of onion links.
+- **OnionScan:** For identifying security leaks or relationships between different onion services.
+
+By utilizing these tools and search engines, an analyst can methodically map out infrastructure on the dark web while maintaining strict operational security to avoid deanonymization by malicious proxies or nodes.
+
+%%
