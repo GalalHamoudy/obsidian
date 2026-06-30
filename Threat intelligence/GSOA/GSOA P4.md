@@ -376,3 +376,232 @@ For large-scale investigations, analysts can use automated open-source projects 
 By utilizing these tools and search engines, an analyst can methodically map out infrastructure on the dark web while maintaining strict operational security to avoid deanonymization by malicious proxies or nodes.
 
 %%
+
+
+EmerDNS is a system for decentralized domain names supporting a full range of DNS records. EmerDNS operates under the "dns" service abbreviation in the Emercoin NVS.
+https://peername.org/
+
+|Zone|Intended Purpose|
+|---|---|
+|.coin|digital currency and commerce websites|
+|.emc|websites associated with the Emercoin project|
+|.lib|from the words Library and Liberty - that is, knowledge and freedom|
+|.bazar|marketplace|
+
+### Browser extensions
+
+Several 3rd-party browser plugins exist which allow you to easily visit EmerDNS domains:
+
+- [Peername.com browser extension](https://peername.com/browser-extension) (firefox, chrome, opera)
+- [Blockchain-DNS.info](https://blockchain-dns.info/) browser extension (firefox, chrome)
+- [friGate browser extension](https://fri-gate.org/) (firefox, chrome, opera)
+
+A more updated list of browser extensions that support EmerDNS may be found [here](https://emercoin.com/documentation/links-resources).
+
+Ahmia, Tor66, and DarkSearch are reliable ones, although they are not as thorough as a public internet search engine such as Google.
+https://ahmia.fi/
+https://darksearch.io/
+The website can currently be found on Tor at: 
+tor66sewebgixwhcqfnp5inzp5x5uohhdy3kvtnyfxc2e5mxiuh34iid.onion (https://sec587.info/bg)
+
+
+
+## Topic 3: Cybercrime, Markets, and Forums
+
+
+%% 
+
+This section explores the **Cyber Underground**, detailing how criminal and extremist groups operate across forums and marketplaces on the surface, deep, and dark web, and how OSINT analysts can investigate them.
+
+### **1. The Cyber Underground and Authorization**
+
+As the world moved online in the 1990s, so did criminal activity, leading to a rise in fraud, theft, and extremist organizing. Before investigating these spaces, analysts must adhere to two critical principles:
+
+- **Get Authorization:** You must have written approval from your organization and legal department before viewing or joining criminal or extremist sites.
+- **Expect Objectionable Content:** These sites often contain highly offensive and disturbing material. Analysts must be mentally prepared for this before conducting research.
+
+### **2. Underground Criminal Marketplaces and Forums**
+
+Underground platforms are used to sell a vast array of illegal goods and services, including:
+
+- **Technical Services:** Hacking services, exploit development, bulletproof hosting, DDoS-for-hire, and malware-as-a-service.
+- **Illicit Goods:** Drugs, stolen credit cards, counterfeit money, and stolen account credentials.
+- **Information and Influence:** Doxing services and the sale of social media "likes" or "follows".
+
+Common criminal activities discussed in these forums include **money laundering**, various forms of **fraud**, **identity theft**, and the management of **botnets**.
+
+---
+
+### **3. Investigating Underground Platforms**
+
+Contrary to popular belief, many criminal platforms are not on the dark web (Tor) but exist as restricted-access sites on the "regular" internet.
+
+#### **Key Pivot Points**
+
+Criminals must share contact details to operate, providing investigators with critical data points to "follow":
+
+- **User Identifiers:** Usernames, email addresses, and forum member/seller details.
+- **Communication Handles:** Discord and Telegram URLs, ICQ numbers, or Jabber addresses.
+- **Financial Data:** Bitcoin and other cryptocurrency wallet addresses.
+
+#### **Market Operations and Case Study**
+
+Underground markets often aim for a "frictionless" experience similar to eBay. Sellers use ratings and customer reviews to build goodwill and repeat business.
+
+- **The Silk Road Case Study:** Founder Ross Ulbricht was caught because he used the same pseudonym ("altoid") on a programming forum—where he included his real email address—as he did while initially building the marketplace.
+- **Anonymity and Crypto:** Unlike surface sites, these markets rely almost exclusively on cryptocurrency to maintain anonymity.
+
+---
+
+### **4. Fraud and Protection in the Underground**
+
+Because there is little trust between criminals, fraud is rampant.
+
+- **Rippers:** Sellers or sites that fail to deliver promised goods are labeled "rippers" on popular forums.
+- **Mimicry:** Fraudsters create "phishing" versions of famous marketplaces to steal credentials or payments from unsuspecting buyers.
+- **Escrow and Guarantors:** To protect themselves, users use **Escrow** services. A trusted forum "guarantor" holds the funds until the buyer confirms the item was received. This service usually costs a commission fee (up to 10%).
+
+---
+
+### **5. Underground Forum Dynamics**
+
+Forums are more complex than markets because they focus on community and information exchange rather than just sales.
+
+- **Entry Requirements:** Many require a referral from a current member, a join fee, or proof of "bona fides" (like sharing stolen data) to gain access.
+- **Reputation and Gatekeeping:** Maintaining a high reputation score is vital for access to sensitive info. Analysts may be "gatekept" by being asked to prove technical skills or demonstrate a criminal action.
+- **Languages:** While many use English, many others operate in Russian or other languages, requiring translation or linguistic expertise.
+
+### **6. Private Communication Channels**
+
+While initial contact happens in open forum threads, sensitive business quickly moves to private channels:
+
+- **Direct Messages (DMs):** Most platforms have built-in private messaging.
+- **Jabber (XMPP):** A highly popular decentralized messaging protocol for criminals.
+- **Popular Apps:** Depending on the group and language, targets may use **Telegram**, **Discord**, **WhatsApp**, **WeChat (微信)**, or **ICQ**. Analysts should use the app most popular with the target group to blend in.
+
+%%
+
+
+
+Making Payments
+Making payments for goods or services can almost always be done with a common cryptocurrency such as 
+Bitcoin or Monero. Some like Monero have a private blockchain. But payments with Bitcoin and other open 
+blockchain cryptocurrencies should be made using a "mixer" service (also called "tumblers" and "blenders") to 
+obfuscate where your funds actually came from. These services charge a fee, but by shuffling your payment 
+through many wallets, the source of the payment is hidden from the recipient (and others monitoring the 
+blockchain).
+Examples of popular mixing and tumbling services are:
+• Blender.io
+• Blenderbit.com
+• Cryptomixer.io
+
+
+
+## Topic 4: Cryptocurrency and Financial OSINT
+
+%% 
+This section continues with the final part of Section 4, focusing on **Cryptocurrency and Financial OSINT**, detailing how these digital assets work and the specialized tools analysts use to track them.
+
+### **1. Making Payments in the Underground**
+
+In underground markets and forums, making payments is almost exclusively done using **cryptocurrency**, such as Bitcoin or Monero. For an investigator, this is a critical data point because while standard banking records might be unavailable, the nature of many cryptocurrencies allows for a different kind of tracking.
+
+### **2. Fundamentals of Cryptocurrency**
+
+- **Definition:** A cryptocurrency is virtual or digital money in the form of tokens or coins that can be bought, sold, and traded.
+- **Technology:** They are based on cryptographic algorithms and a **blockchain** to create and process transactions.
+- **The Blockchain:** In simple terms, a blockchain is a type of database that stores information in "blocks" that are chained together in a permanent, chronological order.
+- **Mining:** This is the process of verifying transactions before they are added to the blockchain. It involves validating transactions and solving complex cryptographic hash puzzles.
+
+---
+
+### **3. Why Criminals Use Cryptocurrency**
+
+Bad actors prefer cryptocurrency for several key operational benefits:
+
+- **Anonymity:** It allows them to conduct illicit activities without being personally identified.
+- **Liquidity:** Funds are easily exchangeable for other currencies or can be "cashed out".
+- **Irreversibility:** Once a payment is sent (e.g., for extortion or illegal goods), the sender cannot undo the transaction.
+- **Automation:** Almost every aspect, from creating wallets to moving funds, can be automated.
+
+### **4. Money Laundering and Anonymity**
+
+Cryptocurrency is an attractive way to **launder funds**, making it difficult for Anti-Money Laundering (AML) investigators to trace money back to its criminal origin. However, the level of anonymity varies:
+
+- **Monero:** Maintains high privacy through a private blockchain ledger.
+- **Bitcoin:** Uses a **public ledger** where every transaction is recorded. As one detective noted, while catching a dealer on the street only proves one crime, uncovering a Bitcoin history is like "discovering their books".
+
+---
+
+### **5. Tracking Cryptocurrency Payments**
+
+For currencies with public blockchains, investigators can "follow the money," though tools like **mixers** are used by criminals to try and obscure these paths.
+
+#### **The Wallet Address**
+
+The starting point for any financial investigation is the **wallet address**, a unique cryptographic ID used to store and use the currency. Because these addresses are part of the immutable blockchain, they provide a permanent record of activity.
+
+#### **Blockchain Investigation Tools**
+
+Since all transactions are visible on a public blockchain, analysts use specialized tools to search for wallet IDs or transaction numbers.
+
+1. **Blockchain.com Explorer:** A free tool for tracking Bitcoin, Ethereum, and Bitcoin Cash.
+    
+    - **Transaction View:** Shows the outflow of funds (destination and amount) and the inflow (sender and amount).
+    - **Change Addresses:** It helps explain why a transaction might show two recipient addresses—one is the actual recipient, and the other is often receiving "change" from the transaction being returned to a different wallet controlled by the sender.
+    - **Summaries:** Provides a clear summary of hashes and fees, with toggles to view values in either USD or the specific cryptocurrency.
+2. **WalletExplorer:** A "smart" block explorer that provides **address grouping** and **wallet labeling**.
+    
+    - **Organization Identification:** It identifies wallet addresses associated with specific organizations, such as exchanges, gambling sites, and historical marketplaces.
+    - **Association:** It automatically links different Bitcoin addresses to the same wallet based on transaction data, saving the analyst from having to make those connections manually.
+3. **Bitcoin Who's Who:** A tracker that includes reports of **scam activity**, which is a primary goal of the site. It also provides URLs for any reported associations.
+    
+4. **Bitcoin Abuse Database:** A crowdsourced database focusing on wallet addresses used by criminals for ransomware and fraud. It features an **API** that can be used to check addresses, look up abuse tags, or submit new reports.
+    
+5. **Blockchair:** Features a clean graphical interface for showing sending and receiving wallets. The data is displayed in tables that can be scraped and exported as **CSV files**.
+    
+6. **Intelligence X (intelx.io):** A searchable database for Bitcoin addresses that provides the responsive data found, the date it was collected, and source URLs.
+    
+
+---
+
+### **6. Case Study: Investigating a Bitcoin Address**
+
+To demonstrate these concepts, the course provides a case study. The process begins with identifying a specific product or service on a **darknet market** hosted on Tor. By selecting a product and proceeding to the payment stage, an analyst can uncover the specific Bitcoin wallet address where the criminal wants the funds sent, providing the first major pivot point for a deeper investigation.
+
+---
+
+### **1. Case Study: Investigating Darknet Services**
+
+The investigation begins with a listing on a **Tor-based darknet market** for a service offering fake "selfie identification". These services claim to provide fraudulent ID documents, but analysts must determine if the service is legitimate within the underground or merely a scam.
+
+- **Financial Pivoting:** By following the payment instructions, investigators identified a specific **Bitcoin wallet address**. This wallet showed 70 transactions totaling over **$35,000**, acting as a collection point for funds from numerous other wallets.
+- **Corroborating Evidence:** Searching for this new wallet address on Google revealed its association with multiple reported **scams**, including ransomware, blackmail, and sextortion.
+- **Expanded Investigation:** Through this single pivot point, an analyst can link a seller of fake IDs to broader criminal networks, uncovering related email addresses, additional Tor websites, and IP addresses for further research.
+
+---
+
+### **2. The Cybercrime Underground: Common Fraud Activities**
+
+The sources detail specific categories of fraud discussed and facilitated within underground communities:
+
+- **Travel and Hospitality Fraud:** Criminals use stolen credit cards or hijacked user accounts to obtain car rentals, hotel stays, and flights. They also target loyalty programs to sell or use stolen miles and bonus points.
+- **Mules, Shipping, and Drop Services:** Fraudsters often rely on **"mules"**—individuals who transfer illicit goods or funds to obscure the paper trail. **"Drop services"** provide physical addresses for receiving packages bought with stolen funds, helping to move high-value items while keeping the actual criminal anonymous.
+- **Bank Fraud:** This broad category includes credit card theft, unauthorized wire transfers, and **Business Email Compromise (BEC)**. Advanced techniques mentioned include:
+    - **SIM Swapping:** Stealing a victim's phone number to bypass security controls.
+    - **BIN Searching:** Identifying banks that do not support **Mastercard SecureCode (MCSC)** or other 3D secure protocols to find easier targets for transaction fraud.
+- **Money Laundering:** Online laundering involves converting illicitly gained funds into a "clean" form to hide their criminal origin. This often requires intermediaries or the use of **cryptocurrencies** and **mixers** (services that scramble transaction paths) to thwart Anti-Money Laundering (AML) investigators.
+- **Government Payment Fraud:** This profitable area involves submitting fraudulent claims to government agencies, such as faked tax returns or unemployment benefits, to collect the resulting payments.
+- **Confidence Scams:** These tricks rely on psychological manipulation. Examples include **romance scams** on dating sites, **BEC** activities, and the classic **"Nigerian Prince" (419)** email scams. While these actors can be sophisticated, they are sometimes unmasked through their own weak operational security.
+
+### **3. Mobile Malware and Control Panels**
+
+Investigators may also encounter command-and-control (C2) panels for mobile malware. An example provided is the **Anubis** panel, a known Android banking trojan used to manage infected devices ("bots"), monitor contacts, and inject fraudulent screens into banking apps to steal credentials.
+
+%%
+
+
+
+
+
+
