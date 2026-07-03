@@ -25,7 +25,6 @@ Understanding how online undercover operations work is a key tool for investigat
 ### **Operational Considerations**
 
 Before beginning operations, several strategic questions should be addressed:
-
 - **Longevity:** How long should the sock puppet be kept active?
 - **Validation:** Multiple puppets can validate each other, but the compromise of one can potentially expose the entire network.
 - **Accessibility:** Should other team members have access to the accounts?
@@ -44,7 +43,6 @@ Before interacting with targets, you must determine your overall goals, understa
 #### **Engagement Tips**
 
 Successful interaction requires specific tradecraft:
-
 - **Jargon:** Learn and understand the slang and jargon of the target group to avoid sticking out as an imposter.
 - **Consistency:** Do not disappear immediately after getting information, as this is highly suspicious; maintain a long-term presence to build trust.
 - **Validation:** Be wary of information provided to you, as it may be intentionally or unintentionally false, and always try to corroborate it.
@@ -61,7 +59,6 @@ As social platforms transition toward virtual reality (VR) worlds, sock puppet o
 ### **The Death of Sock Puppets**
 
 Analysts must accept that their fictitious identities will eventually be "killed" or shut down. Common reasons for a sock puppet being burned include:
-
 - **Poor Persona:** Pretending to be something the account obviously is not.
 - **Disposable Emails:** Using "10-minute" email addresses that cannot be used for future account verification.
 - **Obvious Questions:** Asking questions that are clearly from an "investigator" perspective rather than those a genuine group member would ask.
@@ -76,9 +73,9 @@ Creating and operating sock puppets is a complex process that requires constant 
 
 OPSEC Standard Operating Procedure (SOP)
 What you can do is create an OPSEC SOP template based on the three known Security Operations Threat Levels:
-- Overt Work
-- Covert Work
-- Clandestine Work
+Overt Work
+Covert Work
+Clandestine Work
 
 %% 
 ### **What Is OPSEC?**
@@ -88,7 +85,6 @@ What you can do is create an OPSEC SOP template based on the three known Securit
 ### **Denying Valuable Information**
 
 The goal of OPSEC is to prevent an adversary from discovering your real identity or location. You must actively work to hide the following:
-
 - **Personal Data:** Full name, date of birth, home address, and national identifiers (like an SSN).
 - **Contact Info:** Personal or work telephone numbers and email accounts.
 - **Digital Footprint:** Social media posts, family/friend connections, and your **digital device fingerprint**.
@@ -96,7 +92,6 @@ The goal of OPSEC is to prevent an adversary from discovering your real identity
 ### **The "5 Times NO" Rules**
 
 The sources highlight five critical "no-go" areas for practicing good OPSEC:
-
 1. **NO Linking:** Keep work and private life 100% separated.
 2. **NO Private Connections:** Never use your home internet for research.
 3. **NO Office Connections:** Do not use standard office Wi-Fi or wired connections for OSINT gathering.
@@ -108,7 +103,6 @@ The sources highlight five critical "no-go" areas for practicing good OPSEC:
 ### **Overt vs. Clandestine OPSEC**
 
 Depending on the mission, the level of protection required varies:
-
 - **OPSEC for Overt Work:** This applies when it is acceptable for an adversary to detect your activity. It requires a dedicated OS or VM, a VPN, and a generic device fingerprint to blend in.
 - **OPSEC for Clandestine Work:** This is used when detection is **not** acceptable. It requires hardened hardware, multiple VPNs, **4G or 5G MiFi connections** (which offer non-static IP addresses), multiple custom-tailored device fingerprints, and the disabling of all system logs and crash reports.
 
@@ -131,7 +125,6 @@ A common misunderstanding is that **Incognito Mode** makes you invisible. While 
 #### **3. Useful Browser Extensions**
 
 To enhance OPSEC, analysts use specific add-ons:
-
 - **HTTPS Everywhere:** Enforces encryption on connections.
 - **Privacy Badger:** Blocks third-party trackers.
 - **uBlock Origin:** Blocks ads and prevents **WebRTC** from leaking your real IP address.
@@ -141,7 +134,6 @@ To enhance OPSEC, analysts use specific add-ons:
 #### **4. Analyzing Browser Extensions (ExtAnalysis)**
 
 Extensions themselves can be malicious, serving adware or harvesting your data. Analysts use **ExtAnalysis**, a Python-based tool, to examine these extensions.
-
 - **Permissions:** It rates permissions (like `<ALL_URLS>`) as high or critical risk.
 - **URLs & Domains:** It shows every server the extension communicates with, allowing you to spot suspicious traffic to unusual countries.
 
@@ -150,19 +142,13 @@ Extensions themselves can be malicious, serving adware or harvesting your data. 
 ### **Mobile Device OPSEC**
 
 Modern investigations often rely on mobile devices, especially when data is only available through mobile apps.
-
 - **Device Fingerprinting:** Every visit to a website leaves a digital fingerprint based on data your device sends to the server, which is subject to analysis.
 - **Selection Criteria:** Choosing a device depends on the make, model, OS, and which sensors are activated.
 - **NSA Guidance:** In 2020, the NSA released a tip sheet for mobile OPSEC, recommending the use of strong passwords/PINs, minimizing installed applications, and being cautious with attachments and links.
 
-%%
-
-
-%% 
 ### **Monitoring Network Traffic for OPSEC**
 
 It is vital for an investigator to know exactly what data their system is transmitting. Analyzing your own network traffic serves several purposes:
-
 - **Security Check:** Ensuring your system is not "phoning home" to inform a company or government about the sites you are visiting.
 - **Understanding Applications:** Seeing how websites and apps work under the hood.
 - **Discovering APIs:** Identifying hidden methods (APIs) to interface with sites for more efficient data gathering.
