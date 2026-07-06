@@ -486,8 +486,6 @@ Examples of popular mixing and tumbling services are:
 ## Topic 4: Cryptocurrency and Financial OSINT
 
 %% 
-This section continues with the final part of Section 4, focusing on **Cryptocurrency and Financial OSINT**, detailing how these digital assets work and the specialized tools analysts use to track them.
-
 ### **1. Making Payments in the Underground**
 
 In underground markets and forums, making payments is almost exclusively done using **cryptocurrency**, such as Bitcoin or Monero. For an investigator, this is a critical data point because while standard banking records might be unavailable, the nature of many cryptocurrencies allows for a different kind of tracking.
