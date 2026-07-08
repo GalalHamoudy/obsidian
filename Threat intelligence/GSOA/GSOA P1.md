@@ -853,3 +853,40 @@ From: https://jqlang.org/manual/#basic-filters
 | Command | jq '{a: 1} + {b: 2} + {c: 3} + {a: 42}'               |
 | Input   | null                                                  |
 | Output  | {"a": 42, "b": 2, "c": 3}                             |
+
+
+---
+
+# Plus 2025:
+
+## Apply OSINT Frameworks: NATO, CRAAP, ACH
+
+The Admiralty Code (NATO Admiralty code) is a foundational Open Source Intelligence (OSINT) framework used to grade intelligence. It prevents bias by separating the Source Reliability (A–F) from the Information Credibility (1–6), allowing analysts to weigh how much they trust an entity against how believable the specific claim is Evaluating OSINT: Why It Matters and How to Do It Right.
+
+In OSINT and Cyber Threat Intelligence (CTI), this dual alphanumeric code (e.g., A1, B2) structures your analysis
+
+#### valuation of the source (A-F)
+This scale describes how credible a source is:
+- **A**: Very trustworthy, as it has proven to be reliable in the past.
+- **B**: Normally trustworthy.
+- **C**: Occasionally reliable, but not always consistent.
+- **D**: Unreliable source.
+- **E**: Unknown source whose credibility cannot be assessed.
+- **F**: Proven false or misleading source.
+
+#### Evaluation of the information (1-6)
+This scale indicates how reliable a particular piece of information is:
+- **1**: Confirmed by independent sources.
+- **2**: Very probably correct.
+- **3**: Possibly correct.
+- **4**: Rather unlikely.
+- **5**: Doubtful.
+- **6**: Not assessable.
+A typical assessment could be, for example **B2** which means that a usually reliable source provides highly probable information. This system helps to weigh information objectively (NATO Intelligence Doctrine, 2020).
+
+#### Comparison with other verification models
+
+There are several alternative methods for verifying information:
+- **CRAAP test** (Currency, Relevance, Authority, Accuracy, Purpose) - A method for evaluating sources in the academic field.
+- **SIFT method** (Stop, Investigate, Find better coverage, Trace claims) - Often used in journalism to debunk fake news.
+- **Bayesian analysis** - A mathematical approach to evaluating the probability of information.

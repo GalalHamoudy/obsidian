@@ -86,7 +86,6 @@ Finally, we end the section by covering persistent monitoring of sites like Tele
 - Persistent Monitoring
 - Automating your Python code in the cloud
 
-Read less
 
 ### Section 3: Video, Image and Audio Analysis, AI for OSINT, Advanced Enumeration and Gaming
 
