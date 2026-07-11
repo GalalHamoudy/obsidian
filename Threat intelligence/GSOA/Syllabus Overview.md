@@ -132,8 +132,6 @@ Finally, we end with an all-new section on gaming OSINT discussing why it's impo
 - 100% passive enumeration of a website
 - Gaming OSINT
 
-Read less
-
 ### Section 4: Sock Puppets, OPSEC, Dark Web, Cryptocurrency and Wireless
 
 This section covers creating and managing sock puppets while maintaining OPSEC. Students explore OSINT techniques for the Dark Web, tracking criminal marketplaces, locating hidden servers, and automating monitoring. It includes a cryptocurrency lab on transaction tracking and sanctioned entities. The day ends with a wireless OSINT overview.

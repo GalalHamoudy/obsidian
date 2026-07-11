@@ -10,16 +10,14 @@
 
 
 Disinformation 
-- is information that is being spread on purpose with a specific narrative to influence the reader and it Has some truth and Not 100 % accurate.
-- The information is altered or manipulated in such a way that it is tailored to look like an official piece of information, but the purpose is to influence the reader.
-- The difference between fake news and disinformation is that disinformation has some truth to it and/or is crafted in such a way as to not be 100% accurate.
+is information that is being spread on purpose with a specific narrative to influence the reader and it Has some truth and Not 100 % accurate.
+The information is altered or manipulated in such a way that it is tailored to look like an official piece of information, but the purpose is to influence the reader.
+The difference between fake news and disinformation is that disinformation has some truth to it and/or is crafted in such a way as to not be 100% accurate.
 
 Fake news 
-- is news that is being spread online that is not true and (100 %) not true and Crafted to influence
-
+is news that is being spread online that is not true and (100 %) not true and Crafted to influence
 
 %% 
-
 ### **1. History of Disinformation**
 
 Disinformation and fake news tactics are not new; humans have used them since the beginning of time.
@@ -66,7 +64,7 @@ Information warfare
 - It can be a technology company trying to gain an advantage over a competitor. It can be a local political party or rebel group trying to spread a certain narrative to make an adversary look bad.
 
 One of the most common forms of information warfare happens in conflict zones and the social/political sphere.
-The golden rule to detect disinformation is critical thinking
+The golden rule to detect disinformation is **critical thinking**
 
 The Process
 Generally, the process to make and spread disinformation or fake news consists of three steps: the **operation**, the **message**, and the **target**.
@@ -80,7 +78,7 @@ The operation has the intent to influence the target audience. This can be anyth
 In short, the operation is the playbook that is being used by an actor based upon their scope and goals.
 
 the actor
-the actor must have access to certain resources to craft their message(s) for the target audience. In that regard, spreading disinformation and/or fake news follows a path similar to that of legitimate marketers and advertisers. They set a goal, gather resources to achieve the goal, and then target the intended audience with the message. The main difference is the motivation
+the actor must have access to certain resources to craft their message(s) for the target audience. In that regard, spreading disinformation and/or fake news follows a path similar to that of legitimate marketers and advertisers. They set a goal, gather resources to achieve the goal, and then target the intended audience with the message. The main difference is the **motivation**
 
 the message
 the goal of the campaign and the message is to influence a specific target audience. 
@@ -114,20 +112,16 @@ Like-minded (Ignore, Accept, Support)
 Opposite (Ignore, Accept, Support)
 
 %% 
-
 ### **Information Warfare**
 
 Information warfare is the act of spreading a manipulated story or narrative to get a competitive advantage over an opponent. It is not just something done by countries; anyone can do it, including technology companies trying to beat a competitor or local political groups trying to make an adversary look bad.
-
 - **How it works:** Adversaries collect information about each other, such as a CEO's private meeting schedule or secret technology data. They might leak negative news to hurt a competitor’s new product launch.
 - **Conflict Zones and Politics:** This is where most fake news is used to change public opinion. For example, during the rise of the Islamic State in Syria, they used propaganda to make it seem like terrorist "lone wolves" were everywhere ready to attack the West. They reached a massive audience by "hijacking" popular hashtags on social media.
 
 ---
-
 ### **How to Detect Disinformation and Fake News**
 
 The "golden rule" for finding false information is **critical thinking**. This means you must look at information rationally and calmly, without letting your personal emotions or biases interfere with your analysis.
-
 - **Extraction and Validation:** To find the truth, you should describe exactly what you see, identify where the information came from, and then try to find the same information in other trusted sources.
 - **Example:** A social media headline might say, “All bald men have too much testosterone, so this specific vitamin will let your hair regrow”. While there might be some small amount of research about baldness, the story is actually a fake narrative used just to influence you to buy vitamins.
 
@@ -140,7 +134,6 @@ When investigating fake news, the most important thing is to validate the source
 - **Platform vs. Account:** Even if a platform like Twitter is generally trusted, that trust does not automatically apply to the specific person who tweeted the message. You must investigate the individual account and the platform separately.
 
 ---
-
 ### **The Three-Step Process**
 
 The process of making and spreading disinformation generally consists of three main steps: the **Operation**, the **Message**, and the **Target**.
@@ -165,7 +158,6 @@ The target can be any individual or group.
 - **Example:** During an election in Taiwan, opponents of President Tsai Ing-wen targeted her supporters on Facebook and the app Line with disinformation about her stance on LGBT rights.
 
 ---
-
 ### **The Process – In Detail**
 
 The steps in a disinformation operation are not always strict; they can be changed based on how the target audience reacts.
@@ -179,7 +171,6 @@ The steps in a disinformation operation are not always strict; they can be chang
 ### **Summary of the Disinformation Process**
 
 The overall process involves **leadership** (who starts it), **agencies and proxies** (who helps), **channels** (where it is shared, like social media or fake websites), and finally the **targets** (citizens, politicians, or influencers). Understanding these steps helps investigators find and analyze both current and past disinformation campaigns.
-
 
 %%
 
@@ -299,7 +290,6 @@ Staged
 Fake/Deep fake
 Correct video, wrong narrative
 
-
 If we sum up the examination of this account, we have found five tells that this might be a fake account and two pieces of information that might tell us that this is not a fake account. The next step could be to examine the overall behavior of this account, rather than the account characteristics
 
 Nonhuman behavior:
@@ -326,14 +316,11 @@ Hoaxy
 Hoaxy is a tool that visualizes the spread of articles online. 
 It’s great for pivoting into who spread a certain message and analyzing who connects to whom.
 
-
 Botometer
 Botometer1 is a tool to check if a Twitter account has the characteristics of being a bot or not. The higher the score, the more likely it is that the account is a bot
 
-
 Archiving Tools
 Sources like archive.org, archive.is, and archive-it.org keep archives of pages over years.
-
 
 Resources for Disinformation and Fake News
 Snopes.com
@@ -344,7 +331,6 @@ Knowyourmeme.com
 
 
 %% 
-
 ### **How to Examine Images and Videos**
 
 When analyzing footage, you should look for several key factors to see if it is part of a disinformation campaign:
@@ -477,8 +463,7 @@ Language independent
 Easy to parse with common tools
 Common data format encountered when using APIs
 
-
-Delimited data
+**Delimited data**
 Delimited data is a structured data type with fields separated by a fixed character.
 The fields are consistent in number and in sequence.
 Data may be enclosed inside double quotes.
@@ -766,7 +751,6 @@ Enumerate all email addresses for a specific domain. > Register for a free accou
 
 
 %% 
-
 ### **1. Introduction to APIs**
 
 An **Application Programming Interface (API)** is a set of rules that defines how to interact with a software resource. APIs hide the complexity of the underlying code, allowing you to focus on what you want the software to do rather than how it does it.
