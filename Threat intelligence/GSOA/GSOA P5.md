@@ -66,7 +66,7 @@ RSS is an XML-based format used to share web content. It is powerful for investi
 
 #### **RSS-Bridge**
 
-For websites that do not have a built-in RSS feed, analysts use **RSS-Bridge**. This open-source project can generate feeds in various formats, including JSON and HTML, by collecting data from source websites using cURL.
+For websites that do not have a built-in RSS feed, analysts use **RSS-Bridge**. This open-source project can generate feeds in various formats, including JSON and HTML, by collecting data from source websites using CURL.
 
 ### **5. Searx: A Privacy-Respecting Metasearch Engine**
 
@@ -89,8 +89,6 @@ This section concludes with **Lab 5.1**, where students practice setting up and 
 
 
 %% 
-
-This section of the course focuses on **Advanced Twitter Analysis**, moving beyond basic keyword searches to leverage curated lists, advanced scraping tools, and social network visualization.
 
 ### **1. Searching Twitter Lists**
 
@@ -149,9 +147,6 @@ Large datasets extracted from Twitter (via Twint or lists) are best analyzed usi
 - **Community Discovery:** Graph analysis helps identify **clusters** or communities of related accounts that may not be obvious through standard searching.
 - **Gephi:** This is a free, open-source tool used to visualize these relationships. It is excellent for analyzing large-scale influence operations or mapping infrastructure by clarifying how different entities are linked.
 
----
-
-**Transition Note:** This concludes the Advanced Twitter Analysis section. **Slide 44** begins the next major topic: **Motor Vehicle OSINT**.
 
 %%
 
@@ -159,8 +154,6 @@ Large datasets extracted from Twitter (via Twint or lists) are best analyzed usi
 ## Topic 3: Motor Vehicle OSINT
 
 %% 
-
-This section of the course covers **Motor Vehicle OSINT**, focusing on the identification, tracking, and analysis of ground transport such as cars, trucks, and motorcycles.
 
 ### **1. Introduction to Motor Vehicle OSINT**
 
@@ -239,7 +232,6 @@ Crowdsourced images from car enthusiasts often include plate numbers, locations,
 - **General Purpose:** **Platesmania.com** is a premier resource that allows searches of **partial registration numbers** and covers all vehicle types across Europe and other regions.
 - **Collectors:** `vintagebentleys.org` and the **Porsche 928 Owner's Club** are useful for antique or collectible searches.
 
-Following these topics, **Lab 5.4** allows students to practice these Motor Vehicle OSINT techniques before moving on to **Aviation OSINT**.
 
 %%
 
@@ -248,9 +240,6 @@ Following these topics, **Lab 5.4** allows students to practice these Motor Vehi
 
 
 %% 
-
-This section of the course covers **Aviation OSINT**, providing techniques for identifying, tracking, and analyzing aircraft using open-source data from international registries and radio transmissions.
-
 ### **1. Why Track Aircraft?**
 
 Aircraft traverse the globe constantly, and much of their data is publicly accessible. Analysts track aircraft to:
@@ -327,8 +316,6 @@ Enthusiast websites often contain photos and data not available in official gove
 - **General Spotting:** `planespotters.net`, `jetphotos.com`, and `planelist.net`.
 - **Military Focus:** `joebaugher.com` (USAF serials) and `scramble.nl/database/military`.
 
-Following this comprehensive overview, **Lab 5.5** allows you to practice these techniques before the course transitions to **Maritime OSINT**.
-
 %%
 
 
@@ -336,9 +323,6 @@ Following this comprehensive overview, **Lab 5.5** allows you to practice these 
 
 
 %% 
-
-This section of the course covers **Maritime OSINT**, detailing the techniques and resources used to identify, track, and analyze vessels, their owners, crew, and cargo.
-
 ### **1. Foundations of Maritime OSINT**
 
 The maritime world is vast and interconnected, with ships sailing 24/7. Much like aviation, maritime operations are governed by international laws requiring the registration and broadcasting of data for safety and collision avoidance.
@@ -414,7 +398,6 @@ VHF radio is used for ship-to-shore and ship-to-ship communication.
 - **Listening Online:** [Broadcastify.com](https://www.broadcastify.com/) and [Dxzone.com](https://www.dxzone.com/) provide live feeds of maritime radio traffic.
 - **Standard Phrases:** Communication is standardized using **IMO Standard Marine Communication Phrases (SMCP)**, which includes specific terms like "Mayday" (distress) or "Pan-Pan" (urgency).
 
-This concludes the instructional material for Section 5. The next step is **Lab 5.6**, where you will apply these Maritime OSINT techniques.
 
 %%
 
