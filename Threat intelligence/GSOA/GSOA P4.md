@@ -73,9 +73,9 @@ Creating and operating sock puppets is a complex process that requires constant 
 
 OPSEC Standard Operating Procedure (SOP)
 What you can do is create an OPSEC SOP template based on the three known Security Operations Threat Levels:
-Overt Work
-Covert Work
-Clandestine Work
+- Overt Work
+- Covert Work
+- Clandestine Work
 
 %% 
 ### **What Is OPSEC?**
@@ -157,14 +157,12 @@ It is vital for an investigator to know exactly what data their system is transm
 ### **What to Look for in Traffic**
 
 Analysts perform traffic analysis by comparing active traffic against a **baseline** (the normal level of traffic before research begins) to spot differences.
-
 - **Inside the Packets:** You can find credentials, advertising IDs, DNS names being resolved, exact search strings, and large blobs of data in XML or JSON formats.
 - **Metadata (Non-Packet Data):** This includes packet headers, API endpoints, and the timing of IP address connections.
 
 ### **Levels of Traffic Monitoring**
 
 There are three primary levels where you can monitor and gather data:
-
 1. **Application Level:** Using web browser developer tools or specialized proxies like Burp Suite.
 2. **Operating System Level:** Using tools like `tcpdump` or **Wireshark** to capture all traffic moving through the OS.
 3. **Network Level:** Monitoring traffic after it leaves your host machine.
@@ -174,7 +172,6 @@ There are three primary levels where you can monitor and gather data:
 ### **Application-Level Monitoring: Browser Developer Tools**
 
 Since most OSINT is conducted in a browser, this is the best place to start.
-
 - **Access:** Press **F12**, `Ctrl-Shift-i`, or `Opt-Cmd-i` (macOS) in Firefox or Chrome.
 - **The Network Tab:** This tab shows every request your browser makes (e.g., for images, HTML, or JavaScript) to render a page. It allows you to view HTTP/HTTPS protocols, API traffic, and hostnames.
 
@@ -183,7 +180,6 @@ Since most OSINT is conducted in a browser, this is the best place to start.
 ### **OS-Level Monitoring: Wireshark**
 
 **Wireshark** is a free, cross-platform tool used for deep packet analysis with an intuitive graphical interface.
-
 - **Statistics Features:** Wireshark can summarize your capture to help you understand the big picture.
     - **Resolved Addresses:** Shows all IP addresses and their associated domain names found in the capture.
     - **Protocol Hierarchy:** Displays a breakdown of every protocol observed (e.g., DNS, HTTP, SSL/TLS), helping you see what types of activity are most frequent.
@@ -203,9 +199,6 @@ By using these tools, analysts can move beyond simple web browsing to "drill dow
 ## Topic 2: The Dark and Hidden Web
 
 %% 
-
-Continuing with **Section 4**, this part transitions from OPSEC and system monitoring into **The Dark and Hidden Web**, covering definitions, the various networks involved, and the challenges of accessing this data.
-
 ### **1. Introduction to the Dark and Hidden Web**
 
 The internet is traditionally conceptualized in three broad divisions:
@@ -250,9 +243,6 @@ cryptocurrencies have had their blockchains used to create domains resistant to 
 
 
 %% 
-
-This section of the course explores specialized networks and alternative naming systems often used in the dark web and cybercrime underground to achieve anonymity and censorship resistance.
-
 ### **1. Challenges of Darknet Access**
 
 While gaining entry to dark networks is usually not technically difficult once the correct software is installed, the primary challenge for investigators is **navigation and discovery**. These environments are not well-indexed; for example, a standard Google search for `.onion` addresses returns no results because standard surface crawlers cannot reach them. Investigators often need to rely on known entry points or specialized search tools to begin gathering intelligence.
@@ -294,7 +284,7 @@ To view content on these networks, investigators use specific methods:
 
 %%
 
-Tor hidden services use the ".onion" top-level domain. Currently, each address within the Tor network is identified by a 56-character value derived from that particular Tor service's public encryption key (only 16-character domain names were used prior to the implementation of Tor version 3).1 The benefit to using a Tor service for those seeking anonymity is that web servers running Tor services do not use the DNS system and thus the actual IP the services are running on remains unknown unless a misconfiguration or other operational security issues leak this information
+Tor hidden services use the ".onion" top-level domain. Currently, each address within the Tor network is identified by a 56-character value derived from that particular Tor service's public encryption key (only 16-character domain names were used prior to the implementation of Tor version 3). The benefit to using a Tor service for those seeking anonymity is that web servers running Tor services do not use the DNS system and thus the actual IP the services are running on remains unknown unless a misconfiguration or other operational security issues leak this information
 
 A long with the forums and marketplaces, there are other services that are popular uses of Tor:
 • ProtonMail (email), protonirockerxow.onion
@@ -305,9 +295,6 @@ dark.fail, darkfailllnkf4vf.onion
 • onionlist.org/, https://sec587.info/5x
 
 %% 
-
-Continuing Section 4, this part focuses on the **Tor network**, search strategies for hidden services, and the risks associated with using surface-web proxies for dark web research.
-
 ### **1. The Tor Network (The Onion Router)**
 
 The **Tor network** is the most widely used dark web system. It is designed to provide **anonymity** by bouncing user traffic through multiple relay nodes (entry, middle, and exit relays), making it difficult for a destination server to identify the original source IP address. Tor hidden services are uniquely identified by the **`.onion`** top-level domain.
@@ -315,7 +302,6 @@ The **Tor network** is the most widely used dark web system. It is designed to p
 ### **2. Notable Tor Services**
 
 Beyond criminal forums and markets, several legitimate organizations maintain a presence on Tor to ensure access for users in restrictive environments.
-
 - **Email:** ProtonMail and TorBox.
 - **Drop Services:** SecureDrop (used for anonymous whistleblowing).
 - **Mirrored Sites:** Major organizations like the **CIA**, **Facebook**, **DuckDuckGo**, and **The New York Times** maintain Tor versions of their websites.
@@ -323,7 +309,6 @@ Beyond criminal forums and markets, several legitimate organizations maintain a 
 ### **3. Finding and Navigating Tor Links**
 
 Because Tor sites are not indexed by standard engines like Google, analysts rely on **link lists** and directories.
-
 - **Link Lists:** Sites like **dark.fail**, **onionlist.org**, and **Onion List** provide directories of active forums and marketplaces.
 - **Status Indicators:** These lists often indicate if a site is online, offline, or has been flagged as a **scam**.
 - **OPSEC Alert:** The surface web version of _dark.fail_ was compromised in 2021; analysts are advised to use the Tor-based onion version of such directories to ensure they are getting legitimate links.
@@ -333,7 +318,6 @@ Because Tor sites are not indexed by standard engines like Google, analysts rely
 ### **4. Tor Search Engines**
 
 While limited compared to surface web engines, several specialized tools exist for searching the Tor network:
-
 - **Ahmia:** An open-source search engine that indexes both **Tor** and **I2P** pages. It is available on both the surface web and Tor.
 - **Tor66:** This engine provides a useful "Fresh Onions" list showing newly discovered sites and can filter popular sites by **language** (e.g., English, Chinese, Russian).
 - **DarkSearch:** A reliable engine that claims to have indexed millions of Tor pages.
@@ -396,9 +380,6 @@ tor66sewebgixwhcqfnp5inzp5x5uohhdy3kvtnyfxc2e5mxiuh34iid.onion (https://sec587.i
 
 
 %% 
-
-This section explores the **Cyber Underground**, detailing how criminal and extremist groups operate across forums and marketplaces on the surface, deep, and dark web, and how OSINT analysts can investigate them.
-
 ### **1. The Cyber Underground and Authorization**
 
 As the world moved online in the 1990s, so did criminal activity, leading to a rise in fraud, theft, and extremist organizing. Before investigating these spaces, analysts must adhere to two critical principles:
@@ -530,12 +511,10 @@ The starting point for any financial investigation is the **wallet address**, a 
 Since all transactions are visible on a public blockchain, analysts use specialized tools to search for wallet IDs or transaction numbers.
 
 1. **Blockchain.com Explorer:** A free tool for tracking Bitcoin, Ethereum, and Bitcoin Cash.
-    
     - **Transaction View:** Shows the outflow of funds (destination and amount) and the inflow (sender and amount).
     - **Change Addresses:** It helps explain why a transaction might show two recipient addresses—one is the actual recipient, and the other is often receiving "change" from the transaction being returned to a different wallet controlled by the sender.
     - **Summaries:** Provides a clear summary of hashes and fees, with toggles to view values in either USD or the specific cryptocurrency.
 2. **WalletExplorer:** A "smart" block explorer that provides **address grouping** and **wallet labeling**.
-    
     - **Organization Identification:** It identifies wallet addresses associated with specific organizations, such as exchanges, gambling sites, and historical marketplaces.
     - **Association:** It automatically links different Bitcoin addresses to the same wallet based on transaction data, saving the analyst from having to make those connections manually.
 3. **Bitcoin Who's Who:** A tracker that includes reports of **scam activity**, which is a primary goal of the site. It also provides URLs for any reported associations.
