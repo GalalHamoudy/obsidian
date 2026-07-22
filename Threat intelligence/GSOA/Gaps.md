@@ -102,7 +102,17 @@ Methods to access information in password-protected files
 Methods to identify sensitive credentials in both offline and online repositories
 
 
+---
 
+# Websites
 
+https://ifttt.com/
+https://feedreader.com/
+https://rss-bridge.org/
 
+https://github.com/searx/searx
+
+Google Dorks
+
+Gephi tool https://gephi.org/
 
